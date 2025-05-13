@@ -1,0 +1,12 @@
+# # PromotionCuponsWebhookRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**entity** | **string** |  | [optional]
+**action** | **string** |  | [optional]
+**result** | **string** |  | [optional]
+**content** | [**\IdPluggerPromotion\Model\CouponWebhookErrorContent**](CouponWebhookErrorContent.md) |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
