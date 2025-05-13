@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **status** | **string** | Estado atual do pedido | [optional] [default to 'pending']
 **created_at** | **string** | Data em que o pedido foi criado | [optional]
 **updated_at** | **string** | Data em que o pedido foi atualizado | [optional]
-**coupon** | [**\IdPluggerPromotion\Model\Coupon**](Coupon.md) |  | [optional]
-**lucky_numbers** | [**\IdPluggerPromotion\Model\LuckyNumber[]**](LuckyNumber.md) |  | [optional]
-**custom_data** | [**\IdPluggerPromotion\Model\OrderCustomDataInner[]**](OrderCustomDataInner.md) |  | [optional]
+**coupon** | [**\IdpluggerPromotion\Model\Coupon**](Coupon.md) |  | [optional]
+**lucky_numbers** | [**\IdpluggerPromotion\Model\LuckyNumber[]**](LuckyNumber.md) |  | [optional]
+**custom_data** | [**\IdpluggerPromotion\Model\OrderCustomDataInner[]**](OrderCustomDataInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

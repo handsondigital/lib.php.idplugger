@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **coupon_min_value** | **string** | Valor mínimo que o total de um cupom deve ter para a API aceitar seu cadastro | [optional]
 **coupon_max_value** | **string** | Valor máximo que o total de um cupom pode ter para a API aceitar seu cadastro | [optional]
 **coupon_value_to_win** | **string** | Parâmetro que determina quanto um usuário deve ter acumulado ou em um cupom cadastrado para ganhar um número da sorte. Neste exemplo, a cada 150 reais, o usuário ganhará 1 número da sorte, a depender das regras da promoção de acordo com o regulamento. | [optional]
-**datetime** | [**\IdPluggerPromotion\Model\PromotionDatetime**](PromotionDatetime.md) |  | [optional]
+**datetime** | [**\IdpluggerPromotion\Model\PromotionDatetime**](PromotionDatetime.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

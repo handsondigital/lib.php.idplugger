@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **color_black** | **string** | Cor mais escura utilizada em todo o site | [optional]
 **input_border_radius** | **string** | Campos de entrada de dados com ou sem cantos arredondados | [optional] [default to 'on']
 **btn_border_radius** | **string** | Botões com ou sem cantos arredondados | [optional] [default to 'on']
-**menu** | [**\IdPluggerPromotion\Model\BrandingMenuInner[]**](BrandingMenuInner.md) | Itens do menu do hotsite da promoção | [optional]
-**social** | [**\IdPluggerPromotion\Model\BrandingSocial**](BrandingSocial.md) |  | [optional]
+**menu** | [**\IdpluggerPromotion\Model\BrandingMenuInner[]**](BrandingMenuInner.md) | Itens do menu do hotsite da promoção | [optional]
+**social** | [**\IdpluggerPromotion\Model\BrandingSocial**](BrandingSocial.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

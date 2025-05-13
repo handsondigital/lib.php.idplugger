@@ -102,19 +102,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new IdPluggerPromotion\Api\AutenticaoApi(
-    // Se quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, o `GuzzleHttp\Client` será usado como padrão.
-    new GuzzleHttp\Client()
+
+$apiInstance = new IdpluggerPromotion\Api\ArticlesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
 );
-$app_http_controllers_admin_admin_controller_login_request = new \IdPluggerPromotion\Model\AppHttpControllersAdminAdminControllerLoginRequest(); // \IdPluggerPromotion\Model\AppHttpControllersAdminAdminControllerLoginRequest
+$promotion_id = 'promotion_id_example'; // string | ID da promoção
+$article = array(new \IdpluggerPromotion\Model\Article()); // \IdpluggerPromotion\Model\Article[]
 
 try {
-    $result = $apiInstance->appHttpControllersAdminAdminControllerLogin($app_http_controllers_admin_admin_controller_login_request);
+    $result = $apiInstance->articlesCreate($promotion_id, $article);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AutenticaoApi->appHttpControllersAdminAdminControllerLogin: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ArticlesApi->articlesCreate: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -125,301 +130,301 @@ Todas as URIs são relativas a *https://api.idplugger.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AutenticaoApi* | [**appHttpControllersAdminAdminControllerLogin**](docs/Api/AutenticaoApi.md#apphttpcontrollersadminadmincontrollerlogin) | **POST** /v3/login | Login na API
-*AutenticaoApi* | [**appHttpControllersAdminAdminControllerMe**](docs/Api/AutenticaoApi.md#apphttpcontrollersadminadmincontrollerme) | **GET** /v3/me | Dados na API
-*CPFsBloqueadosApi* | [**promotionBlacklistCreate**](docs/Api/CPFsBloqueadosApi.md#promotionblacklistcreate) | **POST** /v3/promotion/{promotion_id}/users/blacklist | Cadastra um CPF na lista de CPFs bloqueados na promoção
-*CPFsBloqueadosApi* | [**promotionBlacklistDelete**](docs/Api/CPFsBloqueadosApi.md#promotionblacklistdelete) | **DELETE** /v3/promotion/{promotion_id}/users/blacklist/{id} | Exclui um CPF da lista de CPFs bloqueados da promoção
-*CPFsBloqueadosApi* | [**promotionBlacklistIndex**](docs/Api/CPFsBloqueadosApi.md#promotionblacklistindex) | **GET** /v3/promotion/{promotion_id}/users/blacklist | Pesquisa por CPFs bloqueados na promoção
-*ConfiguraesApi* | [**promotionConfigWebhook**](docs/Api/ConfiguraesApi.md#promotionconfigwebhook) | **POST** /v3/promotion/{promotion_id}/webhook | Configura o webhook da promoção
-*ContedoApi* | [**promotionContentCreate**](docs/Api/ContedoApi.md#promotioncontentcreate) | **POST** /v3/promotion/{promotion_id}/cms/content | Cria um novo conteúdo para a promoção
-*ContedoApi* | [**promotionContentIndex**](docs/Api/ContedoApi.md#promotioncontentindex) | **GET** /v3/promotion/{promotion_id}/cms/content | Dados referentes aos conteúdos (que não são artigos de blog) da promoção
-*CuponsApi* | [**promotionCouponsCreate**](docs/Api/CuponsApi.md#promotioncouponscreate) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Cadastra um cupom para um usuário cadastrado na promoção
-*CuponsApi* | [**promotionCouponsDelete**](docs/Api/CuponsApi.md#promotioncouponsdelete) | **DELETE** /v3/promotion/{promotion_id}/users/{user_id}/coupons/{coupon_id} | Exclui um cupom de um usuário cadastrado na promoção
-*CuponsApi* | [**promotionCouponsIndex**](docs/Api/CuponsApi.md#promotioncouponsindex) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Busca por cupons de um usuário cadastrado na promoção
-*CuponsApi* | [**promotionCouponsUpdate**](docs/Api/CuponsApi.md#promotioncouponsupdate) | **PATCH** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Cadastra ou atualiza um cupom para um usuário cadastrado na promoção
-*CuponsApi* | [**promotionCuponsWebhook**](docs/Api/CuponsApi.md#promotioncuponswebhook) | **POST** /webhook-do-cupom | Webhook de resposta ao registro de cupons
-*DadosDaPromooApi* | [**promotionConfigsIndex**](docs/Api/DadosDaPromooApi.md#promotionconfigsindex) | **GET** /v3/promotion/{promotion_id} | Retorna dados da promoção
-*FAQApi* | [**promotionFaqCreate**](docs/Api/FAQApi.md#promotionfaqcreate) | **POST** /v3/promotion/{promotion_id}/cms/faq | Cadastra perguntas frequentes na promoção
-*FAQApi* | [**promotionFaqDelete**](docs/Api/FAQApi.md#promotionfaqdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/faq | Esclui perguntas frequentes na promoção
-*FAQApi* | [**promotionFaqIndex**](docs/Api/FAQApi.md#promotionfaqindex) | **GET** /v3/promotion/{promotion_id}/cms/faq | Lista as perguntas frequentes cadastradas na promoção
-*FAQApi* | [**promotionFaqUpdate**](docs/Api/FAQApi.md#promotionfaqupdate) | **PATCH** /v3/promotion/{promotion_id}/cms/faq | Cadastra ou atualiza perguntas frequentes na promoção
-*GanhadoresApi* | [**promotionAwardedsSearch**](docs/Api/GanhadoresApi.md#promotionawardedssearch) | **GET** /v3/promotion/{promotion_id}/awardeds | Busca por usuários cadastrados na promoção ganhadores de sorteios
-*GanhadoresApi* | [**promotionAwardedsStates**](docs/Api/GanhadoresApi.md#promotionawardedsstates) | **GET** /v3/promotion/{promotion_id}/awardeds/states | Lista os status de ganhador existentes na promoção
-*GanhadoresApi* | [**promotionAwardedsUpdate**](docs/Api/GanhadoresApi.md#promotionawardedsupdate) | **PATCH** /v3/promotion/{promotion_id}/awardeds | Atualiza informações referentes aos ganhadores de sorteios da promoção
-*IdentidadeVisualApi* | [**promotionBrandingIndex**](docs/Api/IdentidadeVisualApi.md#promotionbrandingindex) | **GET** /v3/promotion/{promotion_id}/cms/branding | Dados referentes a identidade visual da marca da promoção
-*IdentidadeVisualApi* | [**promotionBrandingUpdate**](docs/Api/IdentidadeVisualApi.md#promotionbrandingupdate) | **POST** /v3/promotion/{promotion_id}/cms/branding | Altera os dados referentes a identidade visual da marca da promoção
-*LojasApi* | [**promotionStoresCreate**](docs/Api/LojasApi.md#promotionstorescreate) | **POST** /v3/promotion/{promotion_id}/stores | Cadastra uma loja na promoção
-*LojasApi* | [**promotionStoresIndex**](docs/Api/LojasApi.md#promotionstoresindex) | **GET** /v3/promotion/{promotion_id}/stores | Busca por lojas cadastradas na promoção
-*LojasApi* | [**promotionStoresUpdate**](docs/Api/LojasApi.md#promotionstoresupdate) | **PATCH** /v3/promotion/{promotion_id}/stores | Cadastra ou atualiza lojas na promoção
-*NmerosDaSorteApi* | [**promotionLuckyNumbersAddCustom**](docs/Api/NmerosDaSorteApi.md#promotionluckynumbersaddcustom) | **POST** /v3/promotion/{promotion_id}/lucky_numbers | Cadastra Números da Sorte no repositório da promoção
-*NmerosDaSorteApi* | [**promotionLuckyNumbersRemove**](docs/Api/NmerosDaSorteApi.md#promotionluckynumbersremove) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/lucky_numbers/remove | Inativa e remove Números da Sorte cadastrados na promoção
-*NmerosDaSorteApi* | [**promotionLuckyNumbersSearch**](docs/Api/NmerosDaSorteApi.md#promotionluckynumberssearch) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/lucky_numbers | Busca por Números da Sorte de um usuário cadastrado na promoção
-*PedidosApi* | [**promotionOrdersCreate**](docs/Api/PedidosApi.md#promotionorderscreate) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/orders | Cadastra um pedido para um usuário na promoção
-*PedidosApi* | [**promotionOrdersIndex**](docs/Api/PedidosApi.md#promotionordersindex) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/orders | Pesquisa por pedidos na promoção
-*PedidosApi* | [**promotionOrdersUpdate**](docs/Api/PedidosApi.md#promotionordersupdate) | **PATCH** /v3/promotion/{promotion_id}/users/{user_id}/orders | Cadastra ou atualiza um pedido de um usuário na promoção
-*PrmiosApi* | [**promotionAwardsCreate**](docs/Api/PrmiosApi.md#promotionawardscreate) | **POST** /v3/promotion/{promotion_id}/awards | Cadastra um prêmio na promoção
-*PrmiosApi* | [**promotionAwardsDelete**](docs/Api/PrmiosApi.md#promotionawardsdelete) | **DELETE** /v3/promotion/{promotion_id}/awards/{id} | Deleta um prêmio da promoção
-*PrmiosApi* | [**promotionAwardsIndex**](docs/Api/PrmiosApi.md#promotionawardsindex) | **GET** /v3/promotion/{promotion_id}/awards | Pesquisa por prêmios na promoção
-*PrmiosApi* | [**promotionAwardsUpdate**](docs/Api/PrmiosApi.md#promotionawardsupdate) | **PATCH** /v3/promotion/{promotion_id}/awards | Cadastra ou atualiza um prêmio na promoção
-*ProdutosApi* | [**promotionProductsCreate**](docs/Api/ProdutosApi.md#promotionproductscreate) | **POST** /v3/promotion/{promotion_id}/products | Cadastra um produto na promoção
-*ProdutosApi* | [**promotionProductsDelete**](docs/Api/ProdutosApi.md#promotionproductsdelete) | **DELETE** /v3/promotion/{promotion_id}/products/{product_id} | Exclui um produto cadastrado na promoção
-*ProdutosApi* | [**promotionProductsIndex**](docs/Api/ProdutosApi.md#promotionproductsindex) | **GET** /v3/promotion/{promotion_id}/products | Busca por produtos cadastrados na promoção
-*ProdutosApi* | [**promotionProductsUpdate**](docs/Api/ProdutosApi.md#promotionproductsupdate) | **PATCH** /v3/promotion/{promotion_id}/products | Cadastra ou atualiza produtos na promoção
-*ProdutosApi* | [**promotionStoresDelete**](docs/Api/ProdutosApi.md#promotionstoresdelete) | **DELETE** /v3/promotion/{promotion_id}/stores/{store_id} | Exclui um produto cadastrado na promoção
-*PublicaesApi* | [**promotionArticlesCreate**](docs/Api/PublicaesApi.md#promotionarticlescreate) | **POST** /v3/promotion/{promotion_id}/cms/articles | Cadastra publicações na promoção
-*PublicaesApi* | [**promotionArticlesDelete**](docs/Api/PublicaesApi.md#promotionarticlesdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/articles/{id} | Exclui uma publicação da promoção
-*PublicaesApi* | [**promotionArticlesIndex**](docs/Api/PublicaesApi.md#promotionarticlesindex) | **GET** /v3/promotion/{promotion_id}/cms/articles | Lista as publicações cadastradas na promoção
-*PublicaesApi* | [**promotionArticlesUpdate**](docs/Api/PublicaesApi.md#promotionarticlesupdate) | **PATCH** /v3/promotion/{promotion_id}/cms/articles | Cadastra ou atualiza publicações na promoção
-*SorteiosApi* | [**promotionRafflesCreate**](docs/Api/SorteiosApi.md#promotionrafflescreate) | **POST** /v3/promotion/{promotion_id}/raffles | Cadastra um sorteio na promoção
-*SorteiosApi* | [**promotionRafflesDelete**](docs/Api/SorteiosApi.md#promotionrafflesdelete) | **DELETE** /v3/promotion/{promotion_id}/raffles/{id} | Exclui um sorteio da promoção
-*SorteiosApi* | [**promotionRafflesIndex**](docs/Api/SorteiosApi.md#promotionrafflesindex) | **GET** /v3/promotion/{promotion_id}/raffles | Pesquisa por sorteios na promoção
-*SorteiosApi* | [**promotionRafflesReport**](docs/Api/SorteiosApi.md#promotionrafflesreport) | **POST** /v3/promotion/{promotion_id}/raffles/{id}/report | Envia por e-mail o relatório de cupons participantes de um sorteio
-*SorteiosApi* | [**promotionRafflesUpdate**](docs/Api/SorteiosApi.md#promotionrafflesupdate) | **PATCH** /v3/promotion/{promotion_id}/raffles | Cadastra ou atualiza um sorteio na promoção
-*SuporteDaPromooApi* | [**promotionTicketsCreate**](docs/Api/SuporteDaPromooApi.md#promotionticketscreate) | **POST** /v3/promotion/{promotion_id}/tickets | Cadastra um ticket de suporte na promoção
-*SuporteDaPromooApi* | [**promotionTicketsDelete**](docs/Api/SuporteDaPromooApi.md#promotionticketsdelete) | **DELETE** /v3/promotion/{promotion_id}/tickets/{id} | Exclui um ticket de suporte da promoção
-*SuporteDaPromooApi* | [**promotionTicketsIndex**](docs/Api/SuporteDaPromooApi.md#promotionticketsindex) | **GET** /v3/promotion/{promotion_id}/tickets | Busca por tickets de suporte cadastrados na promoção
-*SuporteDaPromooApi* | [**promotionTicketsUpdate**](docs/Api/SuporteDaPromooApi.md#promotionticketsupdate) | **PATCH** /v3/promotion/{promotion_id}/tickets | Cadastra ou atualiza um ticket de suporte na promoção
-*TermosRegulamentosEPolticaDePrivacidadeApi* | [**promotionDocumentRulesIndex**](docs/Api/TermosRegulamentosEPolticaDePrivacidadeApi.md#promotiondocumentrulesindex) | **GET** /v3/promotion/{promotion_id}/cms/document_rules | Termos de uso, regulamentos e política de privacidade da promoção
-*TermosRegulamentosEPolticaDePrivacidadeApi* | [**promotionDocumentRulesRegulationDelete**](docs/Api/TermosRegulamentosEPolticaDePrivacidadeApi.md#promotiondocumentrulesregulationdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/document_rules/regulation/{regulation_id} | Exclui um regulamento da promoção
-*TermosRegulamentosEPolticaDePrivacidadeApi* | [**promotionDocumentRulesUpdate**](docs/Api/TermosRegulamentosEPolticaDePrivacidadeApi.md#promotiondocumentrulesupdate) | **POST** /v3/promotion/{promotion_id}/cms/document_rules | Atualiza os termos de uso e regulamento da promoção
-*UsuriosNaPromooApi* | [**promotionUsersCreate**](docs/Api/UsuriosNaPromooApi.md#promotionuserscreate) | **POST** /v3/promotion/{promotion_id}/users | Cadastra um usuário na promoção
-*UsuriosNaPromooApi* | [**promotionUsersDelete**](docs/Api/UsuriosNaPromooApi.md#promotionusersdelete) | **DELETE** /v3/promotion/{promotion_id}/users/{user_id} | Exclui um usuário da promoção
-*UsuriosNaPromooApi* | [**promotionUsersIndex**](docs/Api/UsuriosNaPromooApi.md#promotionusersindex) | **GET** /v3/promotion/{promotion_id}/users | Busca por um usuário cadastrado na promoção
-*UsuriosNaPromooApi* | [**promotionUsersUpdate**](docs/Api/UsuriosNaPromooApi.md#promotionusersupdate) | **PATCH** /v3/promotion/{promotion_id}/users | Cadastra ou atualiza um usuário na promoção
-*UsuriosNaPromooApi* | [**promotionUsersWebhook**](docs/Api/UsuriosNaPromooApi.md#promotionuserswebhook) | **POST** /webhook-do-usuario | Webhook de resposta ao registro de usuário
+*ArticlesApi* | [**articlesCreate**](docs/Api/ArticlesApi.md#articlescreate) | **POST** /v3/promotion/{promotion_id}/cms/articles | Cadastra publicações na promoção
+*ArticlesApi* | [**articlesDelete**](docs/Api/ArticlesApi.md#articlesdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/articles/{id} | Exclui uma publicação da promoção
+*ArticlesApi* | [**articlesIndex**](docs/Api/ArticlesApi.md#articlesindex) | **GET** /v3/promotion/{promotion_id}/cms/articles | Lista as publicações cadastradas na promoção
+*ArticlesApi* | [**articlesUpdate**](docs/Api/ArticlesApi.md#articlesupdate) | **PATCH** /v3/promotion/{promotion_id}/cms/articles | Cadastra ou atualiza publicações na promoção
+*AuthApi* | [**login**](docs/Api/AuthApi.md#login) | **POST** /v3/login | Login na API
+*AuthApi* | [**me**](docs/Api/AuthApi.md#me) | **GET** /v3/me | Dados na API
+*AwardedsApi* | [**awardedsSearch**](docs/Api/AwardedsApi.md#awardedssearch) | **GET** /v3/promotion/{promotion_id}/awardeds | Busca por usuários cadastrados na promoção ganhadores de sorteios
+*AwardedsApi* | [**awardedsStates**](docs/Api/AwardedsApi.md#awardedsstates) | **GET** /v3/promotion/{promotion_id}/awardeds/states | Lista os status de ganhador existentes na promoção
+*AwardedsApi* | [**awardedsUpdate**](docs/Api/AwardedsApi.md#awardedsupdate) | **PATCH** /v3/promotion/{promotion_id}/awardeds | Atualiza informações referentes aos ganhadores de sorteios da promoção
+*AwardsApi* | [**awardsCreate**](docs/Api/AwardsApi.md#awardscreate) | **POST** /v3/promotion/{promotion_id}/awards | Cadastra um prêmio na promoção
+*AwardsApi* | [**awardsDelete**](docs/Api/AwardsApi.md#awardsdelete) | **DELETE** /v3/promotion/{promotion_id}/awards/{id} | Deleta um prêmio da promoção
+*AwardsApi* | [**awardsIndex**](docs/Api/AwardsApi.md#awardsindex) | **GET** /v3/promotion/{promotion_id}/awards | Pesquisa por prêmios na promoção
+*AwardsApi* | [**awardsUpdate**](docs/Api/AwardsApi.md#awardsupdate) | **PATCH** /v3/promotion/{promotion_id}/awards | Cadastra ou atualiza um prêmio na promoção
+*BlockedUsersApi* | [**blacklistCreate**](docs/Api/BlockedUsersApi.md#blacklistcreate) | **POST** /v3/promotion/{promotion_id}/users/blacklist | Cadastra um CPF na lista de CPFs bloqueados na promoção
+*BlockedUsersApi* | [**blacklistDelete**](docs/Api/BlockedUsersApi.md#blacklistdelete) | **DELETE** /v3/promotion/{promotion_id}/users/blacklist/{id} | Exclui um CPF da lista de CPFs bloqueados da promoção
+*BlockedUsersApi* | [**blacklistIndex**](docs/Api/BlockedUsersApi.md#blacklistindex) | **GET** /v3/promotion/{promotion_id}/users/blacklist | Pesquisa por CPFs bloqueados na promoção
+*BrandingApi* | [**brandingIndex**](docs/Api/BrandingApi.md#brandingindex) | **GET** /v3/promotion/{promotion_id}/cms/branding | Dados referentes a identidade visual da marca da promoção
+*BrandingApi* | [**brandingUpdate**](docs/Api/BrandingApi.md#brandingupdate) | **POST** /v3/promotion/{promotion_id}/cms/branding | Altera os dados referentes a identidade visual da marca da promoção
+*ContedoApi* | [**contentCreate**](docs/Api/ContedoApi.md#contentcreate) | **POST** /v3/promotion/{promotion_id}/cms/content | Cria um novo conteúdo para a promoção
+*ContedoApi* | [**contentIndex**](docs/Api/ContedoApi.md#contentindex) | **GET** /v3/promotion/{promotion_id}/cms/content | Dados referentes aos conteúdos (que não são artigos de blog) da promoção
+*CouponsApi* | [**couponsCreate**](docs/Api/CouponsApi.md#couponscreate) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Cadastra um cupom para um usuário cadastrado na promoção
+*CouponsApi* | [**couponsDelete**](docs/Api/CouponsApi.md#couponsdelete) | **DELETE** /v3/promotion/{promotion_id}/users/{user_id}/coupons/{coupon_id} | Exclui um cupom de um usuário cadastrado na promoção
+*CouponsApi* | [**couponsIndex**](docs/Api/CouponsApi.md#couponsindex) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Busca por cupons de um usuário cadastrado na promoção
+*CouponsApi* | [**couponsUpdate**](docs/Api/CouponsApi.md#couponsupdate) | **PATCH** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Cadastra ou atualiza um cupom para um usuário cadastrado na promoção
+*CouponsApi* | [**cuponsWebhook**](docs/Api/CouponsApi.md#cuponswebhook) | **POST** /webhook-do-cupom | Webhook de resposta ao registro de cupons
+*DocumentRulesApi* | [**documentRulesIndex**](docs/Api/DocumentRulesApi.md#documentrulesindex) | **GET** /v3/promotion/{promotion_id}/cms/document_rules | Termos de uso, regulamentos e política de privacidade da promoção
+*DocumentRulesApi* | [**documentRulesRegulationDelete**](docs/Api/DocumentRulesApi.md#documentrulesregulationdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/document_rules/regulation/{regulation_id} | Exclui um regulamento da promoção
+*DocumentRulesApi* | [**documentRulesUpdate**](docs/Api/DocumentRulesApi.md#documentrulesupdate) | **POST** /v3/promotion/{promotion_id}/cms/document_rules | Atualiza os termos de uso e regulamento da promoção
+*FAQApi* | [**faqCreate**](docs/Api/FAQApi.md#faqcreate) | **POST** /v3/promotion/{promotion_id}/cms/faq | Cadastra perguntas frequentes na promoção
+*FAQApi* | [**faqDelete**](docs/Api/FAQApi.md#faqdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/faq | Esclui perguntas frequentes na promoção
+*FAQApi* | [**faqIndex**](docs/Api/FAQApi.md#faqindex) | **GET** /v3/promotion/{promotion_id}/cms/faq | Lista as perguntas frequentes cadastradas na promoção
+*FAQApi* | [**faqUpdate**](docs/Api/FAQApi.md#faqupdate) | **PATCH** /v3/promotion/{promotion_id}/cms/faq | Cadastra ou atualiza perguntas frequentes na promoção
+*LuckyNumbersApi* | [**luckyNumbersAddCustom**](docs/Api/LuckyNumbersApi.md#luckynumbersaddcustom) | **POST** /v3/promotion/{promotion_id}/lucky_numbers | Cadastra Números da Sorte no repositório da promoção
+*LuckyNumbersApi* | [**luckyNumbersRemove**](docs/Api/LuckyNumbersApi.md#luckynumbersremove) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/lucky_numbers/remove | Inativa e remove Números da Sorte cadastrados na promoção
+*LuckyNumbersApi* | [**luckyNumbersSearch**](docs/Api/LuckyNumbersApi.md#luckynumberssearch) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/lucky_numbers | Busca por Números da Sorte de um usuário cadastrado na promoção
+*OrdersApi* | [**ordersCreate**](docs/Api/OrdersApi.md#orderscreate) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/orders | Cadastra um pedido para um usuário na promoção
+*OrdersApi* | [**ordersIndex**](docs/Api/OrdersApi.md#ordersindex) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/orders | Pesquisa por pedidos na promoção
+*OrdersApi* | [**ordersUpdate**](docs/Api/OrdersApi.md#ordersupdate) | **PATCH** /v3/promotion/{promotion_id}/users/{user_id}/orders | Cadastra ou atualiza um pedido de um usuário na promoção
+*ProductsApi* | [**productsCreate**](docs/Api/ProductsApi.md#productscreate) | **POST** /v3/promotion/{promotion_id}/products | Cadastra um produto na promoção
+*ProductsApi* | [**productsDelete**](docs/Api/ProductsApi.md#productsdelete) | **DELETE** /v3/promotion/{promotion_id}/products/{product_id} | Exclui um produto cadastrado na promoção
+*ProductsApi* | [**productsIndex**](docs/Api/ProductsApi.md#productsindex) | **GET** /v3/promotion/{promotion_id}/products | Busca por produtos cadastrados na promoção
+*ProductsApi* | [**productsUpdate**](docs/Api/ProductsApi.md#productsupdate) | **PATCH** /v3/promotion/{promotion_id}/products | Cadastra ou atualiza produtos na promoção
+*PromotionDataApi* | [**configsIndex**](docs/Api/PromotionDataApi.md#configsindex) | **GET** /v3/promotion/{promotion_id} | Retorna dados da promoção
+*RafflesApi* | [**rafflesCreate**](docs/Api/RafflesApi.md#rafflescreate) | **POST** /v3/promotion/{promotion_id}/raffles | Cadastra um sorteio na promoção
+*RafflesApi* | [**rafflesDelete**](docs/Api/RafflesApi.md#rafflesdelete) | **DELETE** /v3/promotion/{promotion_id}/raffles/{id} | Exclui um sorteio da promoção
+*RafflesApi* | [**rafflesIndex**](docs/Api/RafflesApi.md#rafflesindex) | **GET** /v3/promotion/{promotion_id}/raffles | Pesquisa por sorteios na promoção
+*RafflesApi* | [**rafflesReport**](docs/Api/RafflesApi.md#rafflesreport) | **POST** /v3/promotion/{promotion_id}/raffles/{id}/report | Envia por e-mail o relatório de cupons participantes de um sorteio
+*RafflesApi* | [**rafflesUpdate**](docs/Api/RafflesApi.md#rafflesupdate) | **PATCH** /v3/promotion/{promotion_id}/raffles | Cadastra ou atualiza um sorteio na promoção
+*SettingsApi* | [**configWebhook**](docs/Api/SettingsApi.md#configwebhook) | **POST** /v3/promotion/{promotion_id}/webhook | Configura o webhook da promoção
+*StoresApi* | [**storesCreate**](docs/Api/StoresApi.md#storescreate) | **POST** /v3/promotion/{promotion_id}/stores | Cadastra uma loja na promoção
+*StoresApi* | [**storesDelete**](docs/Api/StoresApi.md#storesdelete) | **DELETE** /v3/promotion/{promotion_id}/stores/{store_id} | Exclui um produto cadastrado na promoção
+*StoresApi* | [**storesIndex**](docs/Api/StoresApi.md#storesindex) | **GET** /v3/promotion/{promotion_id}/stores | Busca por lojas cadastradas na promoção
+*StoresApi* | [**storesUpdate**](docs/Api/StoresApi.md#storesupdate) | **PATCH** /v3/promotion/{promotion_id}/stores | Cadastra ou atualiza lojas na promoção
+*TicketsApi* | [**ticketsCreate**](docs/Api/TicketsApi.md#ticketscreate) | **POST** /v3/promotion/{promotion_id}/tickets | Cadastra um ticket de suporte na promoção
+*TicketsApi* | [**ticketsDelete**](docs/Api/TicketsApi.md#ticketsdelete) | **DELETE** /v3/promotion/{promotion_id}/tickets/{id} | Exclui um ticket de suporte da promoção
+*TicketsApi* | [**ticketsIndex**](docs/Api/TicketsApi.md#ticketsindex) | **GET** /v3/promotion/{promotion_id}/tickets | Busca por tickets de suporte cadastrados na promoção
+*TicketsApi* | [**ticketsUpdate**](docs/Api/TicketsApi.md#ticketsupdate) | **PATCH** /v3/promotion/{promotion_id}/tickets | Cadastra ou atualiza um ticket de suporte na promoção
+*UsersApi* | [**usersCreate**](docs/Api/UsersApi.md#userscreate) | **POST** /v3/promotion/{promotion_id}/users | Cadastra um usuário na promoção
+*UsersApi* | [**usersDelete**](docs/Api/UsersApi.md#usersdelete) | **DELETE** /v3/promotion/{promotion_id}/users/{user_id} | Exclui um usuário da promoção
+*UsersApi* | [**usersIndex**](docs/Api/UsersApi.md#usersindex) | **GET** /v3/promotion/{promotion_id}/users | Busca por um usuário cadastrado na promoção
+*UsersApi* | [**usersUpdate**](docs/Api/UsersApi.md#usersupdate) | **PATCH** /v3/promotion/{promotion_id}/users | Cadastra ou atualiza um usuário na promoção
+*UsersApi* | [**usersWebhook**](docs/Api/UsersApi.md#userswebhook) | **POST** /webhook-do-usuario | Webhook de resposta ao registro de usuário
 
 ## Modelos
 
 - [AddLuckyNumberCustom](docs/Model/AddLuckyNumberCustom.md)
-- [AppHttpControllersAdminAdminControllerLogin200Response](docs/Model/AppHttpControllersAdminAdminControllerLogin200Response.md)
-- [AppHttpControllersAdminAdminControllerLogin401Response](docs/Model/AppHttpControllersAdminAdminControllerLogin401Response.md)
-- [AppHttpControllersAdminAdminControllerLoginRequest](docs/Model/AppHttpControllersAdminAdminControllerLoginRequest.md)
-- [AppHttpControllersAdminAdminControllerMe200Response](docs/Model/AppHttpControllersAdminAdminControllerMe200Response.md)
-- [AppHttpControllersAdminAdminControllerMe200ResponsePromotionsInner](docs/Model/AppHttpControllersAdminAdminControllerMe200ResponsePromotionsInner.md)
 - [Article](docs/Model/Article.md)
 - [ArticleCustomDataInner](docs/Model/ArticleCustomDataInner.md)
+- [ArticlesCreate200Response](docs/Model/ArticlesCreate200Response.md)
+- [ArticlesCreate400Response](docs/Model/ArticlesCreate400Response.md)
+- [ArticlesCreate401Response](docs/Model/ArticlesCreate401Response.md)
+- [ArticlesDelete200Response](docs/Model/ArticlesDelete200Response.md)
+- [ArticlesDelete400Response](docs/Model/ArticlesDelete400Response.md)
+- [ArticlesDelete401Response](docs/Model/ArticlesDelete401Response.md)
+- [ArticlesIndex200Response](docs/Model/ArticlesIndex200Response.md)
+- [ArticlesIndex400Response](docs/Model/ArticlesIndex400Response.md)
+- [ArticlesIndex401Response](docs/Model/ArticlesIndex401Response.md)
+- [ArticlesUpdate200Response](docs/Model/ArticlesUpdate200Response.md)
+- [ArticlesUpdate400Response](docs/Model/ArticlesUpdate400Response.md)
+- [ArticlesUpdate401Response](docs/Model/ArticlesUpdate401Response.md)
 - [Award](docs/Model/Award.md)
 - [Awarded](docs/Model/Awarded.md)
+- [AwardedsSearch200Response](docs/Model/AwardedsSearch200Response.md)
+- [AwardedsSearch400Response](docs/Model/AwardedsSearch400Response.md)
+- [AwardedsSearch401Response](docs/Model/AwardedsSearch401Response.md)
+- [AwardedsStates200Response](docs/Model/AwardedsStates200Response.md)
+- [AwardedsStates200ResponseContentInner](docs/Model/AwardedsStates200ResponseContentInner.md)
+- [AwardedsUpdate200Response](docs/Model/AwardedsUpdate200Response.md)
+- [AwardedsUpdate400Response](docs/Model/AwardedsUpdate400Response.md)
+- [AwardedsUpdate401Response](docs/Model/AwardedsUpdate401Response.md)
+- [AwardsCreate200Response](docs/Model/AwardsCreate200Response.md)
+- [AwardsCreate400Response](docs/Model/AwardsCreate400Response.md)
+- [AwardsCreate401Response](docs/Model/AwardsCreate401Response.md)
+- [AwardsDelete200Response](docs/Model/AwardsDelete200Response.md)
+- [AwardsDelete400Response](docs/Model/AwardsDelete400Response.md)
+- [AwardsDelete401Response](docs/Model/AwardsDelete401Response.md)
+- [AwardsIndex200Response](docs/Model/AwardsIndex200Response.md)
+- [AwardsIndex400Response](docs/Model/AwardsIndex400Response.md)
+- [AwardsIndex401Response](docs/Model/AwardsIndex401Response.md)
+- [AwardsUpdate200Response](docs/Model/AwardsUpdate200Response.md)
+- [AwardsUpdate400Response](docs/Model/AwardsUpdate400Response.md)
+- [AwardsUpdate401Response](docs/Model/AwardsUpdate401Response.md)
+- [BlacklistCreate200Response](docs/Model/BlacklistCreate200Response.md)
+- [BlacklistCreate200ResponseContentInner](docs/Model/BlacklistCreate200ResponseContentInner.md)
+- [BlacklistCreate400Response](docs/Model/BlacklistCreate400Response.md)
+- [BlacklistCreate401Response](docs/Model/BlacklistCreate401Response.md)
+- [BlacklistCreateRequest](docs/Model/BlacklistCreateRequest.md)
+- [BlacklistDelete200Response](docs/Model/BlacklistDelete200Response.md)
+- [BlacklistDelete400Response](docs/Model/BlacklistDelete400Response.md)
+- [BlacklistDelete401Response](docs/Model/BlacklistDelete401Response.md)
+- [BlacklistIndex200Response](docs/Model/BlacklistIndex200Response.md)
+- [BlacklistIndex200ResponseContentInner](docs/Model/BlacklistIndex200ResponseContentInner.md)
+- [BlacklistIndex400Response](docs/Model/BlacklistIndex400Response.md)
 - [Branding](docs/Model/Branding.md)
+- [BrandingIndex200Response](docs/Model/BrandingIndex200Response.md)
+- [BrandingIndex400Response](docs/Model/BrandingIndex400Response.md)
+- [BrandingIndex401Response](docs/Model/BrandingIndex401Response.md)
 - [BrandingMenuInner](docs/Model/BrandingMenuInner.md)
 - [BrandingSocial](docs/Model/BrandingSocial.md)
+- [BrandingUpdate200Response](docs/Model/BrandingUpdate200Response.md)
+- [BrandingUpdate400Response](docs/Model/BrandingUpdate400Response.md)
+- [BrandingUpdate401Response](docs/Model/BrandingUpdate401Response.md)
+- [ConfigWebhook200Response](docs/Model/ConfigWebhook200Response.md)
+- [ConfigWebhook400Response](docs/Model/ConfigWebhook400Response.md)
+- [ConfigWebhook401Response](docs/Model/ConfigWebhook401Response.md)
+- [ConfigWebhookRequest](docs/Model/ConfigWebhookRequest.md)
+- [ConfigsIndex200Response](docs/Model/ConfigsIndex200Response.md)
+- [ConfigsIndex400Response](docs/Model/ConfigsIndex400Response.md)
+- [ConfigsIndex401Response](docs/Model/ConfigsIndex401Response.md)
 - [Content](docs/Model/Content.md)
+- [ContentCreate200Response](docs/Model/ContentCreate200Response.md)
+- [ContentCreate400Response](docs/Model/ContentCreate400Response.md)
+- [ContentCreate401Response](docs/Model/ContentCreate401Response.md)
+- [ContentIndex200Response](docs/Model/ContentIndex200Response.md)
+- [ContentIndex400Response](docs/Model/ContentIndex400Response.md)
+- [ContentIndex401Response](docs/Model/ContentIndex401Response.md)
 - [Coupon](docs/Model/Coupon.md)
 - [CouponProductsInner](docs/Model/CouponProductsInner.md)
 - [CouponWebhookError](docs/Model/CouponWebhookError.md)
 - [CouponWebhookErrorContent](docs/Model/CouponWebhookErrorContent.md)
 - [CouponWebhookErrorContentAllOfErrors](docs/Model/CouponWebhookErrorContentAllOfErrors.md)
 - [CouponWebhookSuccess](docs/Model/CouponWebhookSuccess.md)
+- [CouponsCreate200Response](docs/Model/CouponsCreate200Response.md)
+- [CouponsCreate401Response](docs/Model/CouponsCreate401Response.md)
+- [CouponsCreate409Response](docs/Model/CouponsCreate409Response.md)
+- [CouponsCreateRequest](docs/Model/CouponsCreateRequest.md)
+- [CouponsDelete200Response](docs/Model/CouponsDelete200Response.md)
+- [CouponsDelete400Response](docs/Model/CouponsDelete400Response.md)
+- [CouponsDelete401Response](docs/Model/CouponsDelete401Response.md)
+- [CouponsIndex200Response](docs/Model/CouponsIndex200Response.md)
+- [CouponsIndex200ResponseContentInner](docs/Model/CouponsIndex200ResponseContentInner.md)
+- [CouponsIndex400Response](docs/Model/CouponsIndex400Response.md)
+- [CouponsIndex401Response](docs/Model/CouponsIndex401Response.md)
+- [CouponsUpdate201Response](docs/Model/CouponsUpdate201Response.md)
+- [CouponsUpdate401Response](docs/Model/CouponsUpdate401Response.md)
+- [CouponsUpdate409Response](docs/Model/CouponsUpdate409Response.md)
+- [CuponsWebhookRequest](docs/Model/CuponsWebhookRequest.md)
+- [DocumentRulesIndex200Response](docs/Model/DocumentRulesIndex200Response.md)
+- [DocumentRulesIndex200ResponseContent](docs/Model/DocumentRulesIndex200ResponseContent.md)
+- [DocumentRulesIndex200ResponseContentRegulationsInner](docs/Model/DocumentRulesIndex200ResponseContentRegulationsInner.md)
+- [DocumentRulesIndex400Response](docs/Model/DocumentRulesIndex400Response.md)
+- [DocumentRulesIndex401Response](docs/Model/DocumentRulesIndex401Response.md)
+- [DocumentRulesRegulationDelete200Response](docs/Model/DocumentRulesRegulationDelete200Response.md)
+- [DocumentRulesRegulationDelete400Response](docs/Model/DocumentRulesRegulationDelete400Response.md)
+- [DocumentRulesRegulationDelete401Response](docs/Model/DocumentRulesRegulationDelete401Response.md)
+- [DocumentRulesUpdate200Response](docs/Model/DocumentRulesUpdate200Response.md)
+- [DocumentRulesUpdate400Response](docs/Model/DocumentRulesUpdate400Response.md)
+- [DocumentRulesUpdate401Response](docs/Model/DocumentRulesUpdate401Response.md)
+- [DocumentRulesUpdateRequest](docs/Model/DocumentRulesUpdateRequest.md)
+- [DocumentRulesUpdateRequestRegulationsInner](docs/Model/DocumentRulesUpdateRequestRegulationsInner.md)
+- [FaqCreate200Response](docs/Model/FaqCreate200Response.md)
+- [FaqCreate400Response](docs/Model/FaqCreate400Response.md)
+- [FaqCreate401Response](docs/Model/FaqCreate401Response.md)
+- [FaqCreateRequestInner](docs/Model/FaqCreateRequestInner.md)
+- [FaqDelete200Response](docs/Model/FaqDelete200Response.md)
+- [FaqDelete400Response](docs/Model/FaqDelete400Response.md)
+- [FaqDelete401Response](docs/Model/FaqDelete401Response.md)
+- [FaqIndex200Response](docs/Model/FaqIndex200Response.md)
+- [FaqIndex200ResponseContentInner](docs/Model/FaqIndex200ResponseContentInner.md)
+- [FaqIndex400Response](docs/Model/FaqIndex400Response.md)
+- [FaqIndex401Response](docs/Model/FaqIndex401Response.md)
+- [FaqUpdate200Response](docs/Model/FaqUpdate200Response.md)
+- [FaqUpdate400Response](docs/Model/FaqUpdate400Response.md)
+- [FaqUpdate401Response](docs/Model/FaqUpdate401Response.md)
+- [Login200Response](docs/Model/Login200Response.md)
+- [Login401Response](docs/Model/Login401Response.md)
+- [LoginRequest](docs/Model/LoginRequest.md)
 - [LuckyNumber](docs/Model/LuckyNumber.md)
+- [LuckyNumbersAddCustom200Response](docs/Model/LuckyNumbersAddCustom200Response.md)
+- [LuckyNumbersAddCustom400Response](docs/Model/LuckyNumbersAddCustom400Response.md)
+- [LuckyNumbersAddCustom401Response](docs/Model/LuckyNumbersAddCustom401Response.md)
+- [LuckyNumbersRemove200Response](docs/Model/LuckyNumbersRemove200Response.md)
+- [LuckyNumbersRemove400Response](docs/Model/LuckyNumbersRemove400Response.md)
+- [LuckyNumbersRemove401Response](docs/Model/LuckyNumbersRemove401Response.md)
+- [LuckyNumbersRemoveRequest](docs/Model/LuckyNumbersRemoveRequest.md)
+- [LuckyNumbersRemoveRequestLuckyNumbersInner](docs/Model/LuckyNumbersRemoveRequestLuckyNumbersInner.md)
+- [LuckyNumbersSearch200Response](docs/Model/LuckyNumbersSearch200Response.md)
+- [LuckyNumbersSearch400Response](docs/Model/LuckyNumbersSearch400Response.md)
+- [LuckyNumbersSearch401Response](docs/Model/LuckyNumbersSearch401Response.md)
+- [Me200Response](docs/Model/Me200Response.md)
+- [Me200ResponsePromotionsInner](docs/Model/Me200ResponsePromotionsInner.md)
 - [Order](docs/Model/Order.md)
 - [OrderCustomDataInner](docs/Model/OrderCustomDataInner.md)
+- [OrdersCreate200Response](docs/Model/OrdersCreate200Response.md)
+- [OrdersCreate400Response](docs/Model/OrdersCreate400Response.md)
+- [OrdersCreate401Response](docs/Model/OrdersCreate401Response.md)
+- [OrdersCreateRequest](docs/Model/OrdersCreateRequest.md)
+- [OrdersIndex200Response](docs/Model/OrdersIndex200Response.md)
+- [OrdersIndex400Response](docs/Model/OrdersIndex400Response.md)
+- [OrdersIndex401Response](docs/Model/OrdersIndex401Response.md)
+- [OrdersUpdate200Response](docs/Model/OrdersUpdate200Response.md)
+- [OrdersUpdate400Response](docs/Model/OrdersUpdate400Response.md)
+- [OrdersUpdate401Response](docs/Model/OrdersUpdate401Response.md)
 - [Pagination](docs/Model/Pagination.md)
 - [PaginationLinksInner](docs/Model/PaginationLinksInner.md)
 - [Product](docs/Model/Product.md)
+- [ProductsCreate200Response](docs/Model/ProductsCreate200Response.md)
+- [ProductsCreate401Response](docs/Model/ProductsCreate401Response.md)
+- [ProductsCreate409Response](docs/Model/ProductsCreate409Response.md)
+- [ProductsCreateRequest](docs/Model/ProductsCreateRequest.md)
+- [ProductsDelete200Response](docs/Model/ProductsDelete200Response.md)
+- [ProductsDelete400Response](docs/Model/ProductsDelete400Response.md)
+- [ProductsDelete401Response](docs/Model/ProductsDelete401Response.md)
+- [ProductsIndex200Response](docs/Model/ProductsIndex200Response.md)
+- [ProductsIndex400Response](docs/Model/ProductsIndex400Response.md)
+- [ProductsIndex401Response](docs/Model/ProductsIndex401Response.md)
+- [ProductsUpdate201Response](docs/Model/ProductsUpdate201Response.md)
+- [ProductsUpdate401Response](docs/Model/ProductsUpdate401Response.md)
+- [ProductsUpdate409Response](docs/Model/ProductsUpdate409Response.md)
 - [Promotion](docs/Model/Promotion.md)
-- [PromotionArticlesCreate200Response](docs/Model/PromotionArticlesCreate200Response.md)
-- [PromotionArticlesCreate400Response](docs/Model/PromotionArticlesCreate400Response.md)
-- [PromotionArticlesCreate401Response](docs/Model/PromotionArticlesCreate401Response.md)
-- [PromotionArticlesDelete200Response](docs/Model/PromotionArticlesDelete200Response.md)
-- [PromotionArticlesDelete400Response](docs/Model/PromotionArticlesDelete400Response.md)
-- [PromotionArticlesDelete401Response](docs/Model/PromotionArticlesDelete401Response.md)
-- [PromotionArticlesIndex200Response](docs/Model/PromotionArticlesIndex200Response.md)
-- [PromotionArticlesIndex400Response](docs/Model/PromotionArticlesIndex400Response.md)
-- [PromotionArticlesIndex401Response](docs/Model/PromotionArticlesIndex401Response.md)
-- [PromotionArticlesUpdate200Response](docs/Model/PromotionArticlesUpdate200Response.md)
-- [PromotionArticlesUpdate400Response](docs/Model/PromotionArticlesUpdate400Response.md)
-- [PromotionArticlesUpdate401Response](docs/Model/PromotionArticlesUpdate401Response.md)
-- [PromotionAwardedsSearch200Response](docs/Model/PromotionAwardedsSearch200Response.md)
-- [PromotionAwardedsSearch400Response](docs/Model/PromotionAwardedsSearch400Response.md)
-- [PromotionAwardedsSearch401Response](docs/Model/PromotionAwardedsSearch401Response.md)
-- [PromotionAwardedsStates200Response](docs/Model/PromotionAwardedsStates200Response.md)
-- [PromotionAwardedsStates200ResponseContentInner](docs/Model/PromotionAwardedsStates200ResponseContentInner.md)
-- [PromotionAwardedsUpdate200Response](docs/Model/PromotionAwardedsUpdate200Response.md)
-- [PromotionAwardedsUpdate400Response](docs/Model/PromotionAwardedsUpdate400Response.md)
-- [PromotionAwardedsUpdate401Response](docs/Model/PromotionAwardedsUpdate401Response.md)
-- [PromotionAwardsCreate200Response](docs/Model/PromotionAwardsCreate200Response.md)
-- [PromotionAwardsCreate400Response](docs/Model/PromotionAwardsCreate400Response.md)
-- [PromotionAwardsCreate401Response](docs/Model/PromotionAwardsCreate401Response.md)
-- [PromotionAwardsDelete200Response](docs/Model/PromotionAwardsDelete200Response.md)
-- [PromotionAwardsDelete400Response](docs/Model/PromotionAwardsDelete400Response.md)
-- [PromotionAwardsDelete401Response](docs/Model/PromotionAwardsDelete401Response.md)
-- [PromotionAwardsIndex200Response](docs/Model/PromotionAwardsIndex200Response.md)
-- [PromotionAwardsIndex400Response](docs/Model/PromotionAwardsIndex400Response.md)
-- [PromotionAwardsIndex401Response](docs/Model/PromotionAwardsIndex401Response.md)
-- [PromotionAwardsUpdate200Response](docs/Model/PromotionAwardsUpdate200Response.md)
-- [PromotionAwardsUpdate400Response](docs/Model/PromotionAwardsUpdate400Response.md)
-- [PromotionAwardsUpdate401Response](docs/Model/PromotionAwardsUpdate401Response.md)
-- [PromotionBlacklistCreate200Response](docs/Model/PromotionBlacklistCreate200Response.md)
-- [PromotionBlacklistCreate200ResponseContentInner](docs/Model/PromotionBlacklistCreate200ResponseContentInner.md)
-- [PromotionBlacklistCreate400Response](docs/Model/PromotionBlacklistCreate400Response.md)
-- [PromotionBlacklistCreate401Response](docs/Model/PromotionBlacklistCreate401Response.md)
-- [PromotionBlacklistCreateRequest](docs/Model/PromotionBlacklistCreateRequest.md)
-- [PromotionBlacklistDelete200Response](docs/Model/PromotionBlacklistDelete200Response.md)
-- [PromotionBlacklistDelete400Response](docs/Model/PromotionBlacklistDelete400Response.md)
-- [PromotionBlacklistDelete401Response](docs/Model/PromotionBlacklistDelete401Response.md)
-- [PromotionBlacklistIndex200Response](docs/Model/PromotionBlacklistIndex200Response.md)
-- [PromotionBlacklistIndex200ResponseContentInner](docs/Model/PromotionBlacklistIndex200ResponseContentInner.md)
-- [PromotionBlacklistIndex400Response](docs/Model/PromotionBlacklistIndex400Response.md)
-- [PromotionBrandingIndex200Response](docs/Model/PromotionBrandingIndex200Response.md)
-- [PromotionBrandingIndex400Response](docs/Model/PromotionBrandingIndex400Response.md)
-- [PromotionBrandingIndex401Response](docs/Model/PromotionBrandingIndex401Response.md)
-- [PromotionBrandingUpdate200Response](docs/Model/PromotionBrandingUpdate200Response.md)
-- [PromotionBrandingUpdate400Response](docs/Model/PromotionBrandingUpdate400Response.md)
-- [PromotionBrandingUpdate401Response](docs/Model/PromotionBrandingUpdate401Response.md)
-- [PromotionConfigWebhook200Response](docs/Model/PromotionConfigWebhook200Response.md)
-- [PromotionConfigWebhook400Response](docs/Model/PromotionConfigWebhook400Response.md)
-- [PromotionConfigWebhook401Response](docs/Model/PromotionConfigWebhook401Response.md)
-- [PromotionConfigWebhookRequest](docs/Model/PromotionConfigWebhookRequest.md)
-- [PromotionConfigsIndex200Response](docs/Model/PromotionConfigsIndex200Response.md)
-- [PromotionConfigsIndex400Response](docs/Model/PromotionConfigsIndex400Response.md)
-- [PromotionConfigsIndex401Response](docs/Model/PromotionConfigsIndex401Response.md)
-- [PromotionContentCreate200Response](docs/Model/PromotionContentCreate200Response.md)
-- [PromotionContentCreate400Response](docs/Model/PromotionContentCreate400Response.md)
-- [PromotionContentCreate401Response](docs/Model/PromotionContentCreate401Response.md)
-- [PromotionContentIndex200Response](docs/Model/PromotionContentIndex200Response.md)
-- [PromotionContentIndex400Response](docs/Model/PromotionContentIndex400Response.md)
-- [PromotionContentIndex401Response](docs/Model/PromotionContentIndex401Response.md)
-- [PromotionCouponsCreate200Response](docs/Model/PromotionCouponsCreate200Response.md)
-- [PromotionCouponsCreate401Response](docs/Model/PromotionCouponsCreate401Response.md)
-- [PromotionCouponsCreate409Response](docs/Model/PromotionCouponsCreate409Response.md)
-- [PromotionCouponsCreateRequest](docs/Model/PromotionCouponsCreateRequest.md)
-- [PromotionCouponsDelete200Response](docs/Model/PromotionCouponsDelete200Response.md)
-- [PromotionCouponsDelete400Response](docs/Model/PromotionCouponsDelete400Response.md)
-- [PromotionCouponsDelete401Response](docs/Model/PromotionCouponsDelete401Response.md)
-- [PromotionCouponsIndex200Response](docs/Model/PromotionCouponsIndex200Response.md)
-- [PromotionCouponsIndex200ResponseContentInner](docs/Model/PromotionCouponsIndex200ResponseContentInner.md)
-- [PromotionCouponsIndex400Response](docs/Model/PromotionCouponsIndex400Response.md)
-- [PromotionCouponsIndex401Response](docs/Model/PromotionCouponsIndex401Response.md)
-- [PromotionCouponsUpdate201Response](docs/Model/PromotionCouponsUpdate201Response.md)
-- [PromotionCouponsUpdate401Response](docs/Model/PromotionCouponsUpdate401Response.md)
-- [PromotionCouponsUpdate409Response](docs/Model/PromotionCouponsUpdate409Response.md)
-- [PromotionCuponsWebhookRequest](docs/Model/PromotionCuponsWebhookRequest.md)
 - [PromotionDatetime](docs/Model/PromotionDatetime.md)
 - [PromotionDatetimeActive](docs/Model/PromotionDatetimeActive.md)
 - [PromotionDatetimeDelivery](docs/Model/PromotionDatetimeDelivery.md)
 - [PromotionDatetimeParticipate](docs/Model/PromotionDatetimeParticipate.md)
 - [PromotionDatetimeShowAwardeds](docs/Model/PromotionDatetimeShowAwardeds.md)
-- [PromotionDocumentRulesIndex200Response](docs/Model/PromotionDocumentRulesIndex200Response.md)
-- [PromotionDocumentRulesIndex200ResponseContent](docs/Model/PromotionDocumentRulesIndex200ResponseContent.md)
-- [PromotionDocumentRulesIndex200ResponseContentRegulationsInner](docs/Model/PromotionDocumentRulesIndex200ResponseContentRegulationsInner.md)
-- [PromotionDocumentRulesIndex400Response](docs/Model/PromotionDocumentRulesIndex400Response.md)
-- [PromotionDocumentRulesIndex401Response](docs/Model/PromotionDocumentRulesIndex401Response.md)
-- [PromotionDocumentRulesRegulationDelete200Response](docs/Model/PromotionDocumentRulesRegulationDelete200Response.md)
-- [PromotionDocumentRulesRegulationDelete400Response](docs/Model/PromotionDocumentRulesRegulationDelete400Response.md)
-- [PromotionDocumentRulesRegulationDelete401Response](docs/Model/PromotionDocumentRulesRegulationDelete401Response.md)
-- [PromotionDocumentRulesUpdate200Response](docs/Model/PromotionDocumentRulesUpdate200Response.md)
-- [PromotionDocumentRulesUpdate400Response](docs/Model/PromotionDocumentRulesUpdate400Response.md)
-- [PromotionDocumentRulesUpdate401Response](docs/Model/PromotionDocumentRulesUpdate401Response.md)
-- [PromotionDocumentRulesUpdateRequest](docs/Model/PromotionDocumentRulesUpdateRequest.md)
-- [PromotionDocumentRulesUpdateRequestRegulationsInner](docs/Model/PromotionDocumentRulesUpdateRequestRegulationsInner.md)
-- [PromotionFaqCreate200Response](docs/Model/PromotionFaqCreate200Response.md)
-- [PromotionFaqCreate400Response](docs/Model/PromotionFaqCreate400Response.md)
-- [PromotionFaqCreate401Response](docs/Model/PromotionFaqCreate401Response.md)
-- [PromotionFaqCreateRequestInner](docs/Model/PromotionFaqCreateRequestInner.md)
-- [PromotionFaqDelete200Response](docs/Model/PromotionFaqDelete200Response.md)
-- [PromotionFaqDelete400Response](docs/Model/PromotionFaqDelete400Response.md)
-- [PromotionFaqDelete401Response](docs/Model/PromotionFaqDelete401Response.md)
-- [PromotionFaqIndex200Response](docs/Model/PromotionFaqIndex200Response.md)
-- [PromotionFaqIndex200ResponseContentInner](docs/Model/PromotionFaqIndex200ResponseContentInner.md)
-- [PromotionFaqIndex400Response](docs/Model/PromotionFaqIndex400Response.md)
-- [PromotionFaqIndex401Response](docs/Model/PromotionFaqIndex401Response.md)
-- [PromotionFaqUpdate200Response](docs/Model/PromotionFaqUpdate200Response.md)
-- [PromotionFaqUpdate400Response](docs/Model/PromotionFaqUpdate400Response.md)
-- [PromotionFaqUpdate401Response](docs/Model/PromotionFaqUpdate401Response.md)
-- [PromotionLuckyNumbersAddCustom200Response](docs/Model/PromotionLuckyNumbersAddCustom200Response.md)
-- [PromotionLuckyNumbersAddCustom400Response](docs/Model/PromotionLuckyNumbersAddCustom400Response.md)
-- [PromotionLuckyNumbersAddCustom401Response](docs/Model/PromotionLuckyNumbersAddCustom401Response.md)
-- [PromotionLuckyNumbersRemove200Response](docs/Model/PromotionLuckyNumbersRemove200Response.md)
-- [PromotionLuckyNumbersRemove400Response](docs/Model/PromotionLuckyNumbersRemove400Response.md)
-- [PromotionLuckyNumbersRemove401Response](docs/Model/PromotionLuckyNumbersRemove401Response.md)
-- [PromotionLuckyNumbersRemoveRequest](docs/Model/PromotionLuckyNumbersRemoveRequest.md)
-- [PromotionLuckyNumbersRemoveRequestLuckyNumbersInner](docs/Model/PromotionLuckyNumbersRemoveRequestLuckyNumbersInner.md)
-- [PromotionLuckyNumbersSearch200Response](docs/Model/PromotionLuckyNumbersSearch200Response.md)
-- [PromotionLuckyNumbersSearch400Response](docs/Model/PromotionLuckyNumbersSearch400Response.md)
-- [PromotionLuckyNumbersSearch401Response](docs/Model/PromotionLuckyNumbersSearch401Response.md)
-- [PromotionOrdersCreate200Response](docs/Model/PromotionOrdersCreate200Response.md)
-- [PromotionOrdersCreate400Response](docs/Model/PromotionOrdersCreate400Response.md)
-- [PromotionOrdersCreate401Response](docs/Model/PromotionOrdersCreate401Response.md)
-- [PromotionOrdersCreateRequest](docs/Model/PromotionOrdersCreateRequest.md)
-- [PromotionOrdersIndex200Response](docs/Model/PromotionOrdersIndex200Response.md)
-- [PromotionOrdersIndex400Response](docs/Model/PromotionOrdersIndex400Response.md)
-- [PromotionOrdersIndex401Response](docs/Model/PromotionOrdersIndex401Response.md)
-- [PromotionOrdersUpdate200Response](docs/Model/PromotionOrdersUpdate200Response.md)
-- [PromotionOrdersUpdate400Response](docs/Model/PromotionOrdersUpdate400Response.md)
-- [PromotionOrdersUpdate401Response](docs/Model/PromotionOrdersUpdate401Response.md)
-- [PromotionProductsCreate200Response](docs/Model/PromotionProductsCreate200Response.md)
-- [PromotionProductsCreate401Response](docs/Model/PromotionProductsCreate401Response.md)
-- [PromotionProductsCreate409Response](docs/Model/PromotionProductsCreate409Response.md)
-- [PromotionProductsCreateRequest](docs/Model/PromotionProductsCreateRequest.md)
-- [PromotionProductsDelete200Response](docs/Model/PromotionProductsDelete200Response.md)
-- [PromotionProductsDelete400Response](docs/Model/PromotionProductsDelete400Response.md)
-- [PromotionProductsDelete401Response](docs/Model/PromotionProductsDelete401Response.md)
-- [PromotionProductsIndex200Response](docs/Model/PromotionProductsIndex200Response.md)
-- [PromotionProductsIndex400Response](docs/Model/PromotionProductsIndex400Response.md)
-- [PromotionProductsIndex401Response](docs/Model/PromotionProductsIndex401Response.md)
-- [PromotionProductsUpdate201Response](docs/Model/PromotionProductsUpdate201Response.md)
-- [PromotionProductsUpdate401Response](docs/Model/PromotionProductsUpdate401Response.md)
-- [PromotionProductsUpdate409Response](docs/Model/PromotionProductsUpdate409Response.md)
-- [PromotionRafflesCreate200Response](docs/Model/PromotionRafflesCreate200Response.md)
-- [PromotionRafflesCreate400Response](docs/Model/PromotionRafflesCreate400Response.md)
-- [PromotionRafflesCreate401Response](docs/Model/PromotionRafflesCreate401Response.md)
-- [PromotionRafflesCreateRequestInner](docs/Model/PromotionRafflesCreateRequestInner.md)
-- [PromotionRafflesDelete200Response](docs/Model/PromotionRafflesDelete200Response.md)
-- [PromotionRafflesDelete400Response](docs/Model/PromotionRafflesDelete400Response.md)
-- [PromotionRafflesDelete401Response](docs/Model/PromotionRafflesDelete401Response.md)
-- [PromotionRafflesIndex200Response](docs/Model/PromotionRafflesIndex200Response.md)
-- [PromotionRafflesIndex400Response](docs/Model/PromotionRafflesIndex400Response.md)
-- [PromotionRafflesIndex401Response](docs/Model/PromotionRafflesIndex401Response.md)
-- [PromotionRafflesReportRequest](docs/Model/PromotionRafflesReportRequest.md)
-- [PromotionRafflesUpdate200Response](docs/Model/PromotionRafflesUpdate200Response.md)
-- [PromotionRafflesUpdate400Response](docs/Model/PromotionRafflesUpdate400Response.md)
-- [PromotionRafflesUpdate401Response](docs/Model/PromotionRafflesUpdate401Response.md)
-- [PromotionRafflesUpdateRequestInner](docs/Model/PromotionRafflesUpdateRequestInner.md)
-- [PromotionStoresCreate200Response](docs/Model/PromotionStoresCreate200Response.md)
-- [PromotionStoresCreate401Response](docs/Model/PromotionStoresCreate401Response.md)
-- [PromotionStoresCreate409Response](docs/Model/PromotionStoresCreate409Response.md)
-- [PromotionStoresCreateRequest](docs/Model/PromotionStoresCreateRequest.md)
-- [PromotionStoresDelete200Response](docs/Model/PromotionStoresDelete200Response.md)
-- [PromotionStoresDelete400Response](docs/Model/PromotionStoresDelete400Response.md)
-- [PromotionStoresDelete401Response](docs/Model/PromotionStoresDelete401Response.md)
-- [PromotionStoresIndex200Response](docs/Model/PromotionStoresIndex200Response.md)
-- [PromotionStoresIndex400Response](docs/Model/PromotionStoresIndex400Response.md)
-- [PromotionStoresIndex401Response](docs/Model/PromotionStoresIndex401Response.md)
-- [PromotionStoresUpdate201Response](docs/Model/PromotionStoresUpdate201Response.md)
-- [PromotionStoresUpdate401Response](docs/Model/PromotionStoresUpdate401Response.md)
-- [PromotionStoresUpdate409Response](docs/Model/PromotionStoresUpdate409Response.md)
-- [PromotionTicketsCreate200Response](docs/Model/PromotionTicketsCreate200Response.md)
-- [PromotionTicketsCreate400Response](docs/Model/PromotionTicketsCreate400Response.md)
-- [PromotionTicketsCreate401Response](docs/Model/PromotionTicketsCreate401Response.md)
-- [PromotionTicketsDelete200Response](docs/Model/PromotionTicketsDelete200Response.md)
-- [PromotionTicketsDelete400Response](docs/Model/PromotionTicketsDelete400Response.md)
-- [PromotionTicketsDelete401Response](docs/Model/PromotionTicketsDelete401Response.md)
-- [PromotionTicketsIndex200Response](docs/Model/PromotionTicketsIndex200Response.md)
-- [PromotionTicketsIndex400Response](docs/Model/PromotionTicketsIndex400Response.md)
-- [PromotionTicketsIndex401Response](docs/Model/PromotionTicketsIndex401Response.md)
-- [PromotionTicketsUpdate200Response](docs/Model/PromotionTicketsUpdate200Response.md)
-- [PromotionTicketsUpdate400Response](docs/Model/PromotionTicketsUpdate400Response.md)
-- [PromotionUsersCreate201Response](docs/Model/PromotionUsersCreate201Response.md)
-- [PromotionUsersCreate401Response](docs/Model/PromotionUsersCreate401Response.md)
-- [PromotionUsersCreate409Response](docs/Model/PromotionUsersCreate409Response.md)
-- [PromotionUsersCreateRequest](docs/Model/PromotionUsersCreateRequest.md)
-- [PromotionUsersDelete200Response](docs/Model/PromotionUsersDelete200Response.md)
-- [PromotionUsersDelete400Response](docs/Model/PromotionUsersDelete400Response.md)
-- [PromotionUsersDelete401Response](docs/Model/PromotionUsersDelete401Response.md)
-- [PromotionUsersIndex200Response](docs/Model/PromotionUsersIndex200Response.md)
-- [PromotionUsersUpdate201Response](docs/Model/PromotionUsersUpdate201Response.md)
-- [PromotionUsersWebhook200Response](docs/Model/PromotionUsersWebhook200Response.md)
-- [PromotionUsersWebhookRequest](docs/Model/PromotionUsersWebhookRequest.md)
 - [Raffle](docs/Model/Raffle.md)
+- [RafflesCreate200Response](docs/Model/RafflesCreate200Response.md)
+- [RafflesCreate400Response](docs/Model/RafflesCreate400Response.md)
+- [RafflesCreate401Response](docs/Model/RafflesCreate401Response.md)
+- [RafflesCreateRequestInner](docs/Model/RafflesCreateRequestInner.md)
+- [RafflesDelete200Response](docs/Model/RafflesDelete200Response.md)
+- [RafflesDelete400Response](docs/Model/RafflesDelete400Response.md)
+- [RafflesDelete401Response](docs/Model/RafflesDelete401Response.md)
+- [RafflesIndex200Response](docs/Model/RafflesIndex200Response.md)
+- [RafflesIndex400Response](docs/Model/RafflesIndex400Response.md)
+- [RafflesIndex401Response](docs/Model/RafflesIndex401Response.md)
+- [RafflesReportRequest](docs/Model/RafflesReportRequest.md)
+- [RafflesUpdate200Response](docs/Model/RafflesUpdate200Response.md)
+- [RafflesUpdate400Response](docs/Model/RafflesUpdate400Response.md)
+- [RafflesUpdate401Response](docs/Model/RafflesUpdate401Response.md)
+- [RafflesUpdateRequestInner](docs/Model/RafflesUpdateRequestInner.md)
 - [SerieNumber](docs/Model/SerieNumber.md)
 - [Store](docs/Model/Store.md)
+- [StoresCreate200Response](docs/Model/StoresCreate200Response.md)
+- [StoresCreate401Response](docs/Model/StoresCreate401Response.md)
+- [StoresCreate409Response](docs/Model/StoresCreate409Response.md)
+- [StoresCreateRequest](docs/Model/StoresCreateRequest.md)
+- [StoresDelete200Response](docs/Model/StoresDelete200Response.md)
+- [StoresDelete400Response](docs/Model/StoresDelete400Response.md)
+- [StoresDelete401Response](docs/Model/StoresDelete401Response.md)
+- [StoresIndex200Response](docs/Model/StoresIndex200Response.md)
+- [StoresIndex400Response](docs/Model/StoresIndex400Response.md)
+- [StoresIndex401Response](docs/Model/StoresIndex401Response.md)
+- [StoresUpdate201Response](docs/Model/StoresUpdate201Response.md)
+- [StoresUpdate401Response](docs/Model/StoresUpdate401Response.md)
+- [StoresUpdate409Response](docs/Model/StoresUpdate409Response.md)
 - [Ticket](docs/Model/Ticket.md)
+- [TicketsCreate200Response](docs/Model/TicketsCreate200Response.md)
+- [TicketsCreate400Response](docs/Model/TicketsCreate400Response.md)
+- [TicketsCreate401Response](docs/Model/TicketsCreate401Response.md)
+- [TicketsDelete200Response](docs/Model/TicketsDelete200Response.md)
+- [TicketsDelete400Response](docs/Model/TicketsDelete400Response.md)
+- [TicketsDelete401Response](docs/Model/TicketsDelete401Response.md)
+- [TicketsIndex200Response](docs/Model/TicketsIndex200Response.md)
+- [TicketsIndex400Response](docs/Model/TicketsIndex400Response.md)
+- [TicketsIndex401Response](docs/Model/TicketsIndex401Response.md)
+- [TicketsUpdate200Response](docs/Model/TicketsUpdate200Response.md)
+- [TicketsUpdate400Response](docs/Model/TicketsUpdate400Response.md)
 - [User](docs/Model/User.md)
 - [UserCustomData](docs/Model/UserCustomData.md)
 - [UserWebhookError](docs/Model/UserWebhookError.md)
 - [UserWebhookErrorContent](docs/Model/UserWebhookErrorContent.md)
 - [UserWebhookErrorContentAllOfErrors](docs/Model/UserWebhookErrorContentAllOfErrors.md)
 - [UserWebhookSuccess](docs/Model/UserWebhookSuccess.md)
+- [UsersCreate201Response](docs/Model/UsersCreate201Response.md)
+- [UsersCreate401Response](docs/Model/UsersCreate401Response.md)
+- [UsersCreate409Response](docs/Model/UsersCreate409Response.md)
+- [UsersCreateRequest](docs/Model/UsersCreateRequest.md)
+- [UsersDelete200Response](docs/Model/UsersDelete200Response.md)
+- [UsersDelete400Response](docs/Model/UsersDelete400Response.md)
+- [UsersDelete401Response](docs/Model/UsersDelete401Response.md)
+- [UsersIndex200Response](docs/Model/UsersIndex200Response.md)
+- [UsersUpdate201Response](docs/Model/UsersUpdate201Response.md)
+- [UsersWebhook200Response](docs/Model/UsersWebhook200Response.md)
+- [UsersWebhookRequest](docs/Model/UsersWebhookRequest.md)
 
 ## Autenticação
 

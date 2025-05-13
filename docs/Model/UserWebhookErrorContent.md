@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **newsletter** | **bool** |  | [optional]
 **policy_privacy** | **bool** |  | [optional]
 **agree_terms** | **bool** |  | [optional]
-**custom_data** | [**\IdPluggerPromotion\Model\UserCustomData**](UserCustomData.md) |  | [optional]
-**errors** | [**\IdPluggerPromotion\Model\UserWebhookErrorContentAllOfErrors**](UserWebhookErrorContentAllOfErrors.md) |  | [optional]
+**custom_data** | [**\IdpluggerPromotion\Model\UserCustomData**](UserCustomData.md) |  | [optional]
+**errors** | [**\IdpluggerPromotion\Model\UserWebhookErrorContentAllOfErrors**](UserWebhookErrorContentAllOfErrors.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

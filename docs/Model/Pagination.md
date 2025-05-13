@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **from** | **int** |  | [optional]
 **last_page** | **int** |  | [optional]
 **last_page_url** | **string** |  | [optional]
-**links** | [**\IdPluggerPromotion\Model\PaginationLinksInner[]**](PaginationLinksInner.md) |  | [optional]
+**links** | [**\IdpluggerPromotion\Model\PaginationLinksInner[]**](PaginationLinksInner.md) |  | [optional]
 **next_page_url** | **string** |  | [optional]
 **path** | **string** |  | [optional]
 **per_page** | **string** |  | [optional]

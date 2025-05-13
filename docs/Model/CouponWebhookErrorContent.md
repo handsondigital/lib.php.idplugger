@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **code** | **string** |  |
 **cost** | **float** |  |
 **serie** | **float** |  | [optional]
-**products** | [**\IdPluggerPromotion\Model\CouponProductsInner[]**](CouponProductsInner.md) |  | [optional]
+**products** | [**\IdpluggerPromotion\Model\CouponProductsInner[]**](CouponProductsInner.md) |  | [optional]
 **promotion_codes** | **string[]** |  | [optional]
-**errors** | [**\IdPluggerPromotion\Model\CouponWebhookErrorContentAllOfErrors**](CouponWebhookErrorContentAllOfErrors.md) |  | [optional]
+**errors** | [**\IdpluggerPromotion\Model\CouponWebhookErrorContentAllOfErrors**](CouponWebhookErrorContentAllOfErrors.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdPluggerPromotion
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -12,7 +12,7 @@
 /**
  * Plataforma de Promoção - Documentação da API
  *
- * # Introdução  Bem-vindo à documentação oficial da API da Plataforma de Promoção IdPlugger! Esta API foi desenvolvida para oferecer acesso seguro e eficiente aos recursos e serviços essenciais da Plataforma.  # Sobre a API  Esta API é baseada em REST, proporcionando uma arquitetura flexível e de fácil integração para desenvolvedores e empresas.  Esta documentação foi elaborada com o intuito de fornecer uma referência abrangente e detalhada para desenvolvedores, parceiros e clientes que desejam utilizar a API da Plataforma de Promoção IdPlugger em seus próprios aplicativos, sistemas e plataformas. Aqui, você encontrará informações sobre os endpoints disponíveis, parâmetros de solicitação, respostas esperadas, autenticação, webhooks, exemplos de uso e muito mais.  # Começando  Para começar a explorar e utilizar a API da Plataforma de Promoção IdPlugger, recomendamos que você siga os seguintes passos:  1. **Autenticação**: Obtenha suas credenciais de autenticação ('username' e 'password'), junto ao nosso time comercial, para acessar a API.  2. **Explorar Endpoints**: Navegue pela lista de endpoints disponíveis e suas respectivas funcionalidades.  3. **Experimentar**: Utilize os exemplos de solicitação fornecidos para testar os endpoints e compreender melhor seu funcionamento.  4. **Integrar**: Integre a API da Plataforma de Promoção IdPlugger em seus próprios projetos e sistemas para aproveitar ao máximo suas capacidades.  # Autenticação  Todos os endpoints requerem token de autenticação válido, que pode ser obtido através de requisição à API enviando as credenciais obtidas junto a equipe da Plataforma de Promoção.  Este token é do tipo JWT e deve ser enviado no header da requisição no seguinte formato:  | Header | Valor |   | - | - |   | Authorization | bearer `{token}` |  Substitua `{token}` pelo token obtido na autenticação.  IMPORTANTE: O token JWT tem um tempo de validade, o ideal é armazenar o token JWT e solicitar um novo token apenas quando o seu token expirar. A validade do token é enviada junto com o token na resposta do endpoint de autenticação.  # Webhooks  Ao cadastrar um usuário ou um cupom, a API irá armazenar os dados informados para processar em segundo plano. Por tanto, para obter a informação de cadastro com sucesso ou falha no cadastro de um usuário ou um cupom, é necessário ter um webhook cadastrado na API.  Para cadastrar o webhook da promoção na API, utilize o endpoint <a href=\"#/Configurações/promotion.config.webhook\">`/webhook`</a>.  # Ambiente de testes  Atualmente a Plataforma de Promoção IdPlugger não possui ambiente de homologação para testes de integração do cliente. Todos as validações devem ser realizadas em produção, **sem ônus à pessoa desenvolvedora**. Todos os dados de testes serão excluídos da Plataforma antes do início oficial da Promoção.  Estamos empolgados por você ter escolhido a API de Promoção da IdPlugger para impulsionar suas iniciativas promocionais. Se surgirem dúvidas ou precisar de suporte, não hesite em contatar nossa equipe de suporte técnico.  Vamos começar a promover o sucesso juntos!  # Postman Collection  [<img src=\"https://run.pstmn.io/button.svg\" alt=\"Run In \" style=\"width: 128px; height: 32px;\">](https://god.gw.postman.com/run-collection/13619232-20687020-3c58-488d-bd15-9f9d1a8164b1?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D13619232-20687020-3c58-488d-bd15-9f9d1a8164b1%26entityType%3Dcollection%26workspaceId%3Df86d7ea0-5224-4351-bf69-54ada2ca328d)
+ * # Introdução  Bem-vindo à documentação oficial da API da Plataforma de Promoção IdPlugger! Esta API foi desenvolvida para oferecer acesso seguro e eficiente aos recursos e serviços essenciais da Plataforma.  # Sobre a API  Esta API é baseada em REST, proporcionando uma arquitetura flexível e de fácil integração para desenvolvedores e empresas.  Esta documentação foi elaborada com o intuito de fornecer uma referência abrangente e detalhada para desenvolvedores, parceiros e clientes que desejam utilizar a API da Plataforma de Promoção IdPlugger em seus próprios aplicativos, sistemas e plataformas. Aqui, você encontrará informações sobre os endpoints disponíveis, parâmetros de solicitação, respostas esperadas, autenticação, webhooks, exemplos de uso e muito mais.  # Começando  Para começar a explorar e utilizar a API da Plataforma de Promoção IdPlugger, recomendamos que você siga os seguintes passos:  1. **Autenticação**: Obtenha suas credenciais de autenticação ('username' e 'password'), junto ao nosso time comercial, para acessar a API.  2. **Explorar Endpoints**: Navegue pela lista de endpoints disponíveis e suas respectivas funcionalidades.  3. **Experimentar**: Utilize os exemplos de solicitação fornecidos para testar os endpoints e compreender melhor seu funcionamento.  4. **Integrar**: Integre a API da Plataforma de Promoção IdPlugger em seus próprios projetos e sistemas para aproveitar ao máximo suas capacidades.  # Autenticação  Todos os endpoints requerem token de autenticação válido, que pode ser obtido através de requisição à API enviando as credenciais obtidas junto a equipe da Plataforma de Promoção.  Este token é do tipo JWT e deve ser enviado no header da requisição no seguinte formato:  | Header | Valor |   | - | - |   | Authorization | bearer `{token}` |  Substitua `{token}` pelo token obtido na autenticação.  IMPORTANTE: O token JWT tem um tempo de validade, o ideal é armazenar o token JWT e solicitar um novo token apenas quando o seu token expirar. A validade do token é enviada junto com o token na resposta do endpoint de autenticação.  # Webhooks  Ao cadastrar um usuário ou um cupom, a API irá armazenar os dados informados para processar em segundo plano. Por tanto, para obter a informação de cadastro com sucesso ou falha no cadastro de um usuário ou um cupom, é necessário ter um webhook cadastrado na API.  Para cadastrar o webhook da promoção na API, utilize o endpoint <a href=\"#/Settings/config.webhook\">`/webhook`</a>.  # Ambiente de testes  Atualmente a Plataforma de Promoção IdPlugger não possui ambiente de homologação para testes de integração do cliente. Todos as validações devem ser realizadas em produção, **sem ônus à pessoa desenvolvedora**. Todos os dados de testes serão excluídos da Plataforma antes do início oficial da Promoção.  Estamos empolgados por você ter escolhido a API de Promoção da IdPlugger para impulsionar suas iniciativas promocionais. Se surgirem dúvidas ou precisar de suporte, não hesite em contatar nossa equipe de suporte técnico.  Vamos começar a promover o sucesso juntos!  # Postman Collection  [<img src=\"https://run.pstmn.io/button.svg\" alt=\"Run In \" style=\"width: 128px; height: 32px;\">](https://god.gw.postman.com/run-collection/13619232-20687020-3c58-488d-bd15-9f9d1a8164b1?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D13619232-20687020-3c58-488d-bd15-9f9d1a8164b1%26entityType%3Dcollection%26workspaceId%3Df86d7ea0-5224-4351-bf69-54ada2ca328d)
  *
  * The version of the OpenAPI document: 3.3.0
  * Generated by: https://openapi-generator.tech
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace IdPluggerPromotion\Api;
+namespace IdpluggerPromotion\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use IdPluggerPromotion\ApiException;
-use IdPluggerPromotion\Configuration;
-use IdPluggerPromotion\FormDataProcessor;
-use IdPluggerPromotion\HeaderSelector;
-use IdPluggerPromotion\ObjectSerializer;
+use IdpluggerPromotion\ApiException;
+use IdpluggerPromotion\Configuration;
+use IdpluggerPromotion\FormDataProcessor;
+use IdpluggerPromotion\HeaderSelector;
+use IdpluggerPromotion\ObjectSerializer;
 
 /**
  * ContedoApi Class Doc Comment
  *
  * @category Class
- * @package  IdPluggerPromotion
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -74,10 +74,10 @@ class ContedoApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'promotionContentCreate' => [
+        'contentCreate' => [
             'application/json',
         ],
-        'promotionContentIndex' => [
+        'contentIndex' => [
             'application/json',
         ],
     ];
@@ -129,40 +129,40 @@ class ContedoApi
     }
 
     /**
-     * Operation promotionContentCreate
+     * Operation contentCreate
      *
      * Cria um novo conteúdo para a promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\Content|null $content content (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionContentCreate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\Content|null $content content (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contentCreate'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdPluggerPromotion\Model\PromotionContentCreate200Response|\IdPluggerPromotion\Model\PromotionContentCreate400Response|\IdPluggerPromotion\Model\PromotionContentCreate401Response
+     * @return \IdpluggerPromotion\Model\ContentCreate200Response|\IdpluggerPromotion\Model\ContentCreate400Response|\IdpluggerPromotion\Model\ContentCreate401Response
      */
-    public function promotionContentCreate($promotion_id, $content = null, string $contentType = self::contentTypes['promotionContentCreate'][0])
+    public function contentCreate($promotion_id, $content = null, string $contentType = self::contentTypes['contentCreate'][0])
     {
-        list($response) = $this->promotionContentCreateWithHttpInfo($promotion_id, $content, $contentType);
+        list($response) = $this->contentCreateWithHttpInfo($promotion_id, $content, $contentType);
         return $response;
     }
 
     /**
-     * Operation promotionContentCreateWithHttpInfo
+     * Operation contentCreateWithHttpInfo
      *
      * Cria um novo conteúdo para a promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\Content|null $content (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionContentCreate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\Content|null $content (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contentCreate'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdPluggerPromotion\Model\PromotionContentCreate200Response|\IdPluggerPromotion\Model\PromotionContentCreate400Response|\IdPluggerPromotion\Model\PromotionContentCreate401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\ContentCreate200Response|\IdpluggerPromotion\Model\ContentCreate400Response|\IdpluggerPromotion\Model\ContentCreate401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function promotionContentCreateWithHttpInfo($promotion_id, $content = null, string $contentType = self::contentTypes['promotionContentCreate'][0])
+    public function contentCreateWithHttpInfo($promotion_id, $content = null, string $contentType = self::contentTypes['contentCreate'][0])
     {
-        $request = $this->promotionContentCreateRequest($promotion_id, $content, $contentType);
+        $request = $this->contentCreateRequest($promotion_id, $content, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -190,19 +190,19 @@ class ContedoApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionContentCreate200Response',
+                        '\IdpluggerPromotion\Model\ContentCreate200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionContentCreate400Response',
+                        '\IdpluggerPromotion\Model\ContentCreate400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionContentCreate401Response',
+                        '\IdpluggerPromotion\Model\ContentCreate401Response',
                         $request,
                         $response,
                     );
@@ -224,7 +224,7 @@ class ContedoApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdPluggerPromotion\Model\PromotionContentCreate200Response',
+                '\IdpluggerPromotion\Model\ContentCreate200Response',
                 $request,
                 $response,
             );
@@ -233,7 +233,7 @@ class ContedoApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionContentCreate200Response',
+                        '\IdpluggerPromotion\Model\ContentCreate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -241,7 +241,7 @@ class ContedoApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionContentCreate400Response',
+                        '\IdpluggerPromotion\Model\ContentCreate400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -249,7 +249,7 @@ class ContedoApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionContentCreate401Response',
+                        '\IdpluggerPromotion\Model\ContentCreate401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -262,20 +262,20 @@ class ContedoApi
     }
 
     /**
-     * Operation promotionContentCreateAsync
+     * Operation contentCreateAsync
      *
      * Cria um novo conteúdo para a promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\Content|null $content (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionContentCreate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\Content|null $content (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contentCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionContentCreateAsync($promotion_id, $content = null, string $contentType = self::contentTypes['promotionContentCreate'][0])
+    public function contentCreateAsync($promotion_id, $content = null, string $contentType = self::contentTypes['contentCreate'][0])
     {
-        return $this->promotionContentCreateAsyncWithHttpInfo($promotion_id, $content, $contentType)
+        return $this->contentCreateAsyncWithHttpInfo($promotion_id, $content, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -284,21 +284,21 @@ class ContedoApi
     }
 
     /**
-     * Operation promotionContentCreateAsyncWithHttpInfo
+     * Operation contentCreateAsyncWithHttpInfo
      *
      * Cria um novo conteúdo para a promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\Content|null $content (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionContentCreate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\Content|null $content (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contentCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionContentCreateAsyncWithHttpInfo($promotion_id, $content = null, string $contentType = self::contentTypes['promotionContentCreate'][0])
+    public function contentCreateAsyncWithHttpInfo($promotion_id, $content = null, string $contentType = self::contentTypes['contentCreate'][0])
     {
-        $returnType = '\IdPluggerPromotion\Model\PromotionContentCreate200Response';
-        $request = $this->promotionContentCreateRequest($promotion_id, $content, $contentType);
+        $returnType = '\IdpluggerPromotion\Model\ContentCreate200Response';
+        $request = $this->contentCreateRequest($promotion_id, $content, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -337,22 +337,22 @@ class ContedoApi
     }
 
     /**
-     * Create request for operation 'promotionContentCreate'
+     * Create request for operation 'contentCreate'
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\Content|null $content (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionContentCreate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\Content|null $content (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contentCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function promotionContentCreateRequest($promotion_id, $content = null, string $contentType = self::contentTypes['promotionContentCreate'][0])
+    public function contentCreateRequest($promotion_id, $content = null, string $contentType = self::contentTypes['contentCreate'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
         if ($promotion_id === null || (is_array($promotion_id) && count($promotion_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotion_id when calling promotionContentCreate'
+                'Missing the required parameter $promotion_id when calling contentCreate'
             );
         }
 
@@ -442,7 +442,7 @@ class ContedoApi
     }
 
     /**
-     * Operation promotionContentIndex
+     * Operation contentIndex
      *
      * Dados referentes aos conteúdos (que não são artigos de blog) da promoção
      *
@@ -451,20 +451,20 @@ class ContedoApi
      * @param  string|null $key Pesquisa pela chave principal do conteúdo (optional)
      * @param  string|null $group Pesquisa pela chave do grupo do conteúdo (optional)
      * @param  string|null $type Pesquisa pelo tipo do conteúdo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionContentIndex'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contentIndex'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdPluggerPromotion\Model\PromotionContentIndex200Response|\IdPluggerPromotion\Model\PromotionContentIndex400Response|\IdPluggerPromotion\Model\PromotionContentIndex401Response
+     * @return \IdpluggerPromotion\Model\ContentIndex200Response|\IdpluggerPromotion\Model\ContentIndex400Response|\IdpluggerPromotion\Model\ContentIndex401Response
      */
-    public function promotionContentIndex($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['promotionContentIndex'][0])
+    public function contentIndex($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
     {
-        list($response) = $this->promotionContentIndexWithHttpInfo($promotion_id, $_fields, $key, $group, $type, $contentType);
+        list($response) = $this->contentIndexWithHttpInfo($promotion_id, $_fields, $key, $group, $type, $contentType);
         return $response;
     }
 
     /**
-     * Operation promotionContentIndexWithHttpInfo
+     * Operation contentIndexWithHttpInfo
      *
      * Dados referentes aos conteúdos (que não são artigos de blog) da promoção
      *
@@ -473,15 +473,15 @@ class ContedoApi
      * @param  string|null $key Pesquisa pela chave principal do conteúdo (optional)
      * @param  string|null $group Pesquisa pela chave do grupo do conteúdo (optional)
      * @param  string|null $type Pesquisa pelo tipo do conteúdo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionContentIndex'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contentIndex'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdPluggerPromotion\Model\PromotionContentIndex200Response|\IdPluggerPromotion\Model\PromotionContentIndex400Response|\IdPluggerPromotion\Model\PromotionContentIndex401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\ContentIndex200Response|\IdpluggerPromotion\Model\ContentIndex400Response|\IdpluggerPromotion\Model\ContentIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function promotionContentIndexWithHttpInfo($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['promotionContentIndex'][0])
+    public function contentIndexWithHttpInfo($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
     {
-        $request = $this->promotionContentIndexRequest($promotion_id, $_fields, $key, $group, $type, $contentType);
+        $request = $this->contentIndexRequest($promotion_id, $_fields, $key, $group, $type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -509,19 +509,19 @@ class ContedoApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionContentIndex200Response',
+                        '\IdpluggerPromotion\Model\ContentIndex200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionContentIndex400Response',
+                        '\IdpluggerPromotion\Model\ContentIndex400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionContentIndex401Response',
+                        '\IdpluggerPromotion\Model\ContentIndex401Response',
                         $request,
                         $response,
                     );
@@ -543,7 +543,7 @@ class ContedoApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdPluggerPromotion\Model\PromotionContentIndex200Response',
+                '\IdpluggerPromotion\Model\ContentIndex200Response',
                 $request,
                 $response,
             );
@@ -552,7 +552,7 @@ class ContedoApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionContentIndex200Response',
+                        '\IdpluggerPromotion\Model\ContentIndex200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -560,7 +560,7 @@ class ContedoApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionContentIndex400Response',
+                        '\IdpluggerPromotion\Model\ContentIndex400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class ContedoApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionContentIndex401Response',
+                        '\IdpluggerPromotion\Model\ContentIndex401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -581,7 +581,7 @@ class ContedoApi
     }
 
     /**
-     * Operation promotionContentIndexAsync
+     * Operation contentIndexAsync
      *
      * Dados referentes aos conteúdos (que não são artigos de blog) da promoção
      *
@@ -590,14 +590,14 @@ class ContedoApi
      * @param  string|null $key Pesquisa pela chave principal do conteúdo (optional)
      * @param  string|null $group Pesquisa pela chave do grupo do conteúdo (optional)
      * @param  string|null $type Pesquisa pelo tipo do conteúdo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionContentIndex'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contentIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionContentIndexAsync($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['promotionContentIndex'][0])
+    public function contentIndexAsync($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
     {
-        return $this->promotionContentIndexAsyncWithHttpInfo($promotion_id, $_fields, $key, $group, $type, $contentType)
+        return $this->contentIndexAsyncWithHttpInfo($promotion_id, $_fields, $key, $group, $type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -606,7 +606,7 @@ class ContedoApi
     }
 
     /**
-     * Operation promotionContentIndexAsyncWithHttpInfo
+     * Operation contentIndexAsyncWithHttpInfo
      *
      * Dados referentes aos conteúdos (que não são artigos de blog) da promoção
      *
@@ -615,15 +615,15 @@ class ContedoApi
      * @param  string|null $key Pesquisa pela chave principal do conteúdo (optional)
      * @param  string|null $group Pesquisa pela chave do grupo do conteúdo (optional)
      * @param  string|null $type Pesquisa pelo tipo do conteúdo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionContentIndex'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contentIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionContentIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['promotionContentIndex'][0])
+    public function contentIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
     {
-        $returnType = '\IdPluggerPromotion\Model\PromotionContentIndex200Response';
-        $request = $this->promotionContentIndexRequest($promotion_id, $_fields, $key, $group, $type, $contentType);
+        $returnType = '\IdpluggerPromotion\Model\ContentIndex200Response';
+        $request = $this->contentIndexRequest($promotion_id, $_fields, $key, $group, $type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -662,25 +662,25 @@ class ContedoApi
     }
 
     /**
-     * Create request for operation 'promotionContentIndex'
+     * Create request for operation 'contentIndex'
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados pela API (optional)
      * @param  string|null $key Pesquisa pela chave principal do conteúdo (optional)
      * @param  string|null $group Pesquisa pela chave do grupo do conteúdo (optional)
      * @param  string|null $type Pesquisa pelo tipo do conteúdo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionContentIndex'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contentIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function promotionContentIndexRequest($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['promotionContentIndex'][0])
+    public function contentIndexRequest($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
         if ($promotion_id === null || (is_array($promotion_id) && count($promotion_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotion_id when calling promotionContentIndex'
+                'Missing the required parameter $promotion_id when calling contentIndex'
             );
         }
 

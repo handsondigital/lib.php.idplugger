@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **description** | **string** | Resumo da publicação | [optional]
 **status** | **string** | Status da publicação. Opções: publish,future,draft,pending,private | [optional]
 **date** | **string** | Data em que a publicação será publicada | [optional]
-**custom_data** | [**\IdPluggerPromotion\Model\ArticleCustomDataInner[]**](ArticleCustomDataInner.md) |  | [optional]
+**custom_data** | [**\IdpluggerPromotion\Model\ArticleCustomDataInner[]**](ArticleCustomDataInner.md) |  | [optional]
 **created_at** | **string** | Data em que a publicação foi criada | [optional]
 **updated_at** | **string** | Data em que a publicação foi atualizada | [optional]
 

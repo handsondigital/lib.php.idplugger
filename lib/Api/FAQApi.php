@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdPluggerPromotion
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -12,7 +12,7 @@
 /**
  * Plataforma de Promoção - Documentação da API
  *
- * # Introdução  Bem-vindo à documentação oficial da API da Plataforma de Promoção IdPlugger! Esta API foi desenvolvida para oferecer acesso seguro e eficiente aos recursos e serviços essenciais da Plataforma.  # Sobre a API  Esta API é baseada em REST, proporcionando uma arquitetura flexível e de fácil integração para desenvolvedores e empresas.  Esta documentação foi elaborada com o intuito de fornecer uma referência abrangente e detalhada para desenvolvedores, parceiros e clientes que desejam utilizar a API da Plataforma de Promoção IdPlugger em seus próprios aplicativos, sistemas e plataformas. Aqui, você encontrará informações sobre os endpoints disponíveis, parâmetros de solicitação, respostas esperadas, autenticação, webhooks, exemplos de uso e muito mais.  # Começando  Para começar a explorar e utilizar a API da Plataforma de Promoção IdPlugger, recomendamos que você siga os seguintes passos:  1. **Autenticação**: Obtenha suas credenciais de autenticação ('username' e 'password'), junto ao nosso time comercial, para acessar a API.  2. **Explorar Endpoints**: Navegue pela lista de endpoints disponíveis e suas respectivas funcionalidades.  3. **Experimentar**: Utilize os exemplos de solicitação fornecidos para testar os endpoints e compreender melhor seu funcionamento.  4. **Integrar**: Integre a API da Plataforma de Promoção IdPlugger em seus próprios projetos e sistemas para aproveitar ao máximo suas capacidades.  # Autenticação  Todos os endpoints requerem token de autenticação válido, que pode ser obtido através de requisição à API enviando as credenciais obtidas junto a equipe da Plataforma de Promoção.  Este token é do tipo JWT e deve ser enviado no header da requisição no seguinte formato:  | Header | Valor |   | - | - |   | Authorization | bearer `{token}` |  Substitua `{token}` pelo token obtido na autenticação.  IMPORTANTE: O token JWT tem um tempo de validade, o ideal é armazenar o token JWT e solicitar um novo token apenas quando o seu token expirar. A validade do token é enviada junto com o token na resposta do endpoint de autenticação.  # Webhooks  Ao cadastrar um usuário ou um cupom, a API irá armazenar os dados informados para processar em segundo plano. Por tanto, para obter a informação de cadastro com sucesso ou falha no cadastro de um usuário ou um cupom, é necessário ter um webhook cadastrado na API.  Para cadastrar o webhook da promoção na API, utilize o endpoint <a href=\"#/Configurações/promotion.config.webhook\">`/webhook`</a>.  # Ambiente de testes  Atualmente a Plataforma de Promoção IdPlugger não possui ambiente de homologação para testes de integração do cliente. Todos as validações devem ser realizadas em produção, **sem ônus à pessoa desenvolvedora**. Todos os dados de testes serão excluídos da Plataforma antes do início oficial da Promoção.  Estamos empolgados por você ter escolhido a API de Promoção da IdPlugger para impulsionar suas iniciativas promocionais. Se surgirem dúvidas ou precisar de suporte, não hesite em contatar nossa equipe de suporte técnico.  Vamos começar a promover o sucesso juntos!  # Postman Collection  [<img src=\"https://run.pstmn.io/button.svg\" alt=\"Run In \" style=\"width: 128px; height: 32px;\">](https://god.gw.postman.com/run-collection/13619232-20687020-3c58-488d-bd15-9f9d1a8164b1?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D13619232-20687020-3c58-488d-bd15-9f9d1a8164b1%26entityType%3Dcollection%26workspaceId%3Df86d7ea0-5224-4351-bf69-54ada2ca328d)
+ * # Introdução  Bem-vindo à documentação oficial da API da Plataforma de Promoção IdPlugger! Esta API foi desenvolvida para oferecer acesso seguro e eficiente aos recursos e serviços essenciais da Plataforma.  # Sobre a API  Esta API é baseada em REST, proporcionando uma arquitetura flexível e de fácil integração para desenvolvedores e empresas.  Esta documentação foi elaborada com o intuito de fornecer uma referência abrangente e detalhada para desenvolvedores, parceiros e clientes que desejam utilizar a API da Plataforma de Promoção IdPlugger em seus próprios aplicativos, sistemas e plataformas. Aqui, você encontrará informações sobre os endpoints disponíveis, parâmetros de solicitação, respostas esperadas, autenticação, webhooks, exemplos de uso e muito mais.  # Começando  Para começar a explorar e utilizar a API da Plataforma de Promoção IdPlugger, recomendamos que você siga os seguintes passos:  1. **Autenticação**: Obtenha suas credenciais de autenticação ('username' e 'password'), junto ao nosso time comercial, para acessar a API.  2. **Explorar Endpoints**: Navegue pela lista de endpoints disponíveis e suas respectivas funcionalidades.  3. **Experimentar**: Utilize os exemplos de solicitação fornecidos para testar os endpoints e compreender melhor seu funcionamento.  4. **Integrar**: Integre a API da Plataforma de Promoção IdPlugger em seus próprios projetos e sistemas para aproveitar ao máximo suas capacidades.  # Autenticação  Todos os endpoints requerem token de autenticação válido, que pode ser obtido através de requisição à API enviando as credenciais obtidas junto a equipe da Plataforma de Promoção.  Este token é do tipo JWT e deve ser enviado no header da requisição no seguinte formato:  | Header | Valor |   | - | - |   | Authorization | bearer `{token}` |  Substitua `{token}` pelo token obtido na autenticação.  IMPORTANTE: O token JWT tem um tempo de validade, o ideal é armazenar o token JWT e solicitar um novo token apenas quando o seu token expirar. A validade do token é enviada junto com o token na resposta do endpoint de autenticação.  # Webhooks  Ao cadastrar um usuário ou um cupom, a API irá armazenar os dados informados para processar em segundo plano. Por tanto, para obter a informação de cadastro com sucesso ou falha no cadastro de um usuário ou um cupom, é necessário ter um webhook cadastrado na API.  Para cadastrar o webhook da promoção na API, utilize o endpoint <a href=\"#/Settings/config.webhook\">`/webhook`</a>.  # Ambiente de testes  Atualmente a Plataforma de Promoção IdPlugger não possui ambiente de homologação para testes de integração do cliente. Todos as validações devem ser realizadas em produção, **sem ônus à pessoa desenvolvedora**. Todos os dados de testes serão excluídos da Plataforma antes do início oficial da Promoção.  Estamos empolgados por você ter escolhido a API de Promoção da IdPlugger para impulsionar suas iniciativas promocionais. Se surgirem dúvidas ou precisar de suporte, não hesite em contatar nossa equipe de suporte técnico.  Vamos começar a promover o sucesso juntos!  # Postman Collection  [<img src=\"https://run.pstmn.io/button.svg\" alt=\"Run In \" style=\"width: 128px; height: 32px;\">](https://god.gw.postman.com/run-collection/13619232-20687020-3c58-488d-bd15-9f9d1a8164b1?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D13619232-20687020-3c58-488d-bd15-9f9d1a8164b1%26entityType%3Dcollection%26workspaceId%3Df86d7ea0-5224-4351-bf69-54ada2ca328d)
  *
  * The version of the OpenAPI document: 3.3.0
  * Generated by: https://openapi-generator.tech
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace IdPluggerPromotion\Api;
+namespace IdpluggerPromotion\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -36,17 +36,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use IdPluggerPromotion\ApiException;
-use IdPluggerPromotion\Configuration;
-use IdPluggerPromotion\FormDataProcessor;
-use IdPluggerPromotion\HeaderSelector;
-use IdPluggerPromotion\ObjectSerializer;
+use IdpluggerPromotion\ApiException;
+use IdpluggerPromotion\Configuration;
+use IdpluggerPromotion\FormDataProcessor;
+use IdpluggerPromotion\HeaderSelector;
+use IdpluggerPromotion\ObjectSerializer;
 
 /**
  * FAQApi Class Doc Comment
  *
  * @category Class
- * @package  IdPluggerPromotion
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -74,16 +74,16 @@ class FAQApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'promotionFaqCreate' => [
+        'faqCreate' => [
             'application/json',
         ],
-        'promotionFaqDelete' => [
+        'faqDelete' => [
             'application/json',
         ],
-        'promotionFaqIndex' => [
+        'faqIndex' => [
             'application/json',
         ],
-        'promotionFaqUpdate' => [
+        'faqUpdate' => [
             'application/json',
         ],
     ];
@@ -135,40 +135,40 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqCreate
+     * Operation faqCreate
      *
      * Cadastra perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\PromotionFaqCreateRequestInner[]|null $promotion_faq_create_request_inner promotion_faq_create_request_inner (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqCreate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\FaqCreateRequestInner[]|null $faq_create_request_inner faq_create_request_inner (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqCreate'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdPluggerPromotion\Model\PromotionFaqCreate200Response|\IdPluggerPromotion\Model\PromotionFaqCreate400Response|\IdPluggerPromotion\Model\PromotionFaqCreate401Response
+     * @return \IdpluggerPromotion\Model\FaqCreate200Response|\IdpluggerPromotion\Model\FaqCreate400Response|\IdpluggerPromotion\Model\FaqCreate401Response
      */
-    public function promotionFaqCreate($promotion_id, $promotion_faq_create_request_inner = null, string $contentType = self::contentTypes['promotionFaqCreate'][0])
+    public function faqCreate($promotion_id, $faq_create_request_inner = null, string $contentType = self::contentTypes['faqCreate'][0])
     {
-        list($response) = $this->promotionFaqCreateWithHttpInfo($promotion_id, $promotion_faq_create_request_inner, $contentType);
+        list($response) = $this->faqCreateWithHttpInfo($promotion_id, $faq_create_request_inner, $contentType);
         return $response;
     }
 
     /**
-     * Operation promotionFaqCreateWithHttpInfo
+     * Operation faqCreateWithHttpInfo
      *
      * Cadastra perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\PromotionFaqCreateRequestInner[]|null $promotion_faq_create_request_inner (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqCreate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\FaqCreateRequestInner[]|null $faq_create_request_inner (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqCreate'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdPluggerPromotion\Model\PromotionFaqCreate200Response|\IdPluggerPromotion\Model\PromotionFaqCreate400Response|\IdPluggerPromotion\Model\PromotionFaqCreate401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\FaqCreate200Response|\IdpluggerPromotion\Model\FaqCreate400Response|\IdpluggerPromotion\Model\FaqCreate401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function promotionFaqCreateWithHttpInfo($promotion_id, $promotion_faq_create_request_inner = null, string $contentType = self::contentTypes['promotionFaqCreate'][0])
+    public function faqCreateWithHttpInfo($promotion_id, $faq_create_request_inner = null, string $contentType = self::contentTypes['faqCreate'][0])
     {
-        $request = $this->promotionFaqCreateRequest($promotion_id, $promotion_faq_create_request_inner, $contentType);
+        $request = $this->faqCreateRequest($promotion_id, $faq_create_request_inner, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -196,19 +196,19 @@ class FAQApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqCreate200Response',
+                        '\IdpluggerPromotion\Model\FaqCreate200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqCreate400Response',
+                        '\IdpluggerPromotion\Model\FaqCreate400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqCreate401Response',
+                        '\IdpluggerPromotion\Model\FaqCreate401Response',
                         $request,
                         $response,
                     );
@@ -230,7 +230,7 @@ class FAQApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdPluggerPromotion\Model\PromotionFaqCreate200Response',
+                '\IdpluggerPromotion\Model\FaqCreate200Response',
                 $request,
                 $response,
             );
@@ -239,7 +239,7 @@ class FAQApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqCreate200Response',
+                        '\IdpluggerPromotion\Model\FaqCreate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -247,7 +247,7 @@ class FAQApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqCreate400Response',
+                        '\IdpluggerPromotion\Model\FaqCreate400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -255,7 +255,7 @@ class FAQApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqCreate401Response',
+                        '\IdpluggerPromotion\Model\FaqCreate401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -268,20 +268,20 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqCreateAsync
+     * Operation faqCreateAsync
      *
      * Cadastra perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\PromotionFaqCreateRequestInner[]|null $promotion_faq_create_request_inner (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqCreate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\FaqCreateRequestInner[]|null $faq_create_request_inner (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionFaqCreateAsync($promotion_id, $promotion_faq_create_request_inner = null, string $contentType = self::contentTypes['promotionFaqCreate'][0])
+    public function faqCreateAsync($promotion_id, $faq_create_request_inner = null, string $contentType = self::contentTypes['faqCreate'][0])
     {
-        return $this->promotionFaqCreateAsyncWithHttpInfo($promotion_id, $promotion_faq_create_request_inner, $contentType)
+        return $this->faqCreateAsyncWithHttpInfo($promotion_id, $faq_create_request_inner, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -290,21 +290,21 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqCreateAsyncWithHttpInfo
+     * Operation faqCreateAsyncWithHttpInfo
      *
      * Cadastra perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\PromotionFaqCreateRequestInner[]|null $promotion_faq_create_request_inner (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqCreate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\FaqCreateRequestInner[]|null $faq_create_request_inner (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionFaqCreateAsyncWithHttpInfo($promotion_id, $promotion_faq_create_request_inner = null, string $contentType = self::contentTypes['promotionFaqCreate'][0])
+    public function faqCreateAsyncWithHttpInfo($promotion_id, $faq_create_request_inner = null, string $contentType = self::contentTypes['faqCreate'][0])
     {
-        $returnType = '\IdPluggerPromotion\Model\PromotionFaqCreate200Response';
-        $request = $this->promotionFaqCreateRequest($promotion_id, $promotion_faq_create_request_inner, $contentType);
+        $returnType = '\IdpluggerPromotion\Model\FaqCreate200Response';
+        $request = $this->faqCreateRequest($promotion_id, $faq_create_request_inner, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -343,22 +343,22 @@ class FAQApi
     }
 
     /**
-     * Create request for operation 'promotionFaqCreate'
+     * Create request for operation 'faqCreate'
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\PromotionFaqCreateRequestInner[]|null $promotion_faq_create_request_inner (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqCreate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\FaqCreateRequestInner[]|null $faq_create_request_inner (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function promotionFaqCreateRequest($promotion_id, $promotion_faq_create_request_inner = null, string $contentType = self::contentTypes['promotionFaqCreate'][0])
+    public function faqCreateRequest($promotion_id, $faq_create_request_inner = null, string $contentType = self::contentTypes['faqCreate'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
         if ($promotion_id === null || (is_array($promotion_id) && count($promotion_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotion_id when calling promotionFaqCreate'
+                'Missing the required parameter $promotion_id when calling faqCreate'
             );
         }
 
@@ -390,12 +390,12 @@ class FAQApi
         );
 
         // for model (json/xml)
-        if (isset($promotion_faq_create_request_inner)) {
+        if (isset($faq_create_request_inner)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promotion_faq_create_request_inner));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($faq_create_request_inner));
             } else {
-                $httpBody = $promotion_faq_create_request_inner;
+                $httpBody = $faq_create_request_inner;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -448,40 +448,40 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqDelete
+     * Operation faqDelete
      *
      * Esclui perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string $answer Pergunta da questão a ser excluída (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqDelete'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqDelete'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdPluggerPromotion\Model\PromotionFaqDelete200Response|\IdPluggerPromotion\Model\PromotionFaqDelete400Response|\IdPluggerPromotion\Model\PromotionFaqDelete401Response
+     * @return \IdpluggerPromotion\Model\FaqDelete200Response|\IdpluggerPromotion\Model\FaqDelete400Response|\IdpluggerPromotion\Model\FaqDelete401Response
      */
-    public function promotionFaqDelete($promotion_id, $answer, string $contentType = self::contentTypes['promotionFaqDelete'][0])
+    public function faqDelete($promotion_id, $answer, string $contentType = self::contentTypes['faqDelete'][0])
     {
-        list($response) = $this->promotionFaqDeleteWithHttpInfo($promotion_id, $answer, $contentType);
+        list($response) = $this->faqDeleteWithHttpInfo($promotion_id, $answer, $contentType);
         return $response;
     }
 
     /**
-     * Operation promotionFaqDeleteWithHttpInfo
+     * Operation faqDeleteWithHttpInfo
      *
      * Esclui perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string $answer Pergunta da questão a ser excluída (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqDelete'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqDelete'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdPluggerPromotion\Model\PromotionFaqDelete200Response|\IdPluggerPromotion\Model\PromotionFaqDelete400Response|\IdPluggerPromotion\Model\PromotionFaqDelete401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\FaqDelete200Response|\IdpluggerPromotion\Model\FaqDelete400Response|\IdpluggerPromotion\Model\FaqDelete401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function promotionFaqDeleteWithHttpInfo($promotion_id, $answer, string $contentType = self::contentTypes['promotionFaqDelete'][0])
+    public function faqDeleteWithHttpInfo($promotion_id, $answer, string $contentType = self::contentTypes['faqDelete'][0])
     {
-        $request = $this->promotionFaqDeleteRequest($promotion_id, $answer, $contentType);
+        $request = $this->faqDeleteRequest($promotion_id, $answer, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -509,19 +509,19 @@ class FAQApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqDelete200Response',
+                        '\IdpluggerPromotion\Model\FaqDelete200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqDelete400Response',
+                        '\IdpluggerPromotion\Model\FaqDelete400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqDelete401Response',
+                        '\IdpluggerPromotion\Model\FaqDelete401Response',
                         $request,
                         $response,
                     );
@@ -543,7 +543,7 @@ class FAQApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdPluggerPromotion\Model\PromotionFaqDelete200Response',
+                '\IdpluggerPromotion\Model\FaqDelete200Response',
                 $request,
                 $response,
             );
@@ -552,7 +552,7 @@ class FAQApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqDelete200Response',
+                        '\IdpluggerPromotion\Model\FaqDelete200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -560,7 +560,7 @@ class FAQApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqDelete400Response',
+                        '\IdpluggerPromotion\Model\FaqDelete400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class FAQApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqDelete401Response',
+                        '\IdpluggerPromotion\Model\FaqDelete401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -581,20 +581,20 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqDeleteAsync
+     * Operation faqDeleteAsync
      *
      * Esclui perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string $answer Pergunta da questão a ser excluída (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqDelete'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionFaqDeleteAsync($promotion_id, $answer, string $contentType = self::contentTypes['promotionFaqDelete'][0])
+    public function faqDeleteAsync($promotion_id, $answer, string $contentType = self::contentTypes['faqDelete'][0])
     {
-        return $this->promotionFaqDeleteAsyncWithHttpInfo($promotion_id, $answer, $contentType)
+        return $this->faqDeleteAsyncWithHttpInfo($promotion_id, $answer, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -603,21 +603,21 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqDeleteAsyncWithHttpInfo
+     * Operation faqDeleteAsyncWithHttpInfo
      *
      * Esclui perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string $answer Pergunta da questão a ser excluída (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqDelete'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionFaqDeleteAsyncWithHttpInfo($promotion_id, $answer, string $contentType = self::contentTypes['promotionFaqDelete'][0])
+    public function faqDeleteAsyncWithHttpInfo($promotion_id, $answer, string $contentType = self::contentTypes['faqDelete'][0])
     {
-        $returnType = '\IdPluggerPromotion\Model\PromotionFaqDelete200Response';
-        $request = $this->promotionFaqDeleteRequest($promotion_id, $answer, $contentType);
+        $returnType = '\IdpluggerPromotion\Model\FaqDelete200Response';
+        $request = $this->faqDeleteRequest($promotion_id, $answer, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -656,29 +656,29 @@ class FAQApi
     }
 
     /**
-     * Create request for operation 'promotionFaqDelete'
+     * Create request for operation 'faqDelete'
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string $answer Pergunta da questão a ser excluída (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqDelete'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function promotionFaqDeleteRequest($promotion_id, $answer, string $contentType = self::contentTypes['promotionFaqDelete'][0])
+    public function faqDeleteRequest($promotion_id, $answer, string $contentType = self::contentTypes['faqDelete'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
         if ($promotion_id === null || (is_array($promotion_id) && count($promotion_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotion_id when calling promotionFaqDelete'
+                'Missing the required parameter $promotion_id when calling faqDelete'
             );
         }
 
         // verify the required parameter 'answer' is set
         if ($answer === null || (is_array($answer) && count($answer) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $answer when calling promotionFaqDelete'
+                'Missing the required parameter $answer when calling faqDelete'
             );
         }
 
@@ -769,42 +769,42 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqIndex
+     * Operation faqIndex
      *
      * Lista as perguntas frequentes cadastradas na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $question Pesquisa perguntas frequentes através da questão (optional)
      * @param  string|null $answer Pesquisa perguntas frequentes através da resposta (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqIndex'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqIndex'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdPluggerPromotion\Model\PromotionFaqIndex200Response|\IdPluggerPromotion\Model\PromotionFaqIndex400Response|\IdPluggerPromotion\Model\PromotionFaqIndex401Response
+     * @return \IdpluggerPromotion\Model\FaqIndex200Response|\IdpluggerPromotion\Model\FaqIndex400Response|\IdpluggerPromotion\Model\FaqIndex401Response
      */
-    public function promotionFaqIndex($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['promotionFaqIndex'][0])
+    public function faqIndex($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
     {
-        list($response) = $this->promotionFaqIndexWithHttpInfo($promotion_id, $question, $answer, $contentType);
+        list($response) = $this->faqIndexWithHttpInfo($promotion_id, $question, $answer, $contentType);
         return $response;
     }
 
     /**
-     * Operation promotionFaqIndexWithHttpInfo
+     * Operation faqIndexWithHttpInfo
      *
      * Lista as perguntas frequentes cadastradas na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $question Pesquisa perguntas frequentes através da questão (optional)
      * @param  string|null $answer Pesquisa perguntas frequentes através da resposta (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqIndex'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqIndex'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdPluggerPromotion\Model\PromotionFaqIndex200Response|\IdPluggerPromotion\Model\PromotionFaqIndex400Response|\IdPluggerPromotion\Model\PromotionFaqIndex401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\FaqIndex200Response|\IdpluggerPromotion\Model\FaqIndex400Response|\IdpluggerPromotion\Model\FaqIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function promotionFaqIndexWithHttpInfo($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['promotionFaqIndex'][0])
+    public function faqIndexWithHttpInfo($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
     {
-        $request = $this->promotionFaqIndexRequest($promotion_id, $question, $answer, $contentType);
+        $request = $this->faqIndexRequest($promotion_id, $question, $answer, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -832,19 +832,19 @@ class FAQApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqIndex200Response',
+                        '\IdpluggerPromotion\Model\FaqIndex200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqIndex400Response',
+                        '\IdpluggerPromotion\Model\FaqIndex400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqIndex401Response',
+                        '\IdpluggerPromotion\Model\FaqIndex401Response',
                         $request,
                         $response,
                     );
@@ -866,7 +866,7 @@ class FAQApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdPluggerPromotion\Model\PromotionFaqIndex200Response',
+                '\IdpluggerPromotion\Model\FaqIndex200Response',
                 $request,
                 $response,
             );
@@ -875,7 +875,7 @@ class FAQApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqIndex200Response',
+                        '\IdpluggerPromotion\Model\FaqIndex200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -883,7 +883,7 @@ class FAQApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqIndex400Response',
+                        '\IdpluggerPromotion\Model\FaqIndex400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -891,7 +891,7 @@ class FAQApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqIndex401Response',
+                        '\IdpluggerPromotion\Model\FaqIndex401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -904,21 +904,21 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqIndexAsync
+     * Operation faqIndexAsync
      *
      * Lista as perguntas frequentes cadastradas na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $question Pesquisa perguntas frequentes através da questão (optional)
      * @param  string|null $answer Pesquisa perguntas frequentes através da resposta (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqIndex'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionFaqIndexAsync($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['promotionFaqIndex'][0])
+    public function faqIndexAsync($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
     {
-        return $this->promotionFaqIndexAsyncWithHttpInfo($promotion_id, $question, $answer, $contentType)
+        return $this->faqIndexAsyncWithHttpInfo($promotion_id, $question, $answer, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -927,22 +927,22 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqIndexAsyncWithHttpInfo
+     * Operation faqIndexAsyncWithHttpInfo
      *
      * Lista as perguntas frequentes cadastradas na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $question Pesquisa perguntas frequentes através da questão (optional)
      * @param  string|null $answer Pesquisa perguntas frequentes através da resposta (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqIndex'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionFaqIndexAsyncWithHttpInfo($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['promotionFaqIndex'][0])
+    public function faqIndexAsyncWithHttpInfo($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
     {
-        $returnType = '\IdPluggerPromotion\Model\PromotionFaqIndex200Response';
-        $request = $this->promotionFaqIndexRequest($promotion_id, $question, $answer, $contentType);
+        $returnType = '\IdpluggerPromotion\Model\FaqIndex200Response';
+        $request = $this->faqIndexRequest($promotion_id, $question, $answer, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -981,23 +981,23 @@ class FAQApi
     }
 
     /**
-     * Create request for operation 'promotionFaqIndex'
+     * Create request for operation 'faqIndex'
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $question Pesquisa perguntas frequentes através da questão (optional)
      * @param  string|null $answer Pesquisa perguntas frequentes através da resposta (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqIndex'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function promotionFaqIndexRequest($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['promotionFaqIndex'][0])
+    public function faqIndexRequest($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
         if ($promotion_id === null || (is_array($promotion_id) && count($promotion_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotion_id when calling promotionFaqIndex'
+                'Missing the required parameter $promotion_id when calling faqIndex'
             );
         }
 
@@ -1099,40 +1099,40 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqUpdate
+     * Operation faqUpdate
      *
      * Cadastra ou atualiza perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\PromotionFaqCreateRequestInner[]|null $promotion_faq_create_request_inner promotion_faq_create_request_inner (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqUpdate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\FaqCreateRequestInner[]|null $faq_create_request_inner faq_create_request_inner (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqUpdate'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdPluggerPromotion\Model\PromotionFaqUpdate200Response|\IdPluggerPromotion\Model\PromotionFaqUpdate400Response|\IdPluggerPromotion\Model\PromotionFaqUpdate401Response
+     * @return \IdpluggerPromotion\Model\FaqUpdate200Response|\IdpluggerPromotion\Model\FaqUpdate400Response|\IdpluggerPromotion\Model\FaqUpdate401Response
      */
-    public function promotionFaqUpdate($promotion_id, $promotion_faq_create_request_inner = null, string $contentType = self::contentTypes['promotionFaqUpdate'][0])
+    public function faqUpdate($promotion_id, $faq_create_request_inner = null, string $contentType = self::contentTypes['faqUpdate'][0])
     {
-        list($response) = $this->promotionFaqUpdateWithHttpInfo($promotion_id, $promotion_faq_create_request_inner, $contentType);
+        list($response) = $this->faqUpdateWithHttpInfo($promotion_id, $faq_create_request_inner, $contentType);
         return $response;
     }
 
     /**
-     * Operation promotionFaqUpdateWithHttpInfo
+     * Operation faqUpdateWithHttpInfo
      *
      * Cadastra ou atualiza perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\PromotionFaqCreateRequestInner[]|null $promotion_faq_create_request_inner (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqUpdate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\FaqCreateRequestInner[]|null $faq_create_request_inner (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqUpdate'] to see the possible values for this operation
      *
-     * @throws \IdPluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdPluggerPromotion\Model\PromotionFaqUpdate200Response|\IdPluggerPromotion\Model\PromotionFaqUpdate400Response|\IdPluggerPromotion\Model\PromotionFaqUpdate401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\FaqUpdate200Response|\IdpluggerPromotion\Model\FaqUpdate400Response|\IdpluggerPromotion\Model\FaqUpdate401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function promotionFaqUpdateWithHttpInfo($promotion_id, $promotion_faq_create_request_inner = null, string $contentType = self::contentTypes['promotionFaqUpdate'][0])
+    public function faqUpdateWithHttpInfo($promotion_id, $faq_create_request_inner = null, string $contentType = self::contentTypes['faqUpdate'][0])
     {
-        $request = $this->promotionFaqUpdateRequest($promotion_id, $promotion_faq_create_request_inner, $contentType);
+        $request = $this->faqUpdateRequest($promotion_id, $faq_create_request_inner, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1160,19 +1160,19 @@ class FAQApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqUpdate200Response',
+                        '\IdpluggerPromotion\Model\FaqUpdate200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqUpdate400Response',
+                        '\IdpluggerPromotion\Model\FaqUpdate400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdPluggerPromotion\Model\PromotionFaqUpdate401Response',
+                        '\IdpluggerPromotion\Model\FaqUpdate401Response',
                         $request,
                         $response,
                     );
@@ -1194,7 +1194,7 @@ class FAQApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdPluggerPromotion\Model\PromotionFaqUpdate200Response',
+                '\IdpluggerPromotion\Model\FaqUpdate200Response',
                 $request,
                 $response,
             );
@@ -1203,7 +1203,7 @@ class FAQApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqUpdate200Response',
+                        '\IdpluggerPromotion\Model\FaqUpdate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1211,7 +1211,7 @@ class FAQApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqUpdate400Response',
+                        '\IdpluggerPromotion\Model\FaqUpdate400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1219,7 +1219,7 @@ class FAQApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdPluggerPromotion\Model\PromotionFaqUpdate401Response',
+                        '\IdpluggerPromotion\Model\FaqUpdate401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1232,20 +1232,20 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqUpdateAsync
+     * Operation faqUpdateAsync
      *
      * Cadastra ou atualiza perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\PromotionFaqCreateRequestInner[]|null $promotion_faq_create_request_inner (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqUpdate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\FaqCreateRequestInner[]|null $faq_create_request_inner (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionFaqUpdateAsync($promotion_id, $promotion_faq_create_request_inner = null, string $contentType = self::contentTypes['promotionFaqUpdate'][0])
+    public function faqUpdateAsync($promotion_id, $faq_create_request_inner = null, string $contentType = self::contentTypes['faqUpdate'][0])
     {
-        return $this->promotionFaqUpdateAsyncWithHttpInfo($promotion_id, $promotion_faq_create_request_inner, $contentType)
+        return $this->faqUpdateAsyncWithHttpInfo($promotion_id, $faq_create_request_inner, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1254,21 +1254,21 @@ class FAQApi
     }
 
     /**
-     * Operation promotionFaqUpdateAsyncWithHttpInfo
+     * Operation faqUpdateAsyncWithHttpInfo
      *
      * Cadastra ou atualiza perguntas frequentes na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\PromotionFaqCreateRequestInner[]|null $promotion_faq_create_request_inner (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqUpdate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\FaqCreateRequestInner[]|null $faq_create_request_inner (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function promotionFaqUpdateAsyncWithHttpInfo($promotion_id, $promotion_faq_create_request_inner = null, string $contentType = self::contentTypes['promotionFaqUpdate'][0])
+    public function faqUpdateAsyncWithHttpInfo($promotion_id, $faq_create_request_inner = null, string $contentType = self::contentTypes['faqUpdate'][0])
     {
-        $returnType = '\IdPluggerPromotion\Model\PromotionFaqUpdate200Response';
-        $request = $this->promotionFaqUpdateRequest($promotion_id, $promotion_faq_create_request_inner, $contentType);
+        $returnType = '\IdpluggerPromotion\Model\FaqUpdate200Response';
+        $request = $this->faqUpdateRequest($promotion_id, $faq_create_request_inner, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1307,22 +1307,22 @@ class FAQApi
     }
 
     /**
-     * Create request for operation 'promotionFaqUpdate'
+     * Create request for operation 'faqUpdate'
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  \IdPluggerPromotion\Model\PromotionFaqCreateRequestInner[]|null $promotion_faq_create_request_inner (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['promotionFaqUpdate'] to see the possible values for this operation
+     * @param  \IdpluggerPromotion\Model\FaqCreateRequestInner[]|null $faq_create_request_inner (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function promotionFaqUpdateRequest($promotion_id, $promotion_faq_create_request_inner = null, string $contentType = self::contentTypes['promotionFaqUpdate'][0])
+    public function faqUpdateRequest($promotion_id, $faq_create_request_inner = null, string $contentType = self::contentTypes['faqUpdate'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
         if ($promotion_id === null || (is_array($promotion_id) && count($promotion_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promotion_id when calling promotionFaqUpdate'
+                'Missing the required parameter $promotion_id when calling faqUpdate'
             );
         }
 
@@ -1354,12 +1354,12 @@ class FAQApi
         );
 
         // for model (json/xml)
-        if (isset($promotion_faq_create_request_inner)) {
+        if (isset($faq_create_request_inner)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promotion_faq_create_request_inner));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($faq_create_request_inner));
             } else {
-                $httpBody = $promotion_faq_create_request_inner;
+                $httpBody = $faq_create_request_inner;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

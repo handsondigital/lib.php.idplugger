@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  IdPluggerPromotion
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -13,7 +13,7 @@
 /**
  * Plataforma de Promoção - Documentação da API
  *
- * # Introdução  Bem-vindo à documentação oficial da API da Plataforma de Promoção IdPlugger! Esta API foi desenvolvida para oferecer acesso seguro e eficiente aos recursos e serviços essenciais da Plataforma.  # Sobre a API  Esta API é baseada em REST, proporcionando uma arquitetura flexível e de fácil integração para desenvolvedores e empresas.  Esta documentação foi elaborada com o intuito de fornecer uma referência abrangente e detalhada para desenvolvedores, parceiros e clientes que desejam utilizar a API da Plataforma de Promoção IdPlugger em seus próprios aplicativos, sistemas e plataformas. Aqui, você encontrará informações sobre os endpoints disponíveis, parâmetros de solicitação, respostas esperadas, autenticação, webhooks, exemplos de uso e muito mais.  # Começando  Para começar a explorar e utilizar a API da Plataforma de Promoção IdPlugger, recomendamos que você siga os seguintes passos:  1. **Autenticação**: Obtenha suas credenciais de autenticação ('username' e 'password'), junto ao nosso time comercial, para acessar a API.  2. **Explorar Endpoints**: Navegue pela lista de endpoints disponíveis e suas respectivas funcionalidades.  3. **Experimentar**: Utilize os exemplos de solicitação fornecidos para testar os endpoints e compreender melhor seu funcionamento.  4. **Integrar**: Integre a API da Plataforma de Promoção IdPlugger em seus próprios projetos e sistemas para aproveitar ao máximo suas capacidades.  # Autenticação  Todos os endpoints requerem token de autenticação válido, que pode ser obtido através de requisição à API enviando as credenciais obtidas junto a equipe da Plataforma de Promoção.  Este token é do tipo JWT e deve ser enviado no header da requisição no seguinte formato:  | Header | Valor |   | - | - |   | Authorization | bearer `{token}` |  Substitua `{token}` pelo token obtido na autenticação.  IMPORTANTE: O token JWT tem um tempo de validade, o ideal é armazenar o token JWT e solicitar um novo token apenas quando o seu token expirar. A validade do token é enviada junto com o token na resposta do endpoint de autenticação.  # Webhooks  Ao cadastrar um usuário ou um cupom, a API irá armazenar os dados informados para processar em segundo plano. Por tanto, para obter a informação de cadastro com sucesso ou falha no cadastro de um usuário ou um cupom, é necessário ter um webhook cadastrado na API.  Para cadastrar o webhook da promoção na API, utilize o endpoint <a href=\"#/Configurações/promotion.config.webhook\">`/webhook`</a>.  # Ambiente de testes  Atualmente a Plataforma de Promoção IdPlugger não possui ambiente de homologação para testes de integração do cliente. Todos as validações devem ser realizadas em produção, **sem ônus à pessoa desenvolvedora**. Todos os dados de testes serão excluídos da Plataforma antes do início oficial da Promoção.  Estamos empolgados por você ter escolhido a API de Promoção da IdPlugger para impulsionar suas iniciativas promocionais. Se surgirem dúvidas ou precisar de suporte, não hesite em contatar nossa equipe de suporte técnico.  Vamos começar a promover o sucesso juntos!  # Postman Collection  [<img src=\"https://run.pstmn.io/button.svg\" alt=\"Run In \" style=\"width: 128px; height: 32px;\">](https://god.gw.postman.com/run-collection/13619232-20687020-3c58-488d-bd15-9f9d1a8164b1?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D13619232-20687020-3c58-488d-bd15-9f9d1a8164b1%26entityType%3Dcollection%26workspaceId%3Df86d7ea0-5224-4351-bf69-54ada2ca328d)
+ * # Introdução  Bem-vindo à documentação oficial da API da Plataforma de Promoção IdPlugger! Esta API foi desenvolvida para oferecer acesso seguro e eficiente aos recursos e serviços essenciais da Plataforma.  # Sobre a API  Esta API é baseada em REST, proporcionando uma arquitetura flexível e de fácil integração para desenvolvedores e empresas.  Esta documentação foi elaborada com o intuito de fornecer uma referência abrangente e detalhada para desenvolvedores, parceiros e clientes que desejam utilizar a API da Plataforma de Promoção IdPlugger em seus próprios aplicativos, sistemas e plataformas. Aqui, você encontrará informações sobre os endpoints disponíveis, parâmetros de solicitação, respostas esperadas, autenticação, webhooks, exemplos de uso e muito mais.  # Começando  Para começar a explorar e utilizar a API da Plataforma de Promoção IdPlugger, recomendamos que você siga os seguintes passos:  1. **Autenticação**: Obtenha suas credenciais de autenticação ('username' e 'password'), junto ao nosso time comercial, para acessar a API.  2. **Explorar Endpoints**: Navegue pela lista de endpoints disponíveis e suas respectivas funcionalidades.  3. **Experimentar**: Utilize os exemplos de solicitação fornecidos para testar os endpoints e compreender melhor seu funcionamento.  4. **Integrar**: Integre a API da Plataforma de Promoção IdPlugger em seus próprios projetos e sistemas para aproveitar ao máximo suas capacidades.  # Autenticação  Todos os endpoints requerem token de autenticação válido, que pode ser obtido através de requisição à API enviando as credenciais obtidas junto a equipe da Plataforma de Promoção.  Este token é do tipo JWT e deve ser enviado no header da requisição no seguinte formato:  | Header | Valor |   | - | - |   | Authorization | bearer `{token}` |  Substitua `{token}` pelo token obtido na autenticação.  IMPORTANTE: O token JWT tem um tempo de validade, o ideal é armazenar o token JWT e solicitar um novo token apenas quando o seu token expirar. A validade do token é enviada junto com o token na resposta do endpoint de autenticação.  # Webhooks  Ao cadastrar um usuário ou um cupom, a API irá armazenar os dados informados para processar em segundo plano. Por tanto, para obter a informação de cadastro com sucesso ou falha no cadastro de um usuário ou um cupom, é necessário ter um webhook cadastrado na API.  Para cadastrar o webhook da promoção na API, utilize o endpoint <a href=\"#/Settings/config.webhook\">`/webhook`</a>.  # Ambiente de testes  Atualmente a Plataforma de Promoção IdPlugger não possui ambiente de homologação para testes de integração do cliente. Todos as validações devem ser realizadas em produção, **sem ônus à pessoa desenvolvedora**. Todos os dados de testes serão excluídos da Plataforma antes do início oficial da Promoção.  Estamos empolgados por você ter escolhido a API de Promoção da IdPlugger para impulsionar suas iniciativas promocionais. Se surgirem dúvidas ou precisar de suporte, não hesite em contatar nossa equipe de suporte técnico.  Vamos começar a promover o sucesso juntos!  # Postman Collection  [<img src=\"https://run.pstmn.io/button.svg\" alt=\"Run In \" style=\"width: 128px; height: 32px;\">](https://god.gw.postman.com/run-collection/13619232-20687020-3c58-488d-bd15-9f9d1a8164b1?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D13619232-20687020-3c58-488d-bd15-9f9d1a8164b1%26entityType%3Dcollection%26workspaceId%3Df86d7ea0-5224-4351-bf69-54ada2ca328d)
  *
  * The version of the OpenAPI document: 3.3.0
  * Generated by: https://openapi-generator.tech
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace IdPluggerPromotion;
+namespace IdpluggerPromotion;
 
 use GuzzleHttp\Psr7\Utils;
-use IdPluggerPromotion\Model\ModelInterface;
+use IdpluggerPromotion\Model\ModelInterface;
 
 /**
  * ObjectSerializer Class Doc Comment
  *
  * @category Class
- * @package  IdPluggerPromotion
+ * @package  IdpluggerPromotion
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -503,7 +503,7 @@ class ObjectSerializer
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = $class::DISCRIMINATOR;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\IdPluggerPromotion\Model\\' . $data->{$discriminator};
+                $subclass = '\IdpluggerPromotion\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }
