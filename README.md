@@ -1,4 +1,4 @@
-# IdPluggerPromotion
+# IdpluggerPromotion
 
 
 
@@ -89,7 +89,7 @@ Baixe os arquivos e inclua o `autoload.php`:
 
 ```php
 <?php
-require_once('/caminho/para/IdPluggerPromotion/vendor/autoload.php');
+require_once('/caminho/para/IdpluggerPromotion/vendor/autoload.php');
 ```
 
 ## Primeiros Passos
