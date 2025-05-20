@@ -1,4 +1,4 @@
-# IdpluggerPromotion
+# handsondigital/lib.php.idplugger
 
 
 
@@ -42,7 +42,7 @@ IMPORTANTE: O token JWT tem um tempo de validade, o ideal é armazenar o token J
 
 Ao cadastrar um usuário ou um cupom, a API irá armazenar os dados informados para processar em segundo plano. Por tanto, para obter a informação de cadastro com sucesso ou falha no cadastro de um usuário ou um cupom, é necessário ter um webhook cadastrado na API.
 
-Para cadastrar o webhook da promoção na API, utilize o endpoint <a href=\"#/Configurações/promotion.config.webhook\">`/webhook`</a>.
+Para cadastrar o webhook da promoção na API, utilize o endpoint <a href=\"#/Settings/config.webhook\">`/webhook`</a>.
 
 # Ambiente de testes
 
@@ -89,7 +89,7 @@ Baixe os arquivos e inclua o `autoload.php`:
 
 ```php
 <?php
-require_once('/caminho/para/IdpluggerPromotion/vendor/autoload.php');
+require_once('/path/to/handsondigital/lib.php.idplugger/vendor/autoload.php');
 ```
 
 ## Primeiros Passos
@@ -148,8 +148,8 @@ Class | Method | HTTP request | Description
 *BlockedUsersApi* | [**blacklistIndex**](docs/Api/BlockedUsersApi.md#blacklistindex) | **GET** /v3/promotion/{promotion_id}/users/blacklist | Pesquisa por CPFs bloqueados na promoção
 *BrandingApi* | [**brandingIndex**](docs/Api/BrandingApi.md#brandingindex) | **GET** /v3/promotion/{promotion_id}/cms/branding | Dados referentes a identidade visual da marca da promoção
 *BrandingApi* | [**brandingUpdate**](docs/Api/BrandingApi.md#brandingupdate) | **POST** /v3/promotion/{promotion_id}/cms/branding | Altera os dados referentes a identidade visual da marca da promoção
-*ContedoApi* | [**contentCreate**](docs/Api/ContedoApi.md#contentcreate) | **POST** /v3/promotion/{promotion_id}/cms/content | Cria um novo conteúdo para a promoção
-*ContedoApi* | [**contentIndex**](docs/Api/ContedoApi.md#contentindex) | **GET** /v3/promotion/{promotion_id}/cms/content | Dados referentes aos conteúdos (que não são artigos de blog) da promoção
+*ContentApi* | [**contentCreate**](docs/Api/ContentApi.md#contentcreate) | **POST** /v3/promotion/{promotion_id}/cms/content | Cria um novo conteúdo para a promoção
+*ContentApi* | [**contentIndex**](docs/Api/ContentApi.md#contentindex) | **GET** /v3/promotion/{promotion_id}/cms/content | Dados referentes aos conteúdos (que não são artigos de blog) da promoção
 *CouponsApi* | [**couponsCreate**](docs/Api/CouponsApi.md#couponscreate) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Cadastra um cupom para um usuário cadastrado na promoção
 *CouponsApi* | [**couponsDelete**](docs/Api/CouponsApi.md#couponsdelete) | **DELETE** /v3/promotion/{promotion_id}/users/{user_id}/coupons/{coupon_id} | Exclui um cupom de um usuário cadastrado na promoção
 *CouponsApi* | [**couponsIndex**](docs/Api/CouponsApi.md#couponsindex) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Busca por cupons de um usuário cadastrado na promoção
@@ -162,9 +162,11 @@ Class | Method | HTTP request | Description
 *FAQApi* | [**faqDelete**](docs/Api/FAQApi.md#faqdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/faq | Esclui perguntas frequentes na promoção
 *FAQApi* | [**faqIndex**](docs/Api/FAQApi.md#faqindex) | **GET** /v3/promotion/{promotion_id}/cms/faq | Lista as perguntas frequentes cadastradas na promoção
 *FAQApi* | [**faqUpdate**](docs/Api/FAQApi.md#faqupdate) | **PATCH** /v3/promotion/{promotion_id}/cms/faq | Cadastra ou atualiza perguntas frequentes na promoção
+*FilesApi* | [**filesShow**](docs/Api/FilesApi.md#filesshow) | **GET** /v3/{promotion_id}/files/{filename} | Faz o download de um arquivo
 *LuckyNumbersApi* | [**luckyNumbersAddCustom**](docs/Api/LuckyNumbersApi.md#luckynumbersaddcustom) | **POST** /v3/promotion/{promotion_id}/lucky_numbers | Cadastra Números da Sorte no repositório da promoção
 *LuckyNumbersApi* | [**luckyNumbersRemove**](docs/Api/LuckyNumbersApi.md#luckynumbersremove) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/lucky_numbers/remove | Inativa e remove Números da Sorte cadastrados na promoção
 *LuckyNumbersApi* | [**luckyNumbersSearch**](docs/Api/LuckyNumbersApi.md#luckynumberssearch) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/lucky_numbers | Busca por Números da Sorte de um usuário cadastrado na promoção
+*MetricsApi* | [**metrics**](docs/Api/MetricsApi.md#metrics) | **GET** /v3/{promotion_id}/metrics | Devolve as métricas da promoção
 *OrdersApi* | [**ordersCreate**](docs/Api/OrdersApi.md#orderscreate) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/orders | Cadastra um pedido para um usuário na promoção
 *OrdersApi* | [**ordersIndex**](docs/Api/OrdersApi.md#ordersindex) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/orders | Pesquisa por pedidos na promoção
 *OrdersApi* | [**ordersUpdate**](docs/Api/OrdersApi.md#ordersupdate) | **PATCH** /v3/promotion/{promotion_id}/users/{user_id}/orders | Cadastra ou atualiza um pedido de um usuário na promoção
@@ -331,6 +333,9 @@ Class | Method | HTTP request | Description
 - [LuckyNumbersSearch401Response](docs/Model/LuckyNumbersSearch401Response.md)
 - [Me200Response](docs/Model/Me200Response.md)
 - [Me200ResponsePromotionsInner](docs/Model/Me200ResponsePromotionsInner.md)
+- [Metrics200Response](docs/Model/Metrics200Response.md)
+- [Metrics200ResponseUsersInner](docs/Model/Metrics200ResponseUsersInner.md)
+- [Metrics400Response](docs/Model/Metrics400Response.md)
 - [Order](docs/Model/Order.md)
 - [OrderCustomDataInner](docs/Model/OrderCustomDataInner.md)
 - [OrdersCreate200Response](docs/Model/OrdersCreate200Response.md)
