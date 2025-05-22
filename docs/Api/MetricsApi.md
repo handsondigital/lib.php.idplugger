@@ -33,7 +33,7 @@ $apiInstance = new IdpluggerPromotion\Api\MetricsApi(
     $config
 );
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
-$keys = array('keys_example'); // string[] | Chaves das métricas que deseja consultar. Exemplo: `keys[]=users&keys[]=coupons&keys[]=luckyNumbers`
+$keys = array('keys_example'); // string[] | Chaves das métricas que deseja consultar.
 $start_date = 'start_date_example'; // string | Data inicial para filtrar as métricas
 $end_date = 'end_date_example'; // string | Data final para filtrar as métricas
 $limit = 56; // int | Limite de resultados
@@ -52,7 +52,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promotion_id** | **string**| ID da promoção | |
-| **keys** | [**string[]**](../Model/string.md)| Chaves das métricas que deseja consultar. Exemplo: &#x60;keys[]&#x3D;users&amp;keys[]&#x3D;coupons&amp;keys[]&#x3D;luckyNumbers&#x60; | |
+| **keys** | [**string[]**](../Model/string.md)| Chaves das métricas que deseja consultar. | |
 | **start_date** | **string**| Data inicial para filtrar as métricas | [optional] |
 | **end_date** | **string**| Data final para filtrar as métricas | [optional] |
 | **limit** | **int**| Limite de resultados | [optional] |

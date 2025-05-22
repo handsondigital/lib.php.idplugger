@@ -131,7 +131,7 @@ class MetricsApi
      * Devolve as métricas da promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  string[] $keys Chaves das métricas que deseja consultar. Exemplo: &#x60;keys[]&#x3D;users&amp;keys[]&#x3D;coupons&amp;keys[]&#x3D;luckyNumbers&#x60; (required)
+     * @param  string[] $keys Chaves das métricas que deseja consultar. (required)
      * @param  string|null $start_date Data inicial para filtrar as métricas (optional)
      * @param  string|null $end_date Data final para filtrar as métricas (optional)
      * @param  int|null $limit Limite de resultados (optional)
@@ -154,7 +154,7 @@ class MetricsApi
      * Devolve as métricas da promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  string[] $keys Chaves das métricas que deseja consultar. Exemplo: &#x60;keys[]&#x3D;users&amp;keys[]&#x3D;coupons&amp;keys[]&#x3D;luckyNumbers&#x60; (required)
+     * @param  string[] $keys Chaves das métricas que deseja consultar. (required)
      * @param  string|null $start_date Data inicial para filtrar as métricas (optional)
      * @param  string|null $end_date Data final para filtrar as métricas (optional)
      * @param  int|null $limit Limite de resultados (optional)
@@ -272,7 +272,7 @@ class MetricsApi
      * Devolve as métricas da promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  string[] $keys Chaves das métricas que deseja consultar. Exemplo: &#x60;keys[]&#x3D;users&amp;keys[]&#x3D;coupons&amp;keys[]&#x3D;luckyNumbers&#x60; (required)
+     * @param  string[] $keys Chaves das métricas que deseja consultar. (required)
      * @param  string|null $start_date Data inicial para filtrar as métricas (optional)
      * @param  string|null $end_date Data final para filtrar as métricas (optional)
      * @param  int|null $limit Limite de resultados (optional)
@@ -298,7 +298,7 @@ class MetricsApi
      * Devolve as métricas da promoção
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  string[] $keys Chaves das métricas que deseja consultar. Exemplo: &#x60;keys[]&#x3D;users&amp;keys[]&#x3D;coupons&amp;keys[]&#x3D;luckyNumbers&#x60; (required)
+     * @param  string[] $keys Chaves das métricas que deseja consultar. (required)
      * @param  string|null $start_date Data inicial para filtrar as métricas (optional)
      * @param  string|null $end_date Data final para filtrar as métricas (optional)
      * @param  int|null $limit Limite de resultados (optional)
@@ -353,7 +353,7 @@ class MetricsApi
      * Create request for operation 'metrics'
      *
      * @param  string $promotion_id ID da promoção (required)
-     * @param  string[] $keys Chaves das métricas que deseja consultar. Exemplo: &#x60;keys[]&#x3D;users&amp;keys[]&#x3D;coupons&amp;keys[]&#x3D;luckyNumbers&#x60; (required)
+     * @param  string[] $keys Chaves das métricas que deseja consultar. (required)
      * @param  string|null $start_date Data inicial para filtrar as métricas (optional)
      * @param  string|null $end_date Data final para filtrar as métricas (optional)
      * @param  int|null $limit Limite de resultados (optional)
@@ -397,8 +397,8 @@ class MetricsApi
             $keys,
             'keys', // param base name
             'array', // openApiType
-            'form', // style
-            true, // explode
+            'deepObject', // style
+            false, // explode
             true // required
         ) ?? []);
         // query params

@@ -195,7 +195,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**usersUpdate**](docs/Api/UsersApi.md#usersupdate) | **PATCH** /v3/promotion/{promotion_id}/users | Cadastra ou atualiza um usuário na promoção
 *UsersApi* | [**usersWebhook**](docs/Api/UsersApi.md#userswebhook) | **POST** /webhook-do-usuario | Webhook de resposta ao registro de usuário
 
-## Modelos
+## Models
 
 - [AddLuckyNumberCustom](docs/Model/AddLuckyNumberCustom.md)
 - [Article](docs/Model/Article.md)

@@ -519,9 +519,3 @@ src/Model/UsersUpdate201Response.php
 src/Model/UsersWebhook200Response.php
 src/Model/UsersWebhookRequest.php
 src/ObjectSerializer.php
-test/Api/ContentApiTest.php
-test/Api/FilesApiTest.php
-test/Api/MetricsApiTest.php
-test/Model/Metrics200ResponseTest.php
-test/Model/Metrics200ResponseUsersInnerTest.php
-test/Model/Metrics400ResponseTest.php
