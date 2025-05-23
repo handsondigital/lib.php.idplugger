@@ -385,7 +385,7 @@ class MetricsApi
 
 
 
-        $resourcePath = '/v3/{promotion_id}/metrics';
+        $resourcePath = '/v3/promotion/{promotion_id}/metrics';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

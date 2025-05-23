@@ -4,7 +4,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**filesShow()**](FilesApi.md#filesShow) | **GET** /v3/{promotion_id}/files/{filename} | Faz o download de um arquivo |
+| [**filesShow()**](FilesApi.md#filesShow) | **GET** /v3/promotion/{promotion_id}/files/{filename} | Faz o download de um arquivo |
 
 
 ## `filesShow()`

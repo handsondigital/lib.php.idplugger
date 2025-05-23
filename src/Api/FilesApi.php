@@ -283,7 +283,7 @@ class FilesApi
         }
 
 
-        $resourcePath = '/v3/{promotion_id}/files/{filename}';
+        $resourcePath = '/v3/promotion/{promotion_id}/files/{filename}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

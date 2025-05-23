@@ -4,7 +4,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**metrics()**](MetricsApi.md#metrics) | **GET** /v3/{promotion_id}/metrics | Devolve as métricas da promoção |
+| [**metrics()**](MetricsApi.md#metrics) | **GET** /v3/promotion/{promotion_id}/metrics | Devolve as métricas da promoção |
 
 
 ## `metrics()`
