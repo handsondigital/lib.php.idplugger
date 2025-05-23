@@ -1,6 +1,6 @@
 <?php
 /**
- * Metrics200Response
+ * Metrics200ResponseContentUsersInner
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \IdpluggerPromotion\ObjectSerializer;
 
 /**
- * Metrics200Response Class Doc Comment
+ * Metrics200ResponseContentUsersInner Class Doc Comment
  *
  * @category Class
  * @package  IdpluggerPromotion
@@ -40,7 +40,7 @@ use \IdpluggerPromotion\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class Metrics200ResponseContentUsersInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'metrics_200_response';
+    protected static $openAPIModelName = 'metrics_200_response_content_users_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,8 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entity' => 'string',
-        'action' => 'string',
-        'result' => 'string',
-        'content' => '\IdpluggerPromotion\Model\Metrics200ResponseContent'
+        'value' => 'int',
+        'time' => 'string'
     ];
 
     /**
@@ -71,10 +69,8 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entity' => null,
-        'action' => null,
-        'result' => null,
-        'content' => null
+        'value' => null,
+        'time' => null
     ];
 
     /**
@@ -83,10 +79,8 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'entity' => false,
-        'action' => false,
-        'result' => false,
-        'content' => false
+        'value' => false,
+        'time' => false
     ];
 
     /**
@@ -175,10 +169,8 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'entity' => 'entity',
-        'action' => 'action',
-        'result' => 'result',
-        'content' => 'content'
+        'value' => 'value',
+        'time' => 'time'
     ];
 
     /**
@@ -187,10 +179,8 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'entity' => 'setEntity',
-        'action' => 'setAction',
-        'result' => 'setResult',
-        'content' => 'setContent'
+        'value' => 'setValue',
+        'time' => 'setTime'
     ];
 
     /**
@@ -199,10 +189,8 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'entity' => 'getEntity',
-        'action' => 'getAction',
-        'result' => 'getResult',
-        'content' => 'getContent'
+        'value' => 'getValue',
+        'time' => 'getTime'
     ];
 
     /**
@@ -262,10 +250,8 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('entity', $data ?? [], null);
-        $this->setIfExists('action', $data ?? [], null);
-        $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('content', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('time', $data ?? [], null);
     }
 
     /**
@@ -311,109 +297,55 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets entity
+     * Gets value
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getEntity()
+    public function getValue()
     {
-        return $this->container['entity'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets entity
+     * Sets value
      *
-     * @param string|null $entity entity
+     * @param int|null $value value
      *
      * @return self
      */
-    public function setEntity($entity)
+    public function setValue($value)
     {
-        if (is_null($entity)) {
-            throw new \InvalidArgumentException('non-nullable entity cannot be null');
+        if (is_null($value)) {
+            throw new \InvalidArgumentException('non-nullable value cannot be null');
         }
-        $this->container['entity'] = $entity;
+        $this->container['value'] = $value;
 
         return $this;
     }
 
     /**
-     * Gets action
+     * Gets time
      *
      * @return string|null
      */
-    public function getAction()
+    public function getTime()
     {
-        return $this->container['action'];
+        return $this->container['time'];
     }
 
     /**
-     * Sets action
+     * Sets time
      *
-     * @param string|null $action action
+     * @param string|null $time time
      *
      * @return self
      */
-    public function setAction($action)
+    public function setTime($time)
     {
-        if (is_null($action)) {
-            throw new \InvalidArgumentException('non-nullable action cannot be null');
+        if (is_null($time)) {
+            throw new \InvalidArgumentException('non-nullable time cannot be null');
         }
-        $this->container['action'] = $action;
-
-        return $this;
-    }
-
-    /**
-     * Gets result
-     *
-     * @return string|null
-     */
-    public function getResult()
-    {
-        return $this->container['result'];
-    }
-
-    /**
-     * Sets result
-     *
-     * @param string|null $result result
-     *
-     * @return self
-     */
-    public function setResult($result)
-    {
-        if (is_null($result)) {
-            throw new \InvalidArgumentException('non-nullable result cannot be null');
-        }
-        $this->container['result'] = $result;
-
-        return $this;
-    }
-
-    /**
-     * Gets content
-     *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContent|null
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContent|null $content content
-     *
-     * @return self
-     */
-    public function setContent($content)
-    {
-        if (is_null($content)) {
-            throw new \InvalidArgumentException('non-nullable content cannot be null');
-        }
-        $this->container['content'] = $content;
+        $this->container['time'] = $time;
 
         return $this;
     }

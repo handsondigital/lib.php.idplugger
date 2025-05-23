@@ -161,7 +161,8 @@ docs/Model/LuckyNumbersSearch401Response.md
 docs/Model/Me200Response.md
 docs/Model/Me200ResponsePromotionsInner.md
 docs/Model/Metrics200Response.md
-docs/Model/Metrics200ResponseUsersInner.md
+docs/Model/Metrics200ResponseContent.md
+docs/Model/Metrics200ResponseContentUsersInner.md
 docs/Model/Metrics400Response.md
 docs/Model/Order.md
 docs/Model/OrderCustomDataInner.md
@@ -421,7 +422,8 @@ src/Model/LuckyNumbersSearch401Response.php
 src/Model/Me200Response.php
 src/Model/Me200ResponsePromotionsInner.php
 src/Model/Metrics200Response.php
-src/Model/Metrics200ResponseUsersInner.php
+src/Model/Metrics200ResponseContent.php
+src/Model/Metrics200ResponseContentUsersInner.php
 src/Model/Metrics400Response.php
 src/Model/ModelInterface.php
 src/Model/Order.php
@@ -519,3 +521,5 @@ src/Model/UsersUpdate201Response.php
 src/Model/UsersWebhook200Response.php
 src/Model/UsersWebhookRequest.php
 src/ObjectSerializer.php
+test/Model/Metrics200ResponseContentTest.php
+test/Model/Metrics200ResponseContentUsersInnerTest.php
