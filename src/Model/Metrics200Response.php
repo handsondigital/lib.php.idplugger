@@ -195,7 +195,7 @@ class Metrics200Response implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $attributeMap = [
         'users' => 'users',
         'coupons' => 'coupons',
-        'lucky_numbers' => 'luckyNumbers',
+        'lucky_numbers' => 'lucky_numbers',
         'emails' => 'emails',
         'tickets' => 'tickets',
         'tickets_closed' => 'tickets_closed',
