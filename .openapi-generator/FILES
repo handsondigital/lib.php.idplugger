@@ -521,5 +521,3 @@ src/Model/UsersUpdate201Response.php
 src/Model/UsersWebhook200Response.php
 src/Model/UsersWebhookRequest.php
 src/ObjectSerializer.php
-test/Model/Metrics200ResponseContentTest.php
-test/Model/Metrics200ResponseContentUsersInnerTest.php

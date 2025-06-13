@@ -66,7 +66,8 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
         'raffles' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
         'raffles_closed' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
         'awards_delivered' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'instant_awards' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]'
+        'instant_awards' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
+        'instant_awards_delivered' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]'
     ];
 
     /**
@@ -86,7 +87,8 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
         'raffles' => null,
         'raffles_closed' => null,
         'awards_delivered' => null,
-        'instant_awards' => null
+        'instant_awards' => null,
+        'instant_awards_delivered' => null
     ];
 
     /**
@@ -104,7 +106,8 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
         'raffles' => false,
         'raffles_closed' => false,
         'awards_delivered' => false,
-        'instant_awards' => false
+        'instant_awards' => false,
+        'instant_awards_delivered' => false
     ];
 
     /**
@@ -202,7 +205,8 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
         'raffles' => 'raffles',
         'raffles_closed' => 'raffles_closed',
         'awards_delivered' => 'awards_delivered',
-        'instant_awards' => 'instant_awards'
+        'instant_awards' => 'instant_awards',
+        'instant_awards_delivered' => 'instant_awards_delivered'
     ];
 
     /**
@@ -220,7 +224,8 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
         'raffles' => 'setRaffles',
         'raffles_closed' => 'setRafflesClosed',
         'awards_delivered' => 'setAwardsDelivered',
-        'instant_awards' => 'setInstantAwards'
+        'instant_awards' => 'setInstantAwards',
+        'instant_awards_delivered' => 'setInstantAwardsDelivered'
     ];
 
     /**
@@ -238,7 +243,8 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
         'raffles' => 'getRaffles',
         'raffles_closed' => 'getRafflesClosed',
         'awards_delivered' => 'getAwardsDelivered',
-        'instant_awards' => 'getInstantAwards'
+        'instant_awards' => 'getInstantAwards',
+        'instant_awards_delivered' => 'getInstantAwardsDelivered'
     ];
 
     /**
@@ -308,6 +314,7 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
         $this->setIfExists('raffles_closed', $data ?? [], null);
         $this->setIfExists('awards_delivered', $data ?? [], null);
         $this->setIfExists('instant_awards', $data ?? [], null);
+        $this->setIfExists('instant_awards_delivered', $data ?? [], null);
     }
 
     /**
@@ -618,6 +625,33 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
             throw new \InvalidArgumentException('non-nullable instant_awards cannot be null');
         }
         $this->container['instant_awards'] = $instant_awards;
+
+        return $this;
+    }
+
+    /**
+     * Gets instant_awards_delivered
+     *
+     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
+     */
+    public function getInstantAwardsDelivered()
+    {
+        return $this->container['instant_awards_delivered'];
+    }
+
+    /**
+     * Sets instant_awards_delivered
+     *
+     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $instant_awards_delivered instant_awards_delivered
+     *
+     * @return self
+     */
+    public function setInstantAwardsDelivered($instant_awards_delivered)
+    {
+        if (is_null($instant_awards_delivered)) {
+            throw new \InvalidArgumentException('non-nullable instant_awards_delivered cannot be null');
+        }
+        $this->container['instant_awards_delivered'] = $instant_awards_delivered;
 
         return $this;
     }
