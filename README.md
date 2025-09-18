@@ -134,6 +134,9 @@ Class | Method | HTTP request | Description
 *ArticlesApi* | [**articlesDelete**](docs/Api/ArticlesApi.md#articlesdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/articles/{id} | Exclui uma publicação da promoção
 *ArticlesApi* | [**articlesIndex**](docs/Api/ArticlesApi.md#articlesindex) | **GET** /v3/promotion/{promotion_id}/cms/articles | Lista as publicações cadastradas na promoção
 *ArticlesApi* | [**articlesUpdate**](docs/Api/ArticlesApi.md#articlesupdate) | **PATCH** /v3/promotion/{promotion_id}/cms/articles | Cadastra ou atualiza publicações na promoção
+*AuthApi* | [**authLoginByToken**](docs/Api/AuthApi.md#authloginbytoken) | **POST** /v3/auth/login | Login na API via e-mail e token
+*AuthApi* | [**authRefreshToken**](docs/Api/AuthApi.md#authrefreshtoken) | **POST** /v3/auth/refresh | Renova o do token de autenticação
+*AuthApi* | [**authRequestToken**](docs/Api/AuthApi.md#authrequesttoken) | **POST** /v3/auth/request-token | Solicita envio de token de login por email
 *AuthApi* | [**login**](docs/Api/AuthApi.md#login) | **POST** /v3/login | Login na API
 *AuthApi* | [**me**](docs/Api/AuthApi.md#me) | **GET** /v3/me | Dados na API
 *AwardedsApi* | [**awardedsSearch**](docs/Api/AwardedsApi.md#awardedssearch) | **GET** /v3/promotion/{promotion_id}/awardeds | Busca por usuários cadastrados na promoção ganhadores de sorteios
@@ -212,6 +215,11 @@ Class | Method | HTTP request | Description
 - [ArticlesUpdate200Response](docs/Model/ArticlesUpdate200Response.md)
 - [ArticlesUpdate400Response](docs/Model/ArticlesUpdate400Response.md)
 - [ArticlesUpdate401Response](docs/Model/ArticlesUpdate401Response.md)
+- [AuthLoginByToken200Response](docs/Model/AuthLoginByToken200Response.md)
+- [AuthLoginByTokenRequest](docs/Model/AuthLoginByTokenRequest.md)
+- [AuthRefreshTokenRequest](docs/Model/AuthRefreshTokenRequest.md)
+- [AuthRequestToken200Response](docs/Model/AuthRequestToken200Response.md)
+- [AuthRequestTokenRequest](docs/Model/AuthRequestTokenRequest.md)
 - [Award](docs/Model/Award.md)
 - [Awarded](docs/Model/Awarded.md)
 - [AwardedsSearch200Response](docs/Model/AwardedsSearch200Response.md)
@@ -316,6 +324,9 @@ Class | Method | HTTP request | Description
 - [FaqUpdate200Response](docs/Model/FaqUpdate200Response.md)
 - [FaqUpdate400Response](docs/Model/FaqUpdate400Response.md)
 - [FaqUpdate401Response](docs/Model/FaqUpdate401Response.md)
+- [FilesShow200Response](docs/Model/FilesShow200Response.md)
+- [FilesShow400Response](docs/Model/FilesShow400Response.md)
+- [FilesShow401Response](docs/Model/FilesShow401Response.md)
 - [Login200Response](docs/Model/Login200Response.md)
 - [Login401Response](docs/Model/Login401Response.md)
 - [LoginRequest](docs/Model/LoginRequest.md)
@@ -415,7 +426,6 @@ Class | Method | HTTP request | Description
 - [TicketsUpdate200Response](docs/Model/TicketsUpdate200Response.md)
 - [TicketsUpdate400Response](docs/Model/TicketsUpdate400Response.md)
 - [User](docs/Model/User.md)
-- [UserCustomData](docs/Model/UserCustomData.md)
 - [UserWebhookError](docs/Model/UserWebhookError.md)
 - [UserWebhookErrorContent](docs/Model/UserWebhookErrorContent.md)
 - [UserWebhookErrorContentAllOfErrors](docs/Model/UserWebhookErrorContentAllOfErrors.md)

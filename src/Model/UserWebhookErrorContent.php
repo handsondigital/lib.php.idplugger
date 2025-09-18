@@ -75,7 +75,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
         'newsletter' => 'bool',
         'policy_privacy' => 'bool',
         'agree_terms' => 'bool',
-        'custom_data' => '\IdpluggerPromotion\Model\UserCustomData',
+        'custom_data' => 'array<string,string>',
         'errors' => '\IdpluggerPromotion\Model\UserWebhookErrorContentAllOfErrors'
     ];
 
@@ -407,42 +407,6 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
-        if ($this->container['cpf'] === null) {
-            $invalidProperties[] = "'cpf' can't be null";
-        }
-        if ($this->container['cnpj'] === null) {
-            $invalidProperties[] = "'cnpj' can't be null";
-        }
-        if ($this->container['birth'] === null) {
-            $invalidProperties[] = "'birth' can't be null";
-        }
-        if ($this->container['cep'] === null) {
-            $invalidProperties[] = "'cep' can't be null";
-        }
-        if ($this->container['address'] === null) {
-            $invalidProperties[] = "'address' can't be null";
-        }
-        if ($this->container['number'] === null) {
-            $invalidProperties[] = "'number' can't be null";
-        }
-        if ($this->container['neighborhood'] === null) {
-            $invalidProperties[] = "'neighborhood' can't be null";
-        }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
-        if ($this->container['state'] === null) {
-            $invalidProperties[] = "'state' can't be null";
-        }
-        if ($this->container['sex'] === null) {
-            $invalidProperties[] = "'sex' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -488,7 +452,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -498,7 +462,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string|null $name name
      *
      * @return self
      */
@@ -515,7 +479,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets email
      *
-     * @return string
+     * @return string|null
      */
     public function getEmail()
     {
@@ -525,7 +489,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets email
      *
-     * @param string $email email
+     * @param string|null $email email
      *
      * @return self
      */
@@ -542,7 +506,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets cpf
      *
-     * @return string
+     * @return string|null
      */
     public function getCpf()
     {
@@ -552,7 +516,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cpf
      *
-     * @param string $cpf cpf
+     * @param string|null $cpf cpf
      *
      * @return self
      */
@@ -569,7 +533,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets cnpj
      *
-     * @return string
+     * @return string|null
      */
     public function getCnpj()
     {
@@ -579,7 +543,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cnpj
      *
-     * @param string $cnpj cnpj
+     * @param string|null $cnpj cnpj
      *
      * @return self
      */
@@ -623,7 +587,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets birth
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getBirth()
     {
@@ -633,7 +597,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets birth
      *
-     * @param \DateTime $birth birth
+     * @param \DateTime|null $birth birth
      *
      * @return self
      */
@@ -650,7 +614,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets cep
      *
-     * @return string
+     * @return string|null
      */
     public function getCep()
     {
@@ -660,7 +624,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets cep
      *
-     * @param string $cep cep
+     * @param string|null $cep cep
      *
      * @return self
      */
@@ -677,7 +641,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress()
     {
@@ -687,7 +651,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets address
      *
-     * @param string $address address
+     * @param string|null $address address
      *
      * @return self
      */
@@ -704,7 +668,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets number
      *
-     * @return string
+     * @return string|null
      */
     public function getNumber()
     {
@@ -714,7 +678,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets number
      *
-     * @param string $number number
+     * @param string|null $number number
      *
      * @return self
      */
@@ -731,7 +695,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets neighborhood
      *
-     * @return string
+     * @return string|null
      */
     public function getNeighborhood()
     {
@@ -741,7 +705,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets neighborhood
      *
-     * @param string $neighborhood neighborhood
+     * @param string|null $neighborhood neighborhood
      *
      * @return self
      */
@@ -758,7 +722,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets city
      *
-     * @return string
+     * @return string|null
      */
     public function getCity()
     {
@@ -768,7 +732,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets city
      *
-     * @param string $city city
+     * @param string|null $city city
      *
      * @return self
      */
@@ -785,7 +749,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets state
      *
-     * @return string
+     * @return string|null
      */
     public function getState()
     {
@@ -795,7 +759,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets state
      *
-     * @param string $state state
+     * @param string|null $state state
      *
      * @return self
      */
@@ -839,7 +803,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets sex
      *
-     * @return string
+     * @return string|null
      */
     public function getSex()
     {
@@ -849,7 +813,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sex
      *
-     * @param string $sex sex
+     * @param string|null $sex sex
      *
      * @return self
      */
@@ -947,7 +911,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets custom_data
      *
-     * @return \IdpluggerPromotion\Model\UserCustomData|null
+     * @return array<string,string>|null
      */
     public function getCustomData()
     {
@@ -957,7 +921,7 @@ class UserWebhookErrorContent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets custom_data
      *
-     * @param \IdpluggerPromotion\Model\UserCustomData|null $custom_data custom_data
+     * @param array<string,string>|null $custom_data custom_data
      *
      * @return self
      */

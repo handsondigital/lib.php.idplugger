@@ -39,6 +39,11 @@ docs/Model/ArticlesIndex401Response.md
 docs/Model/ArticlesUpdate200Response.md
 docs/Model/ArticlesUpdate400Response.md
 docs/Model/ArticlesUpdate401Response.md
+docs/Model/AuthLoginByToken200Response.md
+docs/Model/AuthLoginByTokenRequest.md
+docs/Model/AuthRefreshTokenRequest.md
+docs/Model/AuthRequestToken200Response.md
+docs/Model/AuthRequestTokenRequest.md
 docs/Model/Award.md
 docs/Model/Awarded.md
 docs/Model/AwardedsSearch200Response.md
@@ -143,6 +148,9 @@ docs/Model/FaqIndex401Response.md
 docs/Model/FaqUpdate200Response.md
 docs/Model/FaqUpdate400Response.md
 docs/Model/FaqUpdate401Response.md
+docs/Model/FilesShow200Response.md
+docs/Model/FilesShow400Response.md
+docs/Model/FilesShow401Response.md
 docs/Model/Login200Response.md
 docs/Model/Login401Response.md
 docs/Model/LoginRequest.md
@@ -242,7 +250,6 @@ docs/Model/TicketsIndex401Response.md
 docs/Model/TicketsUpdate200Response.md
 docs/Model/TicketsUpdate400Response.md
 docs/Model/User.md
-docs/Model/UserCustomData.md
 docs/Model/UserWebhookError.md
 docs/Model/UserWebhookErrorContent.md
 docs/Model/UserWebhookErrorContentAllOfErrors.md
@@ -300,6 +307,11 @@ src/Model/ArticlesIndex401Response.php
 src/Model/ArticlesUpdate200Response.php
 src/Model/ArticlesUpdate400Response.php
 src/Model/ArticlesUpdate401Response.php
+src/Model/AuthLoginByToken200Response.php
+src/Model/AuthLoginByTokenRequest.php
+src/Model/AuthRefreshTokenRequest.php
+src/Model/AuthRequestToken200Response.php
+src/Model/AuthRequestTokenRequest.php
 src/Model/Award.php
 src/Model/Awarded.php
 src/Model/AwardedsSearch200Response.php
@@ -404,6 +416,9 @@ src/Model/FaqIndex401Response.php
 src/Model/FaqUpdate200Response.php
 src/Model/FaqUpdate400Response.php
 src/Model/FaqUpdate401Response.php
+src/Model/FilesShow200Response.php
+src/Model/FilesShow400Response.php
+src/Model/FilesShow401Response.php
 src/Model/Login200Response.php
 src/Model/Login401Response.php
 src/Model/LoginRequest.php
@@ -504,7 +519,6 @@ src/Model/TicketsIndex401Response.php
 src/Model/TicketsUpdate200Response.php
 src/Model/TicketsUpdate400Response.php
 src/Model/User.php
-src/Model/UserCustomData.php
 src/Model/UserWebhookError.php
 src/Model/UserWebhookErrorContent.php
 src/Model/UserWebhookErrorContentAllOfErrors.php
@@ -521,5 +535,11 @@ src/Model/UsersUpdate201Response.php
 src/Model/UsersWebhook200Response.php
 src/Model/UsersWebhookRequest.php
 src/ObjectSerializer.php
-test/Model/Metrics200ResponseContentTest.php
-test/Model/Metrics200ResponseContentUsersInnerTest.php
+test/Model/AuthLoginByToken200ResponseTest.php
+test/Model/AuthLoginByTokenRequestTest.php
+test/Model/AuthRefreshTokenRequestTest.php
+test/Model/AuthRequestToken200ResponseTest.php
+test/Model/AuthRequestTokenRequestTest.php
+test/Model/FilesShow200ResponseTest.php
+test/Model/FilesShow400ResponseTest.php
+test/Model/FilesShow401ResponseTest.php

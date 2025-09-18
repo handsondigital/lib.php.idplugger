@@ -10,7 +10,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 ## `filesShow()`
 
 ```php
-filesShow($promotion_id, $filename)
+filesShow($promotion_id, $filename): \IdpluggerPromotion\Model\FilesShow200Response
 ```
 
 Faz o download de um arquivo
@@ -32,7 +32,8 @@ $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $filename = 'filename_example'; // string | Nome do arquivo
 
 try {
-    $apiInstance->filesShow($promotion_id, $filename);
+    $result = $apiInstance->filesShow($promotion_id, $filename);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FilesApi->filesShow: ', $e->getMessage(), PHP_EOL;
 }
@@ -47,7 +48,7 @@ try {
 
 ### Return type
 
-void (empty response body)
+[**\IdpluggerPromotion\Model\FilesShow200Response**](../Model/FilesShow200Response.md)
 
 ### Authorization
 
@@ -56,7 +57,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

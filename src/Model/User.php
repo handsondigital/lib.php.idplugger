@@ -75,7 +75,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'newsletter' => 'bool',
         'policy_privacy' => 'bool',
         'agree_terms' => 'bool',
-        'custom_data' => '\IdpluggerPromotion\Model\UserCustomData'
+        'custom_data' => 'array<string,string>'
     ];
 
     /**
@@ -400,42 +400,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
-        if ($this->container['cpf'] === null) {
-            $invalidProperties[] = "'cpf' can't be null";
-        }
-        if ($this->container['cnpj'] === null) {
-            $invalidProperties[] = "'cnpj' can't be null";
-        }
-        if ($this->container['birth'] === null) {
-            $invalidProperties[] = "'birth' can't be null";
-        }
-        if ($this->container['cep'] === null) {
-            $invalidProperties[] = "'cep' can't be null";
-        }
-        if ($this->container['address'] === null) {
-            $invalidProperties[] = "'address' can't be null";
-        }
-        if ($this->container['number'] === null) {
-            $invalidProperties[] = "'number' can't be null";
-        }
-        if ($this->container['neighborhood'] === null) {
-            $invalidProperties[] = "'neighborhood' can't be null";
-        }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
-        if ($this->container['state'] === null) {
-            $invalidProperties[] = "'state' can't be null";
-        }
-        if ($this->container['sex'] === null) {
-            $invalidProperties[] = "'sex' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -481,7 +445,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -491,7 +455,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string|null $name name
      *
      * @return self
      */
@@ -508,7 +472,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets email
      *
-     * @return string
+     * @return string|null
      */
     public function getEmail()
     {
@@ -518,7 +482,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets email
      *
-     * @param string $email email
+     * @param string|null $email email
      *
      * @return self
      */
@@ -535,7 +499,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cpf
      *
-     * @return string
+     * @return string|null
      */
     public function getCpf()
     {
@@ -545,7 +509,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cpf
      *
-     * @param string $cpf cpf
+     * @param string|null $cpf cpf
      *
      * @return self
      */
@@ -562,7 +526,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cnpj
      *
-     * @return string
+     * @return string|null
      */
     public function getCnpj()
     {
@@ -572,7 +536,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cnpj
      *
-     * @param string $cnpj cnpj
+     * @param string|null $cnpj cnpj
      *
      * @return self
      */
@@ -616,7 +580,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets birth
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getBirth()
     {
@@ -626,7 +590,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets birth
      *
-     * @param \DateTime $birth birth
+     * @param \DateTime|null $birth birth
      *
      * @return self
      */
@@ -643,7 +607,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cep
      *
-     * @return string
+     * @return string|null
      */
     public function getCep()
     {
@@ -653,7 +617,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cep
      *
-     * @param string $cep cep
+     * @param string|null $cep cep
      *
      * @return self
      */
@@ -670,7 +634,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress()
     {
@@ -680,7 +644,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param string $address address
+     * @param string|null $address address
      *
      * @return self
      */
@@ -697,7 +661,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets number
      *
-     * @return string
+     * @return string|null
      */
     public function getNumber()
     {
@@ -707,7 +671,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets number
      *
-     * @param string $number number
+     * @param string|null $number number
      *
      * @return self
      */
@@ -724,7 +688,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets neighborhood
      *
-     * @return string
+     * @return string|null
      */
     public function getNeighborhood()
     {
@@ -734,7 +698,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets neighborhood
      *
-     * @param string $neighborhood neighborhood
+     * @param string|null $neighborhood neighborhood
      *
      * @return self
      */
@@ -751,7 +715,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets city
      *
-     * @return string
+     * @return string|null
      */
     public function getCity()
     {
@@ -761,7 +725,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string $city city
+     * @param string|null $city city
      *
      * @return self
      */
@@ -778,7 +742,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets state
      *
-     * @return string
+     * @return string|null
      */
     public function getState()
     {
@@ -788,7 +752,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets state
      *
-     * @param string $state state
+     * @param string|null $state state
      *
      * @return self
      */
@@ -832,7 +796,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sex
      *
-     * @return string
+     * @return string|null
      */
     public function getSex()
     {
@@ -842,7 +806,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sex
      *
-     * @param string $sex sex
+     * @param string|null $sex sex
      *
      * @return self
      */
@@ -940,7 +904,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets custom_data
      *
-     * @return \IdpluggerPromotion\Model\UserCustomData|null
+     * @return array<string,string>|null
      */
     public function getCustomData()
     {
@@ -950,7 +914,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets custom_data
      *
-     * @param \IdpluggerPromotion\Model\UserCustomData|null $custom_data custom_data
+     * @param array<string,string>|null $custom_data custom_data
      *
      * @return self
      */

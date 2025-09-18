@@ -5,23 +5,23 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional]
-**name** | **string** |  |
-**email** | **string** |  |
-**cpf** | **string** |  |
-**cnpj** | **string** |  |
+**name** | **string** |  | [optional]
+**email** | **string** |  | [optional]
+**cpf** | **string** |  | [optional]
+**cnpj** | **string** |  | [optional]
 **phone** | **string** |  | [optional]
-**birth** | **\DateTime** |  |
-**cep** | **string** |  |
-**address** | **string** |  |
-**number** | **string** |  |
-**neighborhood** | **string** |  |
-**city** | **string** |  |
-**state** | **string** |  |
+**birth** | **\DateTime** |  | [optional]
+**cep** | **string** |  | [optional]
+**address** | **string** |  | [optional]
+**number** | **string** |  | [optional]
+**neighborhood** | **string** |  | [optional]
+**city** | **string** |  | [optional]
+**state** | **string** |  | [optional]
 **cel** | **string** |  | [optional]
-**sex** | **string** |  |
+**sex** | **string** |  | [optional]
 **newsletter** | **bool** |  | [optional]
 **policy_privacy** | **bool** |  | [optional]
 **agree_terms** | **bool** |  | [optional]
-**custom_data** | [**\IdpluggerPromotion\Model\UserCustomData**](UserCustomData.md) |  | [optional]
+**custom_data** | **array<string,string>** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

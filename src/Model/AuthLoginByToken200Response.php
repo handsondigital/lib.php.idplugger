@@ -1,6 +1,6 @@
 <?php
 /**
- * Metrics200ResponseContent
+ * AuthLoginByToken200Response
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \IdpluggerPromotion\ObjectSerializer;
 
 /**
- * Metrics200ResponseContent Class Doc Comment
+ * AuthLoginByToken200Response Class Doc Comment
  *
  * @category Class
  * @package  IdpluggerPromotion
@@ -40,7 +40,7 @@ use \IdpluggerPromotion\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSerializable
+class AuthLoginByToken200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'metrics_200_response_content';
+    protected static $openAPIModelName = 'auth_login_by_token_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,17 +57,10 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'users' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'coupons' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'lucky_numbers' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'emails' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'tickets' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'tickets_closed' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'raffles' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'raffles_closed' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'awards_delivered' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'instant_awards' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]',
-        'instant_awards_delivered' => '\IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]'
+        'token' => 'string',
+        'refresh_token' => 'string',
+        'token_type' => 'string',
+        'expires_in' => 'string'
     ];
 
     /**
@@ -78,17 +71,10 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'users' => null,
-        'coupons' => null,
-        'lucky_numbers' => null,
-        'emails' => null,
-        'tickets' => null,
-        'tickets_closed' => null,
-        'raffles' => null,
-        'raffles_closed' => null,
-        'awards_delivered' => null,
-        'instant_awards' => null,
-        'instant_awards_delivered' => null
+        'token' => null,
+        'refresh_token' => null,
+        'token_type' => null,
+        'expires_in' => null
     ];
 
     /**
@@ -97,17 +83,10 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'users' => false,
-        'coupons' => false,
-        'lucky_numbers' => false,
-        'emails' => false,
-        'tickets' => false,
-        'tickets_closed' => false,
-        'raffles' => false,
-        'raffles_closed' => false,
-        'awards_delivered' => false,
-        'instant_awards' => false,
-        'instant_awards_delivered' => false
+        'token' => false,
+        'refresh_token' => false,
+        'token_type' => false,
+        'expires_in' => false
     ];
 
     /**
@@ -196,17 +175,10 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'users' => 'users',
-        'coupons' => 'coupons',
-        'lucky_numbers' => 'lucky_numbers',
-        'emails' => 'emails',
-        'tickets' => 'tickets',
-        'tickets_closed' => 'tickets_closed',
-        'raffles' => 'raffles',
-        'raffles_closed' => 'raffles_closed',
-        'awards_delivered' => 'awards_delivered',
-        'instant_awards' => 'instant_awards',
-        'instant_awards_delivered' => 'instant_awards_delivered'
+        'token' => 'token',
+        'refresh_token' => 'refresh_token',
+        'token_type' => 'token_type',
+        'expires_in' => 'expires_in'
     ];
 
     /**
@@ -215,17 +187,10 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'users' => 'setUsers',
-        'coupons' => 'setCoupons',
-        'lucky_numbers' => 'setLuckyNumbers',
-        'emails' => 'setEmails',
-        'tickets' => 'setTickets',
-        'tickets_closed' => 'setTicketsClosed',
-        'raffles' => 'setRaffles',
-        'raffles_closed' => 'setRafflesClosed',
-        'awards_delivered' => 'setAwardsDelivered',
-        'instant_awards' => 'setInstantAwards',
-        'instant_awards_delivered' => 'setInstantAwardsDelivered'
+        'token' => 'setToken',
+        'refresh_token' => 'setRefreshToken',
+        'token_type' => 'setTokenType',
+        'expires_in' => 'setExpiresIn'
     ];
 
     /**
@@ -234,17 +199,10 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'users' => 'getUsers',
-        'coupons' => 'getCoupons',
-        'lucky_numbers' => 'getLuckyNumbers',
-        'emails' => 'getEmails',
-        'tickets' => 'getTickets',
-        'tickets_closed' => 'getTicketsClosed',
-        'raffles' => 'getRaffles',
-        'raffles_closed' => 'getRafflesClosed',
-        'awards_delivered' => 'getAwardsDelivered',
-        'instant_awards' => 'getInstantAwards',
-        'instant_awards_delivered' => 'getInstantAwardsDelivered'
+        'token' => 'getToken',
+        'refresh_token' => 'getRefreshToken',
+        'token_type' => 'getTokenType',
+        'expires_in' => 'getExpiresIn'
     ];
 
     /**
@@ -304,17 +262,10 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('users', $data ?? [], null);
-        $this->setIfExists('coupons', $data ?? [], null);
-        $this->setIfExists('lucky_numbers', $data ?? [], null);
-        $this->setIfExists('emails', $data ?? [], null);
-        $this->setIfExists('tickets', $data ?? [], null);
-        $this->setIfExists('tickets_closed', $data ?? [], null);
-        $this->setIfExists('raffles', $data ?? [], null);
-        $this->setIfExists('raffles_closed', $data ?? [], null);
-        $this->setIfExists('awards_delivered', $data ?? [], null);
-        $this->setIfExists('instant_awards', $data ?? [], null);
-        $this->setIfExists('instant_awards_delivered', $data ?? [], null);
+        $this->setIfExists('token', $data ?? [], null);
+        $this->setIfExists('refresh_token', $data ?? [], null);
+        $this->setIfExists('token_type', $data ?? [], null);
+        $this->setIfExists('expires_in', $data ?? [], null);
     }
 
     /**
@@ -360,298 +311,109 @@ class Metrics200ResponseContent implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets users
+     * Gets token
      *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
+     * @return string|null
      */
-    public function getUsers()
+    public function getToken()
     {
-        return $this->container['users'];
+        return $this->container['token'];
     }
 
     /**
-     * Sets users
+     * Sets token
      *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $users users
+     * @param string|null $token token
      *
      * @return self
      */
-    public function setUsers($users)
+    public function setToken($token)
     {
-        if (is_null($users)) {
-            throw new \InvalidArgumentException('non-nullable users cannot be null');
+        if (is_null($token)) {
+            throw new \InvalidArgumentException('non-nullable token cannot be null');
         }
-        $this->container['users'] = $users;
+        $this->container['token'] = $token;
 
         return $this;
     }
 
     /**
-     * Gets coupons
+     * Gets refresh_token
      *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
+     * @return string|null
      */
-    public function getCoupons()
+    public function getRefreshToken()
     {
-        return $this->container['coupons'];
+        return $this->container['refresh_token'];
     }
 
     /**
-     * Sets coupons
+     * Sets refresh_token
      *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $coupons coupons
+     * @param string|null $refresh_token refresh_token
      *
      * @return self
      */
-    public function setCoupons($coupons)
+    public function setRefreshToken($refresh_token)
     {
-        if (is_null($coupons)) {
-            throw new \InvalidArgumentException('non-nullable coupons cannot be null');
+        if (is_null($refresh_token)) {
+            throw new \InvalidArgumentException('non-nullable refresh_token cannot be null');
         }
-        $this->container['coupons'] = $coupons;
+        $this->container['refresh_token'] = $refresh_token;
 
         return $this;
     }
 
     /**
-     * Gets lucky_numbers
+     * Gets token_type
      *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
+     * @return string|null
      */
-    public function getLuckyNumbers()
+    public function getTokenType()
     {
-        return $this->container['lucky_numbers'];
+        return $this->container['token_type'];
     }
 
     /**
-     * Sets lucky_numbers
+     * Sets token_type
      *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $lucky_numbers lucky_numbers
+     * @param string|null $token_type token_type
      *
      * @return self
      */
-    public function setLuckyNumbers($lucky_numbers)
+    public function setTokenType($token_type)
     {
-        if (is_null($lucky_numbers)) {
-            throw new \InvalidArgumentException('non-nullable lucky_numbers cannot be null');
+        if (is_null($token_type)) {
+            throw new \InvalidArgumentException('non-nullable token_type cannot be null');
         }
-        $this->container['lucky_numbers'] = $lucky_numbers;
+        $this->container['token_type'] = $token_type;
 
         return $this;
     }
 
     /**
-     * Gets emails
+     * Gets expires_in
      *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
+     * @return string|null
      */
-    public function getEmails()
+    public function getExpiresIn()
     {
-        return $this->container['emails'];
+        return $this->container['expires_in'];
     }
 
     /**
-     * Sets emails
+     * Sets expires_in
      *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $emails emails
+     * @param string|null $expires_in expires_in
      *
      * @return self
      */
-    public function setEmails($emails)
+    public function setExpiresIn($expires_in)
     {
-        if (is_null($emails)) {
-            throw new \InvalidArgumentException('non-nullable emails cannot be null');
+        if (is_null($expires_in)) {
+            throw new \InvalidArgumentException('non-nullable expires_in cannot be null');
         }
-        $this->container['emails'] = $emails;
-
-        return $this;
-    }
-
-    /**
-     * Gets tickets
-     *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
-     */
-    public function getTickets()
-    {
-        return $this->container['tickets'];
-    }
-
-    /**
-     * Sets tickets
-     *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $tickets tickets
-     *
-     * @return self
-     */
-    public function setTickets($tickets)
-    {
-        if (is_null($tickets)) {
-            throw new \InvalidArgumentException('non-nullable tickets cannot be null');
-        }
-        $this->container['tickets'] = $tickets;
-
-        return $this;
-    }
-
-    /**
-     * Gets tickets_closed
-     *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
-     */
-    public function getTicketsClosed()
-    {
-        return $this->container['tickets_closed'];
-    }
-
-    /**
-     * Sets tickets_closed
-     *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $tickets_closed tickets_closed
-     *
-     * @return self
-     */
-    public function setTicketsClosed($tickets_closed)
-    {
-        if (is_null($tickets_closed)) {
-            throw new \InvalidArgumentException('non-nullable tickets_closed cannot be null');
-        }
-        $this->container['tickets_closed'] = $tickets_closed;
-
-        return $this;
-    }
-
-    /**
-     * Gets raffles
-     *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
-     */
-    public function getRaffles()
-    {
-        return $this->container['raffles'];
-    }
-
-    /**
-     * Sets raffles
-     *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $raffles raffles
-     *
-     * @return self
-     */
-    public function setRaffles($raffles)
-    {
-        if (is_null($raffles)) {
-            throw new \InvalidArgumentException('non-nullable raffles cannot be null');
-        }
-        $this->container['raffles'] = $raffles;
-
-        return $this;
-    }
-
-    /**
-     * Gets raffles_closed
-     *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
-     */
-    public function getRafflesClosed()
-    {
-        return $this->container['raffles_closed'];
-    }
-
-    /**
-     * Sets raffles_closed
-     *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $raffles_closed raffles_closed
-     *
-     * @return self
-     */
-    public function setRafflesClosed($raffles_closed)
-    {
-        if (is_null($raffles_closed)) {
-            throw new \InvalidArgumentException('non-nullable raffles_closed cannot be null');
-        }
-        $this->container['raffles_closed'] = $raffles_closed;
-
-        return $this;
-    }
-
-    /**
-     * Gets awards_delivered
-     *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
-     */
-    public function getAwardsDelivered()
-    {
-        return $this->container['awards_delivered'];
-    }
-
-    /**
-     * Sets awards_delivered
-     *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $awards_delivered awards_delivered
-     *
-     * @return self
-     */
-    public function setAwardsDelivered($awards_delivered)
-    {
-        if (is_null($awards_delivered)) {
-            throw new \InvalidArgumentException('non-nullable awards_delivered cannot be null');
-        }
-        $this->container['awards_delivered'] = $awards_delivered;
-
-        return $this;
-    }
-
-    /**
-     * Gets instant_awards
-     *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
-     */
-    public function getInstantAwards()
-    {
-        return $this->container['instant_awards'];
-    }
-
-    /**
-     * Sets instant_awards
-     *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $instant_awards instant_awards
-     *
-     * @return self
-     */
-    public function setInstantAwards($instant_awards)
-    {
-        if (is_null($instant_awards)) {
-            throw new \InvalidArgumentException('non-nullable instant_awards cannot be null');
-        }
-        $this->container['instant_awards'] = $instant_awards;
-
-        return $this;
-    }
-
-    /**
-     * Gets instant_awards_delivered
-     *
-     * @return \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null
-     */
-    public function getInstantAwardsDelivered()
-    {
-        return $this->container['instant_awards_delivered'];
-    }
-
-    /**
-     * Sets instant_awards_delivered
-     *
-     * @param \IdpluggerPromotion\Model\Metrics200ResponseContentUsersInner[]|null $instant_awards_delivered instant_awards_delivered
-     *
-     * @return self
-     */
-    public function setInstantAwardsDelivered($instant_awards_delivered)
-    {
-        if (is_null($instant_awards_delivered)) {
-            throw new \InvalidArgumentException('non-nullable instant_awards_delivered cannot be null');
-        }
-        $this->container['instant_awards_delivered'] = $instant_awards_delivered;
+        $this->container['expires_in'] = $expires_in;
 
         return $this;
     }
