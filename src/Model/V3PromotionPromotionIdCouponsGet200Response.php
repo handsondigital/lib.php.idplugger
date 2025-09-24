@@ -1,6 +1,6 @@
 <?php
 /**
- * RafflesIndex200Response
+ * V3PromotionPromotionIdCouponsGet200Response
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \IdpluggerPromotion\ObjectSerializer;
 
 /**
- * RafflesIndex200Response Class Doc Comment
+ * V3PromotionPromotionIdCouponsGet200Response Class Doc Comment
  *
  * @category Class
  * @package  IdpluggerPromotion
@@ -40,7 +40,7 @@ use \IdpluggerPromotion\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class V3PromotionPromotionIdCouponsGet200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'raffles_index_200_response';
+    protected static $openAPIModelName = '_v3_promotion__promotion_id__coupons_get_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
         'action' => 'string',
         'result' => 'string',
         'paging' => '\IdpluggerPromotion\Model\Pagination',
-        'content' => '\IdpluggerPromotion\Model\Raffle[]'
+        'content' => '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200ResponseContentInner[]'
     ];
 
     /**
@@ -428,7 +428,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets content
      *
-     * @return \IdpluggerPromotion\Model\Raffle[]|null
+     * @return \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200ResponseContentInner[]|null
      */
     public function getContent()
     {
@@ -438,7 +438,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets content
      *
-     * @param \IdpluggerPromotion\Model\Raffle[]|null $content content
+     * @param \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200ResponseContentInner[]|null $content content
      *
      * @return self
      */

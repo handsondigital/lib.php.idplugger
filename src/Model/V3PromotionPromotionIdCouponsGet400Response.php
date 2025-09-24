@@ -1,6 +1,6 @@
 <?php
 /**
- * RafflesIndex200Response
+ * V3PromotionPromotionIdCouponsGet400Response
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \IdpluggerPromotion\ObjectSerializer;
 
 /**
- * RafflesIndex200Response Class Doc Comment
+ * V3PromotionPromotionIdCouponsGet400Response Class Doc Comment
  *
  * @category Class
  * @package  IdpluggerPromotion
@@ -40,7 +40,7 @@ use \IdpluggerPromotion\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class V3PromotionPromotionIdCouponsGet400Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'raffles_index_200_response';
+    protected static $openAPIModelName = '_v3_promotion__promotion_id__coupons_get_400_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,8 +60,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
         'entity' => 'string',
         'action' => 'string',
         'result' => 'string',
-        'paging' => '\IdpluggerPromotion\Model\Pagination',
-        'content' => '\IdpluggerPromotion\Model\Raffle[]'
+        'message' => 'string'
     ];
 
     /**
@@ -75,8 +74,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
         'entity' => null,
         'action' => null,
         'result' => null,
-        'paging' => null,
-        'content' => null
+        'message' => null
     ];
 
     /**
@@ -88,8 +86,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
         'entity' => false,
         'action' => false,
         'result' => false,
-        'paging' => false,
-        'content' => false
+        'message' => false
     ];
 
     /**
@@ -181,8 +178,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
         'entity' => 'entity',
         'action' => 'action',
         'result' => 'result',
-        'paging' => 'paging',
-        'content' => 'content'
+        'message' => 'message'
     ];
 
     /**
@@ -194,8 +190,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
         'entity' => 'setEntity',
         'action' => 'setAction',
         'result' => 'setResult',
-        'paging' => 'setPaging',
-        'content' => 'setContent'
+        'message' => 'setMessage'
     ];
 
     /**
@@ -207,8 +202,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
         'entity' => 'getEntity',
         'action' => 'getAction',
         'result' => 'getResult',
-        'paging' => 'getPaging',
-        'content' => 'getContent'
+        'message' => 'getMessage'
     ];
 
     /**
@@ -271,8 +265,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('entity', $data ?? [], null);
         $this->setIfExists('action', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('paging', $data ?? [], null);
-        $this->setIfExists('content', $data ?? [], null);
+        $this->setIfExists('message', $data ?? [], null);
     }
 
     /**
@@ -399,55 +392,28 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets paging
+     * Gets message
      *
-     * @return \IdpluggerPromotion\Model\Pagination|null
+     * @return string|null
      */
-    public function getPaging()
+    public function getMessage()
     {
-        return $this->container['paging'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets paging
+     * Sets message
      *
-     * @param \IdpluggerPromotion\Model\Pagination|null $paging paging
+     * @param string|null $message message
      *
      * @return self
      */
-    public function setPaging($paging)
+    public function setMessage($message)
     {
-        if (is_null($paging)) {
-            throw new \InvalidArgumentException('non-nullable paging cannot be null');
+        if (is_null($message)) {
+            throw new \InvalidArgumentException('non-nullable message cannot be null');
         }
-        $this->container['paging'] = $paging;
-
-        return $this;
-    }
-
-    /**
-     * Gets content
-     *
-     * @return \IdpluggerPromotion\Model\Raffle[]|null
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param \IdpluggerPromotion\Model\Raffle[]|null $content content
-     *
-     * @return self
-     */
-    public function setContent($content)
-    {
-        if (is_null($content)) {
-            throw new \InvalidArgumentException('non-nullable content cannot be null');
-        }
-        $this->container['content'] = $content;
+        $this->container['message'] = $message;
 
         return $this;
     }

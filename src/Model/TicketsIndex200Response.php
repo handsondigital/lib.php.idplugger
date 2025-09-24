@@ -60,7 +60,7 @@ class TicketsIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
         'entity' => 'string',
         'action' => 'string',
         'result' => 'string',
-        'paging' => '\IdpluggerPromotion\Model\Pagination[]',
+        'paging' => '\IdpluggerPromotion\Model\Pagination',
         'content' => '\IdpluggerPromotion\Model\Ticket[]'
     ];
 
@@ -401,7 +401,7 @@ class TicketsIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets paging
      *
-     * @return \IdpluggerPromotion\Model\Pagination[]|null
+     * @return \IdpluggerPromotion\Model\Pagination|null
      */
     public function getPaging()
     {
@@ -411,7 +411,7 @@ class TicketsIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets paging
      *
-     * @param \IdpluggerPromotion\Model\Pagination[]|null $paging paging
+     * @param \IdpluggerPromotion\Model\Pagination|null $paging paging
      *
      * @return self
      */

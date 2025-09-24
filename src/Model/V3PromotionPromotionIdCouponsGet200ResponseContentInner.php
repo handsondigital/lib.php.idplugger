@@ -1,6 +1,6 @@
 <?php
 /**
- * RafflesIndex200Response
+ * V3PromotionPromotionIdCouponsGet200ResponseContentInner
  *
  * PHP version 8.1
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \IdpluggerPromotion\ObjectSerializer;
 
 /**
- * RafflesIndex200Response Class Doc Comment
+ * V3PromotionPromotionIdCouponsGet200ResponseContentInner Class Doc Comment
  *
  * @category Class
  * @package  IdpluggerPromotion
@@ -40,7 +40,7 @@ use \IdpluggerPromotion\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class V3PromotionPromotionIdCouponsGet200ResponseContentInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'raffles_index_200_response';
+    protected static $openAPIModelName = '_v3_promotion__promotion_id__coupons_get_200_response_content_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,16 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'entity' => 'string',
-        'action' => 'string',
-        'result' => 'string',
-        'paging' => '\IdpluggerPromotion\Model\Pagination',
-        'content' => '\IdpluggerPromotion\Model\Raffle[]'
+        'id' => 'int',
+        'user_id' => 'int',
+        'purchase_date' => 'string',
+        'cnpj' => 'string',
+        'code' => 'string',
+        'cost' => 'float',
+        'serie' => 'float',
+        'products' => '\IdpluggerPromotion\Model\CouponProductsInner[]',
+        'promotion_codes' => 'string[]',
+        'lucky_numbers' => '\IdpluggerPromotion\Model\LuckyNumber[]'
     ];
 
     /**
@@ -72,11 +77,16 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'entity' => null,
-        'action' => null,
-        'result' => null,
-        'paging' => null,
-        'content' => null
+        'id' => 'int',
+        'user_id' => 'int',
+        'purchase_date' => 'string',
+        'cnpj' => 'string',
+        'code' => 'string',
+        'cost' => 'float',
+        'serie' => 'int',
+        'products' => null,
+        'promotion_codes' => null,
+        'lucky_numbers' => null
     ];
 
     /**
@@ -85,11 +95,16 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'entity' => false,
-        'action' => false,
-        'result' => false,
-        'paging' => false,
-        'content' => false
+        'id' => false,
+        'user_id' => false,
+        'purchase_date' => false,
+        'cnpj' => false,
+        'code' => false,
+        'cost' => false,
+        'serie' => false,
+        'products' => false,
+        'promotion_codes' => false,
+        'lucky_numbers' => false
     ];
 
     /**
@@ -178,11 +193,16 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'entity' => 'entity',
-        'action' => 'action',
-        'result' => 'result',
-        'paging' => 'paging',
-        'content' => 'content'
+        'id' => 'id',
+        'user_id' => 'user_id',
+        'purchase_date' => 'purchase_date',
+        'cnpj' => 'cnpj',
+        'code' => 'code',
+        'cost' => 'cost',
+        'serie' => 'serie',
+        'products' => 'products',
+        'promotion_codes' => 'promotion_codes',
+        'lucky_numbers' => 'lucky_numbers'
     ];
 
     /**
@@ -191,11 +211,16 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'entity' => 'setEntity',
-        'action' => 'setAction',
-        'result' => 'setResult',
-        'paging' => 'setPaging',
-        'content' => 'setContent'
+        'id' => 'setId',
+        'user_id' => 'setUserId',
+        'purchase_date' => 'setPurchaseDate',
+        'cnpj' => 'setCnpj',
+        'code' => 'setCode',
+        'cost' => 'setCost',
+        'serie' => 'setSerie',
+        'products' => 'setProducts',
+        'promotion_codes' => 'setPromotionCodes',
+        'lucky_numbers' => 'setLuckyNumbers'
     ];
 
     /**
@@ -204,11 +229,16 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'entity' => 'getEntity',
-        'action' => 'getAction',
-        'result' => 'getResult',
-        'paging' => 'getPaging',
-        'content' => 'getContent'
+        'id' => 'getId',
+        'user_id' => 'getUserId',
+        'purchase_date' => 'getPurchaseDate',
+        'cnpj' => 'getCnpj',
+        'code' => 'getCode',
+        'cost' => 'getCost',
+        'serie' => 'getSerie',
+        'products' => 'getProducts',
+        'promotion_codes' => 'getPromotionCodes',
+        'lucky_numbers' => 'getLuckyNumbers'
     ];
 
     /**
@@ -268,11 +298,16 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('entity', $data ?? [], null);
-        $this->setIfExists('action', $data ?? [], null);
-        $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('paging', $data ?? [], null);
-        $this->setIfExists('content', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('user_id', $data ?? [], null);
+        $this->setIfExists('purchase_date', $data ?? [], null);
+        $this->setIfExists('cnpj', $data ?? [], null);
+        $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('cost', $data ?? [], null);
+        $this->setIfExists('serie', $data ?? [], null);
+        $this->setIfExists('products', $data ?? [], null);
+        $this->setIfExists('promotion_codes', $data ?? [], null);
+        $this->setIfExists('lucky_numbers', $data ?? [], null);
     }
 
     /**
@@ -302,6 +337,21 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
+        if ($this->container['user_id'] === null) {
+            $invalidProperties[] = "'user_id' can't be null";
+        }
+        if ($this->container['purchase_date'] === null) {
+            $invalidProperties[] = "'purchase_date' can't be null";
+        }
+        if ($this->container['cnpj'] === null) {
+            $invalidProperties[] = "'cnpj' can't be null";
+        }
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
+        }
+        if ($this->container['cost'] === null) {
+            $invalidProperties[] = "'cost' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -318,136 +368,271 @@ class RafflesIndex200Response implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets entity
+     * Gets id
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getEntity()
+    public function getId()
     {
-        return $this->container['entity'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets entity
+     * Sets id
      *
-     * @param string|null $entity entity
+     * @param int|null $id id
      *
      * @return self
      */
-    public function setEntity($entity)
+    public function setId($id)
     {
-        if (is_null($entity)) {
-            throw new \InvalidArgumentException('non-nullable entity cannot be null');
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
-        $this->container['entity'] = $entity;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets action
+     * Gets user_id
      *
-     * @return string|null
+     * @return int
      */
-    public function getAction()
+    public function getUserId()
     {
-        return $this->container['action'];
+        return $this->container['user_id'];
     }
 
     /**
-     * Sets action
+     * Sets user_id
      *
-     * @param string|null $action action
+     * @param int $user_id user_id
      *
      * @return self
      */
-    public function setAction($action)
+    public function setUserId($user_id)
     {
-        if (is_null($action)) {
-            throw new \InvalidArgumentException('non-nullable action cannot be null');
+        if (is_null($user_id)) {
+            throw new \InvalidArgumentException('non-nullable user_id cannot be null');
         }
-        $this->container['action'] = $action;
+        $this->container['user_id'] = $user_id;
 
         return $this;
     }
 
     /**
-     * Gets result
+     * Gets purchase_date
      *
-     * @return string|null
+     * @return string
      */
-    public function getResult()
+    public function getPurchaseDate()
     {
-        return $this->container['result'];
+        return $this->container['purchase_date'];
     }
 
     /**
-     * Sets result
+     * Sets purchase_date
      *
-     * @param string|null $result result
+     * @param string $purchase_date purchase_date
      *
      * @return self
      */
-    public function setResult($result)
+    public function setPurchaseDate($purchase_date)
     {
-        if (is_null($result)) {
-            throw new \InvalidArgumentException('non-nullable result cannot be null');
+        if (is_null($purchase_date)) {
+            throw new \InvalidArgumentException('non-nullable purchase_date cannot be null');
         }
-        $this->container['result'] = $result;
+        $this->container['purchase_date'] = $purchase_date;
 
         return $this;
     }
 
     /**
-     * Gets paging
+     * Gets cnpj
      *
-     * @return \IdpluggerPromotion\Model\Pagination|null
+     * @return string
      */
-    public function getPaging()
+    public function getCnpj()
     {
-        return $this->container['paging'];
+        return $this->container['cnpj'];
     }
 
     /**
-     * Sets paging
+     * Sets cnpj
      *
-     * @param \IdpluggerPromotion\Model\Pagination|null $paging paging
+     * @param string $cnpj cnpj
      *
      * @return self
      */
-    public function setPaging($paging)
+    public function setCnpj($cnpj)
     {
-        if (is_null($paging)) {
-            throw new \InvalidArgumentException('non-nullable paging cannot be null');
+        if (is_null($cnpj)) {
+            throw new \InvalidArgumentException('non-nullable cnpj cannot be null');
         }
-        $this->container['paging'] = $paging;
+        $this->container['cnpj'] = $cnpj;
 
         return $this;
     }
 
     /**
-     * Gets content
+     * Gets code
      *
-     * @return \IdpluggerPromotion\Model\Raffle[]|null
+     * @return string
      */
-    public function getContent()
+    public function getCode()
     {
-        return $this->container['content'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets content
+     * Sets code
      *
-     * @param \IdpluggerPromotion\Model\Raffle[]|null $content content
+     * @param string $code code
      *
      * @return self
      */
-    public function setContent($content)
+    public function setCode($code)
     {
-        if (is_null($content)) {
-            throw new \InvalidArgumentException('non-nullable content cannot be null');
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-        $this->container['content'] = $content;
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets cost
+     *
+     * @return float
+     */
+    public function getCost()
+    {
+        return $this->container['cost'];
+    }
+
+    /**
+     * Sets cost
+     *
+     * @param float $cost cost
+     *
+     * @return self
+     */
+    public function setCost($cost)
+    {
+        if (is_null($cost)) {
+            throw new \InvalidArgumentException('non-nullable cost cannot be null');
+        }
+        $this->container['cost'] = $cost;
+
+        return $this;
+    }
+
+    /**
+     * Gets serie
+     *
+     * @return float|null
+     */
+    public function getSerie()
+    {
+        return $this->container['serie'];
+    }
+
+    /**
+     * Sets serie
+     *
+     * @param float|null $serie serie
+     *
+     * @return self
+     */
+    public function setSerie($serie)
+    {
+        if (is_null($serie)) {
+            throw new \InvalidArgumentException('non-nullable serie cannot be null');
+        }
+        $this->container['serie'] = $serie;
+
+        return $this;
+    }
+
+    /**
+     * Gets products
+     *
+     * @return \IdpluggerPromotion\Model\CouponProductsInner[]|null
+     */
+    public function getProducts()
+    {
+        return $this->container['products'];
+    }
+
+    /**
+     * Sets products
+     *
+     * @param \IdpluggerPromotion\Model\CouponProductsInner[]|null $products products
+     *
+     * @return self
+     */
+    public function setProducts($products)
+    {
+        if (is_null($products)) {
+            throw new \InvalidArgumentException('non-nullable products cannot be null');
+        }
+        $this->container['products'] = $products;
+
+        return $this;
+    }
+
+    /**
+     * Gets promotion_codes
+     *
+     * @return string[]|null
+     */
+    public function getPromotionCodes()
+    {
+        return $this->container['promotion_codes'];
+    }
+
+    /**
+     * Sets promotion_codes
+     *
+     * @param string[]|null $promotion_codes promotion_codes
+     *
+     * @return self
+     */
+    public function setPromotionCodes($promotion_codes)
+    {
+        if (is_null($promotion_codes)) {
+            throw new \InvalidArgumentException('non-nullable promotion_codes cannot be null');
+        }
+        $this->container['promotion_codes'] = $promotion_codes;
+
+        return $this;
+    }
+
+    /**
+     * Gets lucky_numbers
+     *
+     * @return \IdpluggerPromotion\Model\LuckyNumber[]|null
+     */
+    public function getLuckyNumbers()
+    {
+        return $this->container['lucky_numbers'];
+    }
+
+    /**
+     * Sets lucky_numbers
+     *
+     * @param \IdpluggerPromotion\Model\LuckyNumber[]|null $lucky_numbers lucky_numbers
+     *
+     * @return self
+     */
+    public function setLuckyNumbers($lucky_numbers)
+    {
+        if (is_null($lucky_numbers)) {
+            throw new \InvalidArgumentException('non-nullable lucky_numbers cannot be null');
+        }
+        $this->container['lucky_numbers'] = $lucky_numbers;
 
         return $this;
     }

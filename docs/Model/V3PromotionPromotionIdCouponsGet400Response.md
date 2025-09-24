@@ -1,4 +1,4 @@
-# # BlacklistIndex200Response
+# # V3PromotionPromotionIdCouponsGet400Response
 
 ## Properties
 
@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **entity** | **string** |  | [optional]
 **action** | **string** |  | [optional]
 **result** | **string** |  | [optional]
-**paging** | [**\IdpluggerPromotion\Model\Pagination**](Pagination.md) |  | [optional]
-**content** | [**\IdpluggerPromotion\Model\BlacklistIndex200ResponseContentInner[]**](BlacklistIndex200ResponseContentInner.md) |  | [optional]
+**message** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

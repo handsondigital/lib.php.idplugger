@@ -60,7 +60,7 @@ class CouponWebhookSuccess implements ModelInterface, ArrayAccess, \JsonSerializ
         'entity' => 'string',
         'action' => 'string',
         'result' => 'string',
-        'content' => '\IdpluggerPromotion\Model\CouponsIndex200ResponseContentInner'
+        'content' => '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200ResponseContentInner'
     ];
 
     /**
@@ -394,7 +394,7 @@ class CouponWebhookSuccess implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets content
      *
-     * @return \IdpluggerPromotion\Model\CouponsIndex200ResponseContentInner|null
+     * @return \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200ResponseContentInner|null
      */
     public function getContent()
     {
@@ -404,7 +404,7 @@ class CouponWebhookSuccess implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets content
      *
-     * @param \IdpluggerPromotion\Model\CouponsIndex200ResponseContentInner|null $content content
+     * @param \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200ResponseContentInner|null $content content
      *
      * @return self
      */

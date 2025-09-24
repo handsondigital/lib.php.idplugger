@@ -60,7 +60,7 @@ class ProductsIndex200Response implements ModelInterface, ArrayAccess, \JsonSeri
         'entity' => 'string',
         'action' => 'string',
         'result' => 'string',
-        'paging' => '\IdpluggerPromotion\Model\Pagination[]',
+        'paging' => '\IdpluggerPromotion\Model\Pagination',
         'content' => '\IdpluggerPromotion\Model\Product[]'
     ];
 
@@ -401,7 +401,7 @@ class ProductsIndex200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets paging
      *
-     * @return \IdpluggerPromotion\Model\Pagination[]|null
+     * @return \IdpluggerPromotion\Model\Pagination|null
      */
     public function getPaging()
     {
@@ -411,7 +411,7 @@ class ProductsIndex200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets paging
      *
-     * @param \IdpluggerPromotion\Model\Pagination[]|null $paging paging
+     * @param \IdpluggerPromotion\Model\Pagination|null $paging paging
      *
      * @return self
      */

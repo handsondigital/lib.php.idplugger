@@ -826,7 +826,7 @@ class CouponsApi
      *
      * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\CouponsIndex200Response|\IdpluggerPromotion\Model\CouponsIndex400Response|\IdpluggerPromotion\Model\CouponsIndex401Response
+     * @return \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet400Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet401Response
      */
     public function couponsIndex($promotion_id, $user_id, $_fields = null, $_include = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
     {
@@ -850,7 +850,7 @@ class CouponsApi
      *
      * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\CouponsIndex200Response|\IdpluggerPromotion\Model\CouponsIndex400Response|\IdpluggerPromotion\Model\CouponsIndex401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet400Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function couponsIndexWithHttpInfo($promotion_id, $user_id, $_fields = null, $_include = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
     {
@@ -882,19 +882,19 @@ class CouponsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\CouponsIndex200Response',
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\CouponsIndex400Response',
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\CouponsIndex401Response',
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet401Response',
                         $request,
                         $response,
                     );
@@ -916,7 +916,7 @@ class CouponsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\IdpluggerPromotion\Model\CouponsIndex200Response',
+                '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response',
                 $request,
                 $response,
             );
@@ -925,7 +925,7 @@ class CouponsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\CouponsIndex200Response',
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -933,7 +933,7 @@ class CouponsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\CouponsIndex400Response',
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -941,7 +941,7 @@ class CouponsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\CouponsIndex401Response',
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -999,7 +999,7 @@ class CouponsApi
      */
     public function couponsIndexAsyncWithHttpInfo($promotion_id, $user_id, $_fields = null, $_include = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
     {
-        $returnType = '\IdpluggerPromotion\Model\CouponsIndex200Response';
+        $returnType = '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response';
         $request = $this->couponsIndexRequest($promotion_id, $user_id, $_fields, $_include, $id, $user_id2, $external_user_id, $contentType);
 
         return $this->client

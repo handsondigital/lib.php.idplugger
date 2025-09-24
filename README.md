@@ -54,47 +54,47 @@ Vamos começar a promover o sucesso juntos!
 
 # Postman Collection
 
-[![Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/13619232-20687020-3c58-488d-bd15-9f9d1a8164b1?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D13619232-20687020-3c58-488d-bd15-9f9d1a8164b1%26entityType%3Dcollection%26workspaceId%3Df86d7ea0-5224-4351-bf69-54ada2ca328d)
+[<img src=\"https://run.pstmn.io/button.svg\" alt=\"Run In \" style=\"width: 128px; height: 32px;\">](https://god.gw.postman.com/run-collection/13619232-20687020-3c58-488d-bd15-9f9d1a8164b1?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D13619232-20687020-3c58-488d-bd15-9f9d1a8164b1%26entityType%3Dcollection%26workspaceId%3Df86d7ea0-5224-4351-bf69-54ada2ca328d)
 
 
-## Instalação e Uso
+## Installation & Usage
 
-### Requisitos
+### Requirements
 
-PHP 8.1 ou superior.
+PHP 8.1 and later.
 
 ### Composer
 
-Para instalar as dependências via [Composer](https://getcomposer.org/), adicione o seguinte ao `composer.json`:
+To install the bindings via [Composer](https://getcomposer.org/), add the following to `composer.json`:
 
 ```json
 {
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/handsondigital/lib.php.idplugger.git"
+      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
     }
   ],
   "require": {
-    "handsondigital/lib.php.idplugger": "*@dev"
+    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
   }
 }
 ```
 
-Em seguida, execute `composer install`
+Then run `composer install`
 
-### Instalação Manual
+### Manual Installation
 
-Baixe os arquivos e inclua o `autoload.php`:
+Download the files and include `autoload.php`:
 
 ```php
 <?php
 require_once('/path/to/handsondigital/lib.php.idplugger/vendor/autoload.php');
 ```
 
-## Primeiros Passos
+## Getting Started
 
-Por favor, siga o [procedimento de instalação](#installation--usage) e, em seguida, execute o seguinte:
+Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```php
 <?php
@@ -124,9 +124,9 @@ try {
 
 ```
 
-## Endpoints da API
+## API Endpoints
 
-Todas as URIs são relativas a *https://api.idplugger.com*
+All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -158,6 +158,7 @@ Class | Method | HTTP request | Description
 *CouponsApi* | [**couponsIndex**](docs/Api/CouponsApi.md#couponsindex) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Busca por cupons de um usuário cadastrado na promoção
 *CouponsApi* | [**couponsUpdate**](docs/Api/CouponsApi.md#couponsupdate) | **PATCH** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Cadastra ou atualiza um cupom para um usuário cadastrado na promoção
 *CouponsApi* | [**cuponsWebhook**](docs/Api/CouponsApi.md#cuponswebhook) | **POST** /webhook-do-cupom | Webhook de resposta ao registro de cupons
+*DefaultApi* | [**v3PromotionPromotionIdCouponsGet**](docs/Api/DefaultApi.md#v3promotionpromotionidcouponsget) | **GET** /v3/promotion/{promotion_id}/coupons | Buscar cupons de uma promoção
 *DocumentRulesApi* | [**documentRulesIndex**](docs/Api/DocumentRulesApi.md#documentrulesindex) | **GET** /v3/promotion/{promotion_id}/cms/document_rules | Termos de uso, regulamentos e política de privacidade da promoção
 *DocumentRulesApi* | [**documentRulesRegulationDelete**](docs/Api/DocumentRulesApi.md#documentrulesregulationdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/document_rules/regulation/{regulation_id} | Exclui um regulamento da promoção
 *DocumentRulesApi* | [**documentRulesUpdate**](docs/Api/DocumentRulesApi.md#documentrulesupdate) | **POST** /v3/promotion/{promotion_id}/cms/document_rules | Atualiza os termos de uso e regulamento da promoção
@@ -289,10 +290,6 @@ Class | Method | HTTP request | Description
 - [CouponsDelete200Response](docs/Model/CouponsDelete200Response.md)
 - [CouponsDelete400Response](docs/Model/CouponsDelete400Response.md)
 - [CouponsDelete401Response](docs/Model/CouponsDelete401Response.md)
-- [CouponsIndex200Response](docs/Model/CouponsIndex200Response.md)
-- [CouponsIndex200ResponseContentInner](docs/Model/CouponsIndex200ResponseContentInner.md)
-- [CouponsIndex400Response](docs/Model/CouponsIndex400Response.md)
-- [CouponsIndex401Response](docs/Model/CouponsIndex401Response.md)
 - [CouponsUpdate201Response](docs/Model/CouponsUpdate201Response.md)
 - [CouponsUpdate401Response](docs/Model/CouponsUpdate401Response.md)
 - [CouponsUpdate409Response](docs/Model/CouponsUpdate409Response.md)
@@ -441,27 +438,35 @@ Class | Method | HTTP request | Description
 - [UsersUpdate201Response](docs/Model/UsersUpdate201Response.md)
 - [UsersWebhook200Response](docs/Model/UsersWebhook200Response.md)
 - [UsersWebhookRequest](docs/Model/UsersWebhookRequest.md)
+- [V3PromotionPromotionIdCouponsGet200Response](docs/Model/V3PromotionPromotionIdCouponsGet200Response.md)
+- [V3PromotionPromotionIdCouponsGet200ResponseContentInner](docs/Model/V3PromotionPromotionIdCouponsGet200ResponseContentInner.md)
+- [V3PromotionPromotionIdCouponsGet400Response](docs/Model/V3PromotionPromotionIdCouponsGet400Response.md)
+- [V3PromotionPromotionIdCouponsGet401Response](docs/Model/V3PromotionPromotionIdCouponsGet401Response.md)
 
-## Autenticação
+## Authorization
 
-Esquemas de autenticação definidos para a API:
+Authentication schemes defined for the API:
 ### bearerAuth
 
-- **Tipo**: Autenticação Bearer (JWT)
+- **Type**: Bearer authentication (JWT)
 
-## Testes
+## Tests
 
-Para executar os testes, use:
+To run the tests, use:
 
 ```bash
 composer install
 vendor/bin/phpunit
 ```
 
-## Sobre este pacote
+## Author
 
-Este pacote PHP é gerado automaticamente pelo projeto [OpenAPI Generator](https://openapi-generator.tech):
 
-- Versão da API: `3.3.0`
-    - Versão do gerador: `7.13.0`
-- Pacote gerado por: `org.openapitools.codegen.languages.PhpClientCodegen`
+
+## About this package
+
+This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
+
+- API version: `3.3.0`
+    - Generator version: `7.13.0`
+- Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

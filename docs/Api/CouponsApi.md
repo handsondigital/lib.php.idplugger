@@ -140,7 +140,7 @@ try {
 ## `couponsIndex()`
 
 ```php
-couponsIndex($promotion_id, $user_id, $_fields, $_include, $id, $user_id2, $external_user_id): \IdpluggerPromotion\Model\CouponsIndex200Response
+couponsIndex($promotion_id, $user_id, $_fields, $_include, $id, $user_id2, $external_user_id): \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response
 ```
 
 Busca por cupons de um usuário cadastrado na promoção
@@ -192,7 +192,7 @@ try {
 
 ### Return type
 
-[**\IdpluggerPromotion\Model\CouponsIndex200Response**](../Model/CouponsIndex200Response.md)
+[**\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response**](../Model/V3PromotionPromotionIdCouponsGet200Response.md)
 
 ### Authorization
 

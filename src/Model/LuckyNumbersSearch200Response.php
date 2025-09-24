@@ -60,7 +60,7 @@ class LuckyNumbersSearch200Response implements ModelInterface, ArrayAccess, \Jso
         'entity' => 'string',
         'action' => 'string',
         'result' => 'string',
-        'paging' => '\IdpluggerPromotion\Model\Pagination[]',
+        'paging' => '\IdpluggerPromotion\Model\Pagination',
         'content' => '\IdpluggerPromotion\Model\LuckyNumber[]'
     ];
 
@@ -401,7 +401,7 @@ class LuckyNumbersSearch200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets paging
      *
-     * @return \IdpluggerPromotion\Model\Pagination[]|null
+     * @return \IdpluggerPromotion\Model\Pagination|null
      */
     public function getPaging()
     {
@@ -411,7 +411,7 @@ class LuckyNumbersSearch200Response implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets paging
      *
-     * @param \IdpluggerPromotion\Model\Pagination[]|null $paging paging
+     * @param \IdpluggerPromotion\Model\Pagination|null $paging paging
      *
      * @return self
      */
