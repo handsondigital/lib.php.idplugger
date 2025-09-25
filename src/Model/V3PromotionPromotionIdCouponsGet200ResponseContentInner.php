@@ -66,6 +66,7 @@ class V3PromotionPromotionIdCouponsGet200ResponseContentInner implements ModelIn
         'serie' => 'float',
         'products' => '\IdpluggerPromotion\Model\CouponProductsInner[]',
         'promotion_codes' => 'string[]',
+        'custom_data' => 'array<string,string>',
         'lucky_numbers' => '\IdpluggerPromotion\Model\LuckyNumber[]'
     ];
 
@@ -86,6 +87,7 @@ class V3PromotionPromotionIdCouponsGet200ResponseContentInner implements ModelIn
         'serie' => 'int',
         'products' => null,
         'promotion_codes' => null,
+        'custom_data' => null,
         'lucky_numbers' => null
     ];
 
@@ -104,6 +106,7 @@ class V3PromotionPromotionIdCouponsGet200ResponseContentInner implements ModelIn
         'serie' => false,
         'products' => false,
         'promotion_codes' => false,
+        'custom_data' => false,
         'lucky_numbers' => false
     ];
 
@@ -202,6 +205,7 @@ class V3PromotionPromotionIdCouponsGet200ResponseContentInner implements ModelIn
         'serie' => 'serie',
         'products' => 'products',
         'promotion_codes' => 'promotion_codes',
+        'custom_data' => 'custom_data',
         'lucky_numbers' => 'lucky_numbers'
     ];
 
@@ -220,6 +224,7 @@ class V3PromotionPromotionIdCouponsGet200ResponseContentInner implements ModelIn
         'serie' => 'setSerie',
         'products' => 'setProducts',
         'promotion_codes' => 'setPromotionCodes',
+        'custom_data' => 'setCustomData',
         'lucky_numbers' => 'setLuckyNumbers'
     ];
 
@@ -238,6 +243,7 @@ class V3PromotionPromotionIdCouponsGet200ResponseContentInner implements ModelIn
         'serie' => 'getSerie',
         'products' => 'getProducts',
         'promotion_codes' => 'getPromotionCodes',
+        'custom_data' => 'getCustomData',
         'lucky_numbers' => 'getLuckyNumbers'
     ];
 
@@ -307,6 +313,7 @@ class V3PromotionPromotionIdCouponsGet200ResponseContentInner implements ModelIn
         $this->setIfExists('serie', $data ?? [], null);
         $this->setIfExists('products', $data ?? [], null);
         $this->setIfExists('promotion_codes', $data ?? [], null);
+        $this->setIfExists('custom_data', $data ?? [], null);
         $this->setIfExists('lucky_numbers', $data ?? [], null);
     }
 
@@ -606,6 +613,33 @@ class V3PromotionPromotionIdCouponsGet200ResponseContentInner implements ModelIn
             throw new \InvalidArgumentException('non-nullable promotion_codes cannot be null');
         }
         $this->container['promotion_codes'] = $promotion_codes;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_data
+     *
+     * @return array<string,string>|null
+     */
+    public function getCustomData()
+    {
+        return $this->container['custom_data'];
+    }
+
+    /**
+     * Sets custom_data
+     *
+     * @param array<string,string>|null $custom_data custom_data
+     *
+     * @return self
+     */
+    public function setCustomData($custom_data)
+    {
+        if (is_null($custom_data)) {
+            throw new \InvalidArgumentException('non-nullable custom_data cannot be null');
+        }
+        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }

@@ -537,8 +537,3 @@ src/Model/V3PromotionPromotionIdCouponsGet200ResponseContentInner.php
 src/Model/V3PromotionPromotionIdCouponsGet400Response.php
 src/Model/V3PromotionPromotionIdCouponsGet401Response.php
 src/ObjectSerializer.php
-test/Api/DefaultApiTest.php
-test/Model/V3PromotionPromotionIdCouponsGet200ResponseContentInnerTest.php
-test/Model/V3PromotionPromotionIdCouponsGet200ResponseTest.php
-test/Model/V3PromotionPromotionIdCouponsGet400ResponseTest.php
-test/Model/V3PromotionPromotionIdCouponsGet401ResponseTest.php

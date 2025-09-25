@@ -65,7 +65,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'cost' => 'float',
         'serie' => 'float',
         'products' => '\IdpluggerPromotion\Model\CouponProductsInner[]',
-        'promotion_codes' => 'string[]'
+        'promotion_codes' => 'string[]',
+        'custom_data' => 'array<string,string>'
     ];
 
     /**
@@ -84,7 +85,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'cost' => 'float',
         'serie' => 'int',
         'products' => null,
-        'promotion_codes' => null
+        'promotion_codes' => null,
+        'custom_data' => null
     ];
 
     /**
@@ -101,7 +103,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'cost' => false,
         'serie' => false,
         'products' => false,
-        'promotion_codes' => false
+        'promotion_codes' => false,
+        'custom_data' => false
     ];
 
     /**
@@ -198,7 +201,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'cost' => 'cost',
         'serie' => 'serie',
         'products' => 'products',
-        'promotion_codes' => 'promotion_codes'
+        'promotion_codes' => 'promotion_codes',
+        'custom_data' => 'custom_data'
     ];
 
     /**
@@ -215,7 +219,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'cost' => 'setCost',
         'serie' => 'setSerie',
         'products' => 'setProducts',
-        'promotion_codes' => 'setPromotionCodes'
+        'promotion_codes' => 'setPromotionCodes',
+        'custom_data' => 'setCustomData'
     ];
 
     /**
@@ -232,7 +237,8 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         'cost' => 'getCost',
         'serie' => 'getSerie',
         'products' => 'getProducts',
-        'promotion_codes' => 'getPromotionCodes'
+        'promotion_codes' => 'getPromotionCodes',
+        'custom_data' => 'getCustomData'
     ];
 
     /**
@@ -301,6 +307,7 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('serie', $data ?? [], null);
         $this->setIfExists('products', $data ?? [], null);
         $this->setIfExists('promotion_codes', $data ?? [], null);
+        $this->setIfExists('custom_data', $data ?? [], null);
     }
 
     /**
@@ -599,6 +606,33 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable promotion_codes cannot be null');
         }
         $this->container['promotion_codes'] = $promotion_codes;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_data
+     *
+     * @return array<string,string>|null
+     */
+    public function getCustomData()
+    {
+        return $this->container['custom_data'];
+    }
+
+    /**
+     * Sets custom_data
+     *
+     * @param array<string,string>|null $custom_data custom_data
+     *
+     * @return self
+     */
+    public function setCustomData($custom_data)
+    {
+        if (is_null($custom_data)) {
+            throw new \InvalidArgumentException('non-nullable custom_data cannot be null');
+        }
+        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }
