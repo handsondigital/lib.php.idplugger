@@ -135,7 +135,7 @@ try {
 ## `faqIndex()`
 
 ```php
-faqIndex($promotion_id, $question, $answer): \IdpluggerPromotion\Model\FaqIndex200Response
+faqIndex($promotion_id, $page, $_per_page, $question, $answer): \IdpluggerPromotion\Model\FaqIndex200Response
 ```
 
 Lista as perguntas frequentes cadastradas na promoção
@@ -158,11 +158,13 @@ $apiInstance = new IdpluggerPromotion\Api\FAQApi(
     $config
 );
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $question = O que será sorteado?; // string | Pesquisa perguntas frequentes através da questão
 $answer = Será sorteado um smartphone; // string | Pesquisa perguntas frequentes através da resposta
 
 try {
-    $result = $apiInstance->faqIndex($promotion_id, $question, $answer);
+    $result = $apiInstance->faqIndex($promotion_id, $page, $_per_page, $question, $answer);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FAQApi->faqIndex: ', $e->getMessage(), PHP_EOL;
@@ -174,6 +176,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promotion_id** | **string**| ID da promoção | |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **question** | **string**| Pesquisa perguntas frequentes através da questão | [optional] |
 | **answer** | **string**| Pesquisa perguntas frequentes através da resposta | [optional] |
 

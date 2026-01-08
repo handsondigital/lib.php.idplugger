@@ -134,7 +134,7 @@ try {
 ## `usersIndex()`
 
 ```php
-usersIndex($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields): \IdpluggerPromotion\Model\UsersIndex200Response
+usersIndex($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields, $page, $_per_page): \IdpluggerPromotion\Model\UsersIndex200Response
 ```
 
 Busca por um usuário cadastrado na promoção
@@ -164,9 +164,11 @@ $email = 'email_example'; // string | email do usuário
 $cpf = 'cpf_example'; // string | CPF do usuário
 $_include = custom_data,coupons,lucky_numbers; // string | Dados relacionados a serem retornados
 $_fields = id,username,email,name,birth,cpf,rg,cep,address,number,complement,neighborhood,city,state,phone,cel,policy_privacy,agree_terms,email_recive_local,email_recive,status,newsletter_id,add_coupon,avatar,sex,notes,store_id,created_at; // string | Campos a serem retornados
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 
 try {
-    $result = $apiInstance->usersIndex($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields);
+    $result = $apiInstance->usersIndex($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields, $page, $_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersIndex: ', $e->getMessage(), PHP_EOL;
@@ -185,6 +187,8 @@ try {
 | **cpf** | **string**| CPF do usuário | [optional] |
 | **_include** | **string**| Dados relacionados a serem retornados | [optional] |
 | **_fields** | **string**| Campos a serem retornados | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 
 ### Return type
 

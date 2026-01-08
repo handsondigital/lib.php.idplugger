@@ -60,7 +60,7 @@ class AwardedsStates200Response implements ModelInterface, ArrayAccess, \JsonSer
         'entity' => 'string',
         'action' => 'string',
         'result' => 'string',
-        'content' => '\IdpluggerPromotion\Model\AwardedsStates200ResponseContentInner[]'
+        'content' => '\IdpluggerPromotion\Model\AwardedsSearch200ResponseContentInnerAllOfAwardedState[]'
     ];
 
     /**
@@ -394,7 +394,7 @@ class AwardedsStates200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets content
      *
-     * @return \IdpluggerPromotion\Model\AwardedsStates200ResponseContentInner[]|null
+     * @return \IdpluggerPromotion\Model\AwardedsSearch200ResponseContentInnerAllOfAwardedState[]|null
      */
     public function getContent()
     {
@@ -404,7 +404,7 @@ class AwardedsStates200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets content
      *
-     * @param \IdpluggerPromotion\Model\AwardedsStates200ResponseContentInner[]|null $content content
+     * @param \IdpluggerPromotion\Model\AwardedsSearch200ResponseContentInnerAllOfAwardedState[]|null $content content
      *
      * @return self
      */

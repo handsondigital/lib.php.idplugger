@@ -133,7 +133,7 @@ try {
 ## `awardsIndex()`
 
 ```php
-awardsIndex($promotion_id, $_fields, $_include, $id, $raffle_id, $raffle_type): \IdpluggerPromotion\Model\AwardsIndex200Response
+awardsIndex($promotion_id, $_fields, $_include, $page, $_per_page, $id, $raffle_id, $raffle_type): \IdpluggerPromotion\Model\AwardsIndex200Response
 ```
 
 Pesquisa por prêmios na promoção
@@ -158,12 +158,14 @@ $apiInstance = new IdpluggerPromotion\Api\AwardsApi(
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $_fields = id,name,raffle_type; // string | Campos a serem retornados
 $_include = raffles,lotterys,awardeds; // string | Dados relacionados a serem retornados
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $id = 1; // string | Id do prêmio
 $raffle_id = 1; // string | Id do sorteio
 $raffle_type = normal; // string | Tipo do sorteio
 
 try {
-    $result = $apiInstance->awardsIndex($promotion_id, $_fields, $_include, $id, $raffle_id, $raffle_type);
+    $result = $apiInstance->awardsIndex($promotion_id, $_fields, $_include, $page, $_per_page, $id, $raffle_id, $raffle_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AwardsApi->awardsIndex: ', $e->getMessage(), PHP_EOL;
@@ -177,6 +179,8 @@ try {
 | **promotion_id** | **string**| ID da promoção | |
 | **_fields** | **string**| Campos a serem retornados | [optional] |
 | **_include** | **string**| Dados relacionados a serem retornados | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **id** | **string**| Id do prêmio | [optional] |
 | **raffle_id** | **string**| Id do sorteio | [optional] |
 | **raffle_type** | **string**| Tipo do sorteio | [optional] |

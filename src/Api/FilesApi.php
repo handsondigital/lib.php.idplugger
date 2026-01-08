@@ -136,7 +136,7 @@ class FilesApi
      *
      * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \IdpluggerPromotion\Model\FilesShow200Response|\IdpluggerPromotion\Model\FilesShow400Response|\IdpluggerPromotion\Model\FilesShow401Response
+     * @return \IdpluggerPromotion\Model\FilesShow200Response|\IdpluggerPromotion\Model\FilesShow400Response|\IdpluggerPromotion\Model\InstantAwardAttempts401Response
      */
     public function filesShow($promotion_id, $filename, string $contentType = self::contentTypes['filesShow'][0])
     {
@@ -155,7 +155,7 @@ class FilesApi
      *
      * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \IdpluggerPromotion\Model\FilesShow200Response|\IdpluggerPromotion\Model\FilesShow400Response|\IdpluggerPromotion\Model\FilesShow401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \IdpluggerPromotion\Model\FilesShow200Response|\IdpluggerPromotion\Model\FilesShow400Response|\IdpluggerPromotion\Model\InstantAwardAttempts401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function filesShowWithHttpInfo($promotion_id, $filename, string $contentType = self::contentTypes['filesShow'][0])
     {
@@ -199,7 +199,7 @@ class FilesApi
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\IdpluggerPromotion\Model\FilesShow401Response',
+                        '\IdpluggerPromotion\Model\InstantAwardAttempts401Response',
                         $request,
                         $response,
                     );
@@ -246,7 +246,7 @@ class FilesApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\IdpluggerPromotion\Model\FilesShow401Response',
+                        '\IdpluggerPromotion\Model\InstantAwardAttempts401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

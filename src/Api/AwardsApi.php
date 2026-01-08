@@ -775,6 +775,8 @@ class AwardsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do prêmio (optional)
      * @param  string|null $raffle_id Id do sorteio (optional)
      * @param  string|null $raffle_type Tipo do sorteio (optional)
@@ -784,9 +786,9 @@ class AwardsApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\AwardsIndex200Response|\IdpluggerPromotion\Model\AwardsIndex400Response|\IdpluggerPromotion\Model\AwardsIndex401Response
      */
-    public function awardsIndex($promotion_id, $_fields = null, $_include = null, $id = null, $raffle_id = null, $raffle_type = null, string $contentType = self::contentTypes['awardsIndex'][0])
+    public function awardsIndex($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $raffle_id = null, $raffle_type = null, string $contentType = self::contentTypes['awardsIndex'][0])
     {
-        list($response) = $this->awardsIndexWithHttpInfo($promotion_id, $_fields, $_include, $id, $raffle_id, $raffle_type, $contentType);
+        list($response) = $this->awardsIndexWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $id, $raffle_id, $raffle_type, $contentType);
         return $response;
     }
 
@@ -798,6 +800,8 @@ class AwardsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do prêmio (optional)
      * @param  string|null $raffle_id Id do sorteio (optional)
      * @param  string|null $raffle_type Tipo do sorteio (optional)
@@ -807,9 +811,9 @@ class AwardsApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\AwardsIndex200Response|\IdpluggerPromotion\Model\AwardsIndex400Response|\IdpluggerPromotion\Model\AwardsIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function awardsIndexWithHttpInfo($promotion_id, $_fields = null, $_include = null, $id = null, $raffle_id = null, $raffle_type = null, string $contentType = self::contentTypes['awardsIndex'][0])
+    public function awardsIndexWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $raffle_id = null, $raffle_type = null, string $contentType = self::contentTypes['awardsIndex'][0])
     {
-        $request = $this->awardsIndexRequest($promotion_id, $_fields, $_include, $id, $raffle_id, $raffle_type, $contentType);
+        $request = $this->awardsIndexRequest($promotion_id, $_fields, $_include, $page, $_per_page, $id, $raffle_id, $raffle_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -916,6 +920,8 @@ class AwardsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do prêmio (optional)
      * @param  string|null $raffle_id Id do sorteio (optional)
      * @param  string|null $raffle_type Tipo do sorteio (optional)
@@ -924,9 +930,9 @@ class AwardsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function awardsIndexAsync($promotion_id, $_fields = null, $_include = null, $id = null, $raffle_id = null, $raffle_type = null, string $contentType = self::contentTypes['awardsIndex'][0])
+    public function awardsIndexAsync($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $raffle_id = null, $raffle_type = null, string $contentType = self::contentTypes['awardsIndex'][0])
     {
-        return $this->awardsIndexAsyncWithHttpInfo($promotion_id, $_fields, $_include, $id, $raffle_id, $raffle_type, $contentType)
+        return $this->awardsIndexAsyncWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $id, $raffle_id, $raffle_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -942,6 +948,8 @@ class AwardsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do prêmio (optional)
      * @param  string|null $raffle_id Id do sorteio (optional)
      * @param  string|null $raffle_type Tipo do sorteio (optional)
@@ -950,10 +958,10 @@ class AwardsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function awardsIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $id = null, $raffle_id = null, $raffle_type = null, string $contentType = self::contentTypes['awardsIndex'][0])
+    public function awardsIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $raffle_id = null, $raffle_type = null, string $contentType = self::contentTypes['awardsIndex'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\AwardsIndex200Response';
-        $request = $this->awardsIndexRequest($promotion_id, $_fields, $_include, $id, $raffle_id, $raffle_type, $contentType);
+        $request = $this->awardsIndexRequest($promotion_id, $_fields, $_include, $page, $_per_page, $id, $raffle_id, $raffle_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -997,6 +1005,8 @@ class AwardsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do prêmio (optional)
      * @param  string|null $raffle_id Id do sorteio (optional)
      * @param  string|null $raffle_type Tipo do sorteio (optional)
@@ -1005,7 +1015,7 @@ class AwardsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function awardsIndexRequest($promotion_id, $_fields = null, $_include = null, $id = null, $raffle_id = null, $raffle_type = null, string $contentType = self::contentTypes['awardsIndex'][0])
+    public function awardsIndexRequest($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $raffle_id = null, $raffle_type = null, string $contentType = self::contentTypes['awardsIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -1014,6 +1024,8 @@ class AwardsApi
                 'Missing the required parameter $promotion_id when calling awardsIndex'
             );
         }
+
+
 
 
 
@@ -1042,6 +1054,24 @@ class AwardsApi
             $_include,
             '_include', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

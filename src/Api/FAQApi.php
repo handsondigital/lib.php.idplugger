@@ -774,6 +774,8 @@ class FAQApi
      * Lista as perguntas frequentes cadastradas na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $question Pesquisa perguntas frequentes através da questão (optional)
      * @param  string|null $answer Pesquisa perguntas frequentes através da resposta (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqIndex'] to see the possible values for this operation
@@ -782,9 +784,9 @@ class FAQApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\FaqIndex200Response|\IdpluggerPromotion\Model\FaqIndex400Response|\IdpluggerPromotion\Model\FaqIndex401Response
      */
-    public function faqIndex($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
+    public function faqIndex($promotion_id, $page = null, $_per_page = null, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
     {
-        list($response) = $this->faqIndexWithHttpInfo($promotion_id, $question, $answer, $contentType);
+        list($response) = $this->faqIndexWithHttpInfo($promotion_id, $page, $_per_page, $question, $answer, $contentType);
         return $response;
     }
 
@@ -794,6 +796,8 @@ class FAQApi
      * Lista as perguntas frequentes cadastradas na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $question Pesquisa perguntas frequentes através da questão (optional)
      * @param  string|null $answer Pesquisa perguntas frequentes através da resposta (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqIndex'] to see the possible values for this operation
@@ -802,9 +806,9 @@ class FAQApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\FaqIndex200Response|\IdpluggerPromotion\Model\FaqIndex400Response|\IdpluggerPromotion\Model\FaqIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function faqIndexWithHttpInfo($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
+    public function faqIndexWithHttpInfo($promotion_id, $page = null, $_per_page = null, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
     {
-        $request = $this->faqIndexRequest($promotion_id, $question, $answer, $contentType);
+        $request = $this->faqIndexRequest($promotion_id, $page, $_per_page, $question, $answer, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -909,6 +913,8 @@ class FAQApi
      * Lista as perguntas frequentes cadastradas na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $question Pesquisa perguntas frequentes através da questão (optional)
      * @param  string|null $answer Pesquisa perguntas frequentes através da resposta (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqIndex'] to see the possible values for this operation
@@ -916,9 +922,9 @@ class FAQApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function faqIndexAsync($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
+    public function faqIndexAsync($promotion_id, $page = null, $_per_page = null, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
     {
-        return $this->faqIndexAsyncWithHttpInfo($promotion_id, $question, $answer, $contentType)
+        return $this->faqIndexAsyncWithHttpInfo($promotion_id, $page, $_per_page, $question, $answer, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -932,6 +938,8 @@ class FAQApi
      * Lista as perguntas frequentes cadastradas na promoção
      *
      * @param  string $promotion_id ID da promoção (required)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $question Pesquisa perguntas frequentes através da questão (optional)
      * @param  string|null $answer Pesquisa perguntas frequentes através da resposta (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqIndex'] to see the possible values for this operation
@@ -939,10 +947,10 @@ class FAQApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function faqIndexAsyncWithHttpInfo($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
+    public function faqIndexAsyncWithHttpInfo($promotion_id, $page = null, $_per_page = null, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\FaqIndex200Response';
-        $request = $this->faqIndexRequest($promotion_id, $question, $answer, $contentType);
+        $request = $this->faqIndexRequest($promotion_id, $page, $_per_page, $question, $answer, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -984,6 +992,8 @@ class FAQApi
      * Create request for operation 'faqIndex'
      *
      * @param  string $promotion_id ID da promoção (required)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $question Pesquisa perguntas frequentes através da questão (optional)
      * @param  string|null $answer Pesquisa perguntas frequentes através da resposta (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['faqIndex'] to see the possible values for this operation
@@ -991,7 +1001,7 @@ class FAQApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function faqIndexRequest($promotion_id, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
+    public function faqIndexRequest($promotion_id, $page = null, $_per_page = null, $question = null, $answer = null, string $contentType = self::contentTypes['faqIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -1004,6 +1014,8 @@ class FAQApi
 
 
 
+
+
         $resourcePath = '/v3/promotion/{promotion_id}/cms/faq';
         $formParams = [];
         $queryParams = [];
@@ -1011,6 +1023,24 @@ class FAQApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $question,

@@ -136,7 +136,7 @@ try {
 ## `luckyNumbersSearch()`
 
 ```php
-luckyNumbersSearch($promotion_id, $user_id, $_fields, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id): \IdpluggerPromotion\Model\LuckyNumbersSearch200Response
+luckyNumbersSearch($promotion_id, $user_id, $_fields, $page, $_per_page, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id): \IdpluggerPromotion\Model\LuckyNumbersSearch200Response
 ```
 
 Busca por Números da Sorte de um usuário cadastrado na promoção
@@ -161,6 +161,8 @@ $apiInstance = new IdpluggerPromotion\Api\LuckyNumbersApi(
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $user_id = 56; // int | ID do usuário
 $_fields = '_fields_example'; // string | Campos a serem retornados
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $id = 'id_example'; // string | Id do número da sorte
 $coupon_id = 'coupon_id_example'; // string | Id do cupom associado ao número da sorte
 $lucky_number = 'lucky_number_example'; // string | Número da sorte
@@ -169,7 +171,7 @@ $situation = 'situation_example'; // string | Situação do número da sorte
 $serial_number_id = 'serial_number_id_example'; // string | Id do serial associado ao número da sorte
 
 try {
-    $result = $apiInstance->luckyNumbersSearch($promotion_id, $user_id, $_fields, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id);
+    $result = $apiInstance->luckyNumbersSearch($promotion_id, $user_id, $_fields, $page, $_per_page, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LuckyNumbersApi->luckyNumbersSearch: ', $e->getMessage(), PHP_EOL;
@@ -183,6 +185,8 @@ try {
 | **promotion_id** | **string**| ID da promoção | |
 | **user_id** | **int**| ID do usuário | |
 | **_fields** | **string**| Campos a serem retornados | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **id** | **string**| Id do número da sorte | [optional] |
 | **coupon_id** | **string**| Id do cupom associado ao número da sorte | [optional] |
 | **lucky_number** | **string**| Número da sorte | [optional] |

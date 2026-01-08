@@ -74,7 +74,7 @@ try {
 ## `ordersIndex()`
 
 ```php
-ordersIndex($promotion_id, $user_id, $_fields, $_include, $id, $payment_id, $payment_gateway, $coupon_id, $status): \IdpluggerPromotion\Model\OrdersIndex200Response
+ordersIndex($promotion_id, $user_id, $_fields, $_include, $page, $_per_page, $id, $payment_id, $payment_gateway, $coupon_id, $status): \IdpluggerPromotion\Model\OrdersIndex200Response
 ```
 
 Pesquisa por pedidos na promoção
@@ -100,6 +100,8 @@ $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $user_id = 'user_id_example'; // string | ID do usuário
 $_fields = ["id"]; // string | Campos a serem retornados
 $_include = ["custom_data,coupon,lucky_numbers"]; // string | Campos a serem retornados
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $id = 'id_example'; // string | Id do pedido
 $payment_id = 'payment_id_example'; // string | ID do pagamento
 $payment_gateway = 'payment_gateway_example'; // string | Gateway de pagamento do pedido
@@ -107,7 +109,7 @@ $coupon_id = 'coupon_id_example'; // string | ID do cupom do pedido
 $status = 'status_example'; // string | Status do pedido
 
 try {
-    $result = $apiInstance->ordersIndex($promotion_id, $user_id, $_fields, $_include, $id, $payment_id, $payment_gateway, $coupon_id, $status);
+    $result = $apiInstance->ordersIndex($promotion_id, $user_id, $_fields, $_include, $page, $_per_page, $id, $payment_id, $payment_gateway, $coupon_id, $status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->ordersIndex: ', $e->getMessage(), PHP_EOL;
@@ -122,6 +124,8 @@ try {
 | **user_id** | **string**| ID do usuário | |
 | **_fields** | **string**| Campos a serem retornados | [optional] |
 | **_include** | **string**| Campos a serem retornados | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **id** | **string**| Id do pedido | [optional] |
 | **payment_id** | **string**| ID do pagamento | [optional] |
 | **payment_gateway** | **string**| Gateway de pagamento do pedido | [optional] |

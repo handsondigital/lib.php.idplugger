@@ -139,6 +139,8 @@ class AwardedsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $user_id Id do usuário (optional)
      * @param  string|null $lucky_number_id Id do número da sorte (optional)
      * @param  string|null $checklist Busca ganhadores pelo texto do checklist (optional)
@@ -149,9 +151,9 @@ class AwardedsApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\AwardedsSearch200Response|\IdpluggerPromotion\Model\AwardedsSearch400Response|\IdpluggerPromotion\Model\AwardedsSearch401Response
      */
-    public function awardedsSearch($promotion_id, $_fields = null, $_include = null, $user_id = null, $lucky_number_id = null, $checklist = null, $justificativa = null, string $contentType = self::contentTypes['awardedsSearch'][0])
+    public function awardedsSearch($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $user_id = null, $lucky_number_id = null, $checklist = null, $justificativa = null, string $contentType = self::contentTypes['awardedsSearch'][0])
     {
-        list($response) = $this->awardedsSearchWithHttpInfo($promotion_id, $_fields, $_include, $user_id, $lucky_number_id, $checklist, $justificativa, $contentType);
+        list($response) = $this->awardedsSearchWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $user_id, $lucky_number_id, $checklist, $justificativa, $contentType);
         return $response;
     }
 
@@ -163,6 +165,8 @@ class AwardedsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $user_id Id do usuário (optional)
      * @param  string|null $lucky_number_id Id do número da sorte (optional)
      * @param  string|null $checklist Busca ganhadores pelo texto do checklist (optional)
@@ -173,9 +177,9 @@ class AwardedsApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\AwardedsSearch200Response|\IdpluggerPromotion\Model\AwardedsSearch400Response|\IdpluggerPromotion\Model\AwardedsSearch401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function awardedsSearchWithHttpInfo($promotion_id, $_fields = null, $_include = null, $user_id = null, $lucky_number_id = null, $checklist = null, $justificativa = null, string $contentType = self::contentTypes['awardedsSearch'][0])
+    public function awardedsSearchWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $user_id = null, $lucky_number_id = null, $checklist = null, $justificativa = null, string $contentType = self::contentTypes['awardedsSearch'][0])
     {
-        $request = $this->awardedsSearchRequest($promotion_id, $_fields, $_include, $user_id, $lucky_number_id, $checklist, $justificativa, $contentType);
+        $request = $this->awardedsSearchRequest($promotion_id, $_fields, $_include, $page, $_per_page, $user_id, $lucky_number_id, $checklist, $justificativa, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -282,6 +286,8 @@ class AwardedsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $user_id Id do usuário (optional)
      * @param  string|null $lucky_number_id Id do número da sorte (optional)
      * @param  string|null $checklist Busca ganhadores pelo texto do checklist (optional)
@@ -291,9 +297,9 @@ class AwardedsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function awardedsSearchAsync($promotion_id, $_fields = null, $_include = null, $user_id = null, $lucky_number_id = null, $checklist = null, $justificativa = null, string $contentType = self::contentTypes['awardedsSearch'][0])
+    public function awardedsSearchAsync($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $user_id = null, $lucky_number_id = null, $checklist = null, $justificativa = null, string $contentType = self::contentTypes['awardedsSearch'][0])
     {
-        return $this->awardedsSearchAsyncWithHttpInfo($promotion_id, $_fields, $_include, $user_id, $lucky_number_id, $checklist, $justificativa, $contentType)
+        return $this->awardedsSearchAsyncWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $user_id, $lucky_number_id, $checklist, $justificativa, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -309,6 +315,8 @@ class AwardedsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $user_id Id do usuário (optional)
      * @param  string|null $lucky_number_id Id do número da sorte (optional)
      * @param  string|null $checklist Busca ganhadores pelo texto do checklist (optional)
@@ -318,10 +326,10 @@ class AwardedsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function awardedsSearchAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $user_id = null, $lucky_number_id = null, $checklist = null, $justificativa = null, string $contentType = self::contentTypes['awardedsSearch'][0])
+    public function awardedsSearchAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $user_id = null, $lucky_number_id = null, $checklist = null, $justificativa = null, string $contentType = self::contentTypes['awardedsSearch'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\AwardedsSearch200Response';
-        $request = $this->awardedsSearchRequest($promotion_id, $_fields, $_include, $user_id, $lucky_number_id, $checklist, $justificativa, $contentType);
+        $request = $this->awardedsSearchRequest($promotion_id, $_fields, $_include, $page, $_per_page, $user_id, $lucky_number_id, $checklist, $justificativa, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -365,6 +373,8 @@ class AwardedsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $user_id Id do usuário (optional)
      * @param  string|null $lucky_number_id Id do número da sorte (optional)
      * @param  string|null $checklist Busca ganhadores pelo texto do checklist (optional)
@@ -374,7 +384,7 @@ class AwardedsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function awardedsSearchRequest($promotion_id, $_fields = null, $_include = null, $user_id = null, $lucky_number_id = null, $checklist = null, $justificativa = null, string $contentType = self::contentTypes['awardedsSearch'][0])
+    public function awardedsSearchRequest($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $user_id = null, $lucky_number_id = null, $checklist = null, $justificativa = null, string $contentType = self::contentTypes['awardedsSearch'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -383,6 +393,8 @@ class AwardedsApi
                 'Missing the required parameter $promotion_id when calling awardedsSearch'
             );
         }
+
+
 
 
 
@@ -412,6 +424,24 @@ class AwardedsApi
             $_include,
             '_include', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

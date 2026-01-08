@@ -775,20 +775,23 @@ class TicketsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Dados associados (optional)
      * @param  string|null $_include Dados associados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do ticket (optional)
      * @param  string|null $parent_id Id do ticket que gerou a resposta (optional)
      * @param  string|null $user_from_id Id do remetente (optional)
      * @param  string|null $user_to_id Id do destinatário (optional)
      * @param  string|null $status Status do destinatário (optional)
+     * @param  string|null $search Texto para pesquisa por nome/email do participante (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ticketsIndex'] to see the possible values for this operation
      *
      * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\TicketsIndex200Response|\IdpluggerPromotion\Model\TicketsIndex400Response|\IdpluggerPromotion\Model\TicketsIndex401Response
      */
-    public function ticketsIndex($promotion_id, $_fields = null, $_include = null, $id = null, $parent_id = null, $user_from_id = null, $user_to_id = null, $status = null, string $contentType = self::contentTypes['ticketsIndex'][0])
+    public function ticketsIndex($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $parent_id = null, $user_from_id = null, $user_to_id = null, $status = null, $search = null, string $contentType = self::contentTypes['ticketsIndex'][0])
     {
-        list($response) = $this->ticketsIndexWithHttpInfo($promotion_id, $_fields, $_include, $id, $parent_id, $user_from_id, $user_to_id, $status, $contentType);
+        list($response) = $this->ticketsIndexWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $id, $parent_id, $user_from_id, $user_to_id, $status, $search, $contentType);
         return $response;
     }
 
@@ -800,20 +803,23 @@ class TicketsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Dados associados (optional)
      * @param  string|null $_include Dados associados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do ticket (optional)
      * @param  string|null $parent_id Id do ticket que gerou a resposta (optional)
      * @param  string|null $user_from_id Id do remetente (optional)
      * @param  string|null $user_to_id Id do destinatário (optional)
      * @param  string|null $status Status do destinatário (optional)
+     * @param  string|null $search Texto para pesquisa por nome/email do participante (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ticketsIndex'] to see the possible values for this operation
      *
      * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\TicketsIndex200Response|\IdpluggerPromotion\Model\TicketsIndex400Response|\IdpluggerPromotion\Model\TicketsIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ticketsIndexWithHttpInfo($promotion_id, $_fields = null, $_include = null, $id = null, $parent_id = null, $user_from_id = null, $user_to_id = null, $status = null, string $contentType = self::contentTypes['ticketsIndex'][0])
+    public function ticketsIndexWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $parent_id = null, $user_from_id = null, $user_to_id = null, $status = null, $search = null, string $contentType = self::contentTypes['ticketsIndex'][0])
     {
-        $request = $this->ticketsIndexRequest($promotion_id, $_fields, $_include, $id, $parent_id, $user_from_id, $user_to_id, $status, $contentType);
+        $request = $this->ticketsIndexRequest($promotion_id, $_fields, $_include, $page, $_per_page, $id, $parent_id, $user_from_id, $user_to_id, $status, $search, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -920,19 +926,22 @@ class TicketsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Dados associados (optional)
      * @param  string|null $_include Dados associados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do ticket (optional)
      * @param  string|null $parent_id Id do ticket que gerou a resposta (optional)
      * @param  string|null $user_from_id Id do remetente (optional)
      * @param  string|null $user_to_id Id do destinatário (optional)
      * @param  string|null $status Status do destinatário (optional)
+     * @param  string|null $search Texto para pesquisa por nome/email do participante (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ticketsIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ticketsIndexAsync($promotion_id, $_fields = null, $_include = null, $id = null, $parent_id = null, $user_from_id = null, $user_to_id = null, $status = null, string $contentType = self::contentTypes['ticketsIndex'][0])
+    public function ticketsIndexAsync($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $parent_id = null, $user_from_id = null, $user_to_id = null, $status = null, $search = null, string $contentType = self::contentTypes['ticketsIndex'][0])
     {
-        return $this->ticketsIndexAsyncWithHttpInfo($promotion_id, $_fields, $_include, $id, $parent_id, $user_from_id, $user_to_id, $status, $contentType)
+        return $this->ticketsIndexAsyncWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $id, $parent_id, $user_from_id, $user_to_id, $status, $search, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -948,20 +957,23 @@ class TicketsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Dados associados (optional)
      * @param  string|null $_include Dados associados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do ticket (optional)
      * @param  string|null $parent_id Id do ticket que gerou a resposta (optional)
      * @param  string|null $user_from_id Id do remetente (optional)
      * @param  string|null $user_to_id Id do destinatário (optional)
      * @param  string|null $status Status do destinatário (optional)
+     * @param  string|null $search Texto para pesquisa por nome/email do participante (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ticketsIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function ticketsIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $id = null, $parent_id = null, $user_from_id = null, $user_to_id = null, $status = null, string $contentType = self::contentTypes['ticketsIndex'][0])
+    public function ticketsIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $parent_id = null, $user_from_id = null, $user_to_id = null, $status = null, $search = null, string $contentType = self::contentTypes['ticketsIndex'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\TicketsIndex200Response';
-        $request = $this->ticketsIndexRequest($promotion_id, $_fields, $_include, $id, $parent_id, $user_from_id, $user_to_id, $status, $contentType);
+        $request = $this->ticketsIndexRequest($promotion_id, $_fields, $_include, $page, $_per_page, $id, $parent_id, $user_from_id, $user_to_id, $status, $search, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1005,17 +1017,20 @@ class TicketsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Dados associados (optional)
      * @param  string|null $_include Dados associados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do ticket (optional)
      * @param  string|null $parent_id Id do ticket que gerou a resposta (optional)
      * @param  string|null $user_from_id Id do remetente (optional)
      * @param  string|null $user_to_id Id do destinatário (optional)
      * @param  string|null $status Status do destinatário (optional)
+     * @param  string|null $search Texto para pesquisa por nome/email do participante (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['ticketsIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function ticketsIndexRequest($promotion_id, $_fields = null, $_include = null, $id = null, $parent_id = null, $user_from_id = null, $user_to_id = null, $status = null, string $contentType = self::contentTypes['ticketsIndex'][0])
+    public function ticketsIndexRequest($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $parent_id = null, $user_from_id = null, $user_to_id = null, $status = null, $search = null, string $contentType = self::contentTypes['ticketsIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -1024,6 +1039,9 @@ class TicketsApi
                 'Missing the required parameter $promotion_id when calling ticketsIndex'
             );
         }
+
+
+
 
 
 
@@ -1054,6 +1072,24 @@ class TicketsApi
             $_include,
             '_include', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1098,6 +1134,15 @@ class TicketsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $status,
             'status', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $search,
+            'search', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

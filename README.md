@@ -72,11 +72,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/handsondigital/lib.ts.promotion.idplugger.git"
+      "url": "https://github.com/handsondigital/lib.php.idplugger.git"
     }
   ],
   "require": {
-    "handsondigital/lib.ts.promotion.idplugger": "*@dev"
+    "handsondigital/lib.php.idplugger": "*@dev"
   }
 }
 ```
@@ -158,7 +158,7 @@ Class | Method | HTTP request | Description
 *CouponsApi* | [**couponsIndex**](docs/Api/CouponsApi.md#couponsindex) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Busca por cupons de um usuário cadastrado na promoção
 *CouponsApi* | [**couponsUpdate**](docs/Api/CouponsApi.md#couponsupdate) | **PATCH** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Cadastra ou atualiza um cupom para um usuário cadastrado na promoção
 *CouponsApi* | [**cuponsWebhook**](docs/Api/CouponsApi.md#cuponswebhook) | **POST** /webhook-do-cupom | Webhook de resposta ao registro de cupons
-*DefaultApi* | [**v3PromotionPromotionIdCouponsGet**](docs/Api/DefaultApi.md#v3promotionpromotionidcouponsget) | **GET** /v3/promotion/{promotion_id}/coupons | Buscar cupons de uma promoção
+*CouponsApi* | [**v3PromotionPromotionIdCouponsGet**](docs/Api/CouponsApi.md#v3promotionpromotionidcouponsget) | **GET** /v3/promotion/{promotion_id}/coupons | Buscar cupons de uma promoção
 *DocumentRulesApi* | [**documentRulesIndex**](docs/Api/DocumentRulesApi.md#documentrulesindex) | **GET** /v3/promotion/{promotion_id}/cms/document_rules | Termos de uso, regulamentos e política de privacidade da promoção
 *DocumentRulesApi* | [**documentRulesRegulationDelete**](docs/Api/DocumentRulesApi.md#documentrulesregulationdelete) | **DELETE** /v3/promotion/{promotion_id}/cms/document_rules/regulation/{regulation_id} | Exclui um regulamento da promoção
 *DocumentRulesApi* | [**documentRulesUpdate**](docs/Api/DocumentRulesApi.md#documentrulesupdate) | **POST** /v3/promotion/{promotion_id}/cms/document_rules | Atualiza os termos de uso e regulamento da promoção
@@ -167,6 +167,8 @@ Class | Method | HTTP request | Description
 *FAQApi* | [**faqIndex**](docs/Api/FAQApi.md#faqindex) | **GET** /v3/promotion/{promotion_id}/cms/faq | Lista as perguntas frequentes cadastradas na promoção
 *FAQApi* | [**faqUpdate**](docs/Api/FAQApi.md#faqupdate) | **PATCH** /v3/promotion/{promotion_id}/cms/faq | Cadastra ou atualiza perguntas frequentes na promoção
 *FilesApi* | [**filesShow**](docs/Api/FilesApi.md#filesshow) | **GET** /v3/promotion/{promotion_id}/files/{filename} | Faz o download de um arquivo
+*InstantAwardsApi* | [**instantAwardAttempts**](docs/Api/InstantAwardsApi.md#instantawardattempts) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/attempts | Retorna a quantidade de chances usadas e restantes de um participante da promoção
+*InstantAwardsApi* | [**instantAwardTryToWin**](docs/Api/InstantAwardsApi.md#instantawardtrytowin) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/try_to_win | Realiza a tentativa de ganho de um prêmio instantâneo para o participante da promoção
 *LuckyNumbersApi* | [**luckyNumbersAddCustom**](docs/Api/LuckyNumbersApi.md#luckynumbersaddcustom) | **POST** /v3/promotion/{promotion_id}/lucky_numbers | Cadastra Números da Sorte no repositório da promoção
 *LuckyNumbersApi* | [**luckyNumbersRemove**](docs/Api/LuckyNumbersApi.md#luckynumbersremove) | **POST** /v3/promotion/{promotion_id}/users/{user_id}/lucky_numbers/remove | Inativa e remove Números da Sorte cadastrados na promoção
 *LuckyNumbersApi* | [**luckyNumbersSearch**](docs/Api/LuckyNumbersApi.md#luckynumberssearch) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/lucky_numbers | Busca por Números da Sorte de um usuário cadastrado na promoção
@@ -224,10 +226,11 @@ Class | Method | HTTP request | Description
 - [Award](docs/Model/Award.md)
 - [Awarded](docs/Model/Awarded.md)
 - [AwardedsSearch200Response](docs/Model/AwardedsSearch200Response.md)
+- [AwardedsSearch200ResponseContentInner](docs/Model/AwardedsSearch200ResponseContentInner.md)
+- [AwardedsSearch200ResponseContentInnerAllOfAwardedState](docs/Model/AwardedsSearch200ResponseContentInnerAllOfAwardedState.md)
 - [AwardedsSearch400Response](docs/Model/AwardedsSearch400Response.md)
 - [AwardedsSearch401Response](docs/Model/AwardedsSearch401Response.md)
 - [AwardedsStates200Response](docs/Model/AwardedsStates200Response.md)
-- [AwardedsStates200ResponseContentInner](docs/Model/AwardedsStates200ResponseContentInner.md)
 - [AwardedsUpdate200Response](docs/Model/AwardedsUpdate200Response.md)
 - [AwardedsUpdate400Response](docs/Model/AwardedsUpdate400Response.md)
 - [AwardedsUpdate401Response](docs/Model/AwardedsUpdate401Response.md)
@@ -287,6 +290,7 @@ Class | Method | HTTP request | Description
 - [CouponsCreate401Response](docs/Model/CouponsCreate401Response.md)
 - [CouponsCreate409Response](docs/Model/CouponsCreate409Response.md)
 - [CouponsCreateRequest](docs/Model/CouponsCreateRequest.md)
+- [CouponsCreateRequestCouponsInner](docs/Model/CouponsCreateRequestCouponsInner.md)
 - [CouponsDelete200Response](docs/Model/CouponsDelete200Response.md)
 - [CouponsDelete400Response](docs/Model/CouponsDelete400Response.md)
 - [CouponsDelete401Response](docs/Model/CouponsDelete401Response.md)
@@ -323,7 +327,12 @@ Class | Method | HTTP request | Description
 - [FaqUpdate401Response](docs/Model/FaqUpdate401Response.md)
 - [FilesShow200Response](docs/Model/FilesShow200Response.md)
 - [FilesShow400Response](docs/Model/FilesShow400Response.md)
-- [FilesShow401Response](docs/Model/FilesShow401Response.md)
+- [InstantAward](docs/Model/InstantAward.md)
+- [InstantAwardAttempts200Response](docs/Model/InstantAwardAttempts200Response.md)
+- [InstantAwardAttempts200ResponseContent](docs/Model/InstantAwardAttempts200ResponseContent.md)
+- [InstantAwardAttempts400Response](docs/Model/InstantAwardAttempts400Response.md)
+- [InstantAwardAttempts401Response](docs/Model/InstantAwardAttempts401Response.md)
+- [InstantAwardTryToWin200Response](docs/Model/InstantAwardTryToWin200Response.md)
 - [Login200Response](docs/Model/Login200Response.md)
 - [Login401Response](docs/Model/Login401Response.md)
 - [LoginRequest](docs/Model/LoginRequest.md)
@@ -435,6 +444,7 @@ Class | Method | HTTP request | Description
 - [UsersDelete400Response](docs/Model/UsersDelete400Response.md)
 - [UsersDelete401Response](docs/Model/UsersDelete401Response.md)
 - [UsersIndex200Response](docs/Model/UsersIndex200Response.md)
+- [UsersIndex200ResponseContentInner](docs/Model/UsersIndex200ResponseContentInner.md)
 - [UsersUpdate201Response](docs/Model/UsersUpdate201Response.md)
 - [UsersWebhook200Response](docs/Model/UsersWebhook200Response.md)
 - [UsersWebhookRequest](docs/Model/UsersWebhookRequest.md)

@@ -60,7 +60,7 @@ class UsersUpdate201Response implements ModelInterface, ArrayAccess, \JsonSerial
         'entity' => 'string',
         'action' => 'string',
         'result' => 'string',
-        'content' => '\IdpluggerPromotion\Model\User[]'
+        'content' => '\IdpluggerPromotion\Model\UsersIndex200ResponseContentInner[]'
     ];
 
     /**
@@ -394,7 +394,7 @@ class UsersUpdate201Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets content
      *
-     * @return \IdpluggerPromotion\Model\User[]|null
+     * @return \IdpluggerPromotion\Model\UsersIndex200ResponseContentInner[]|null
      */
     public function getContent()
     {
@@ -404,7 +404,7 @@ class UsersUpdate201Response implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets content
      *
-     * @param \IdpluggerPromotion\Model\User[]|null $content content
+     * @param \IdpluggerPromotion\Model\UsersIndex200ResponseContentInner[]|null $content content
      *
      * @return self
      */

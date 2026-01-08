@@ -771,6 +771,8 @@ class BlockedUsersApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $cpf CPF bloqueado (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['blacklistIndex'] to see the possible values for this operation
      *
@@ -778,9 +780,9 @@ class BlockedUsersApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\BlacklistIndex200Response|\IdpluggerPromotion\Model\BlacklistIndex400Response|\IdpluggerPromotion\Model\ConfigsIndex401Response
      */
-    public function blacklistIndex($promotion_id, $_fields = null, $cpf = null, string $contentType = self::contentTypes['blacklistIndex'][0])
+    public function blacklistIndex($promotion_id, $_fields = null, $page = null, $_per_page = null, $cpf = null, string $contentType = self::contentTypes['blacklistIndex'][0])
     {
-        list($response) = $this->blacklistIndexWithHttpInfo($promotion_id, $_fields, $cpf, $contentType);
+        list($response) = $this->blacklistIndexWithHttpInfo($promotion_id, $_fields, $page, $_per_page, $cpf, $contentType);
         return $response;
     }
 
@@ -791,6 +793,8 @@ class BlockedUsersApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $cpf CPF bloqueado (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['blacklistIndex'] to see the possible values for this operation
      *
@@ -798,9 +802,9 @@ class BlockedUsersApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\BlacklistIndex200Response|\IdpluggerPromotion\Model\BlacklistIndex400Response|\IdpluggerPromotion\Model\ConfigsIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function blacklistIndexWithHttpInfo($promotion_id, $_fields = null, $cpf = null, string $contentType = self::contentTypes['blacklistIndex'][0])
+    public function blacklistIndexWithHttpInfo($promotion_id, $_fields = null, $page = null, $_per_page = null, $cpf = null, string $contentType = self::contentTypes['blacklistIndex'][0])
     {
-        $request = $this->blacklistIndexRequest($promotion_id, $_fields, $cpf, $contentType);
+        $request = $this->blacklistIndexRequest($promotion_id, $_fields, $page, $_per_page, $cpf, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -906,15 +910,17 @@ class BlockedUsersApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $cpf CPF bloqueado (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['blacklistIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blacklistIndexAsync($promotion_id, $_fields = null, $cpf = null, string $contentType = self::contentTypes['blacklistIndex'][0])
+    public function blacklistIndexAsync($promotion_id, $_fields = null, $page = null, $_per_page = null, $cpf = null, string $contentType = self::contentTypes['blacklistIndex'][0])
     {
-        return $this->blacklistIndexAsyncWithHttpInfo($promotion_id, $_fields, $cpf, $contentType)
+        return $this->blacklistIndexAsyncWithHttpInfo($promotion_id, $_fields, $page, $_per_page, $cpf, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -929,16 +935,18 @@ class BlockedUsersApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $cpf CPF bloqueado (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['blacklistIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blacklistIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $cpf = null, string $contentType = self::contentTypes['blacklistIndex'][0])
+    public function blacklistIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $page = null, $_per_page = null, $cpf = null, string $contentType = self::contentTypes['blacklistIndex'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\BlacklistIndex200Response';
-        $request = $this->blacklistIndexRequest($promotion_id, $_fields, $cpf, $contentType);
+        $request = $this->blacklistIndexRequest($promotion_id, $_fields, $page, $_per_page, $cpf, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -981,13 +989,15 @@ class BlockedUsersApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $cpf CPF bloqueado (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['blacklistIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function blacklistIndexRequest($promotion_id, $_fields = null, $cpf = null, string $contentType = self::contentTypes['blacklistIndex'][0])
+    public function blacklistIndexRequest($promotion_id, $_fields = null, $page = null, $_per_page = null, $cpf = null, string $contentType = self::contentTypes['blacklistIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -996,6 +1006,8 @@ class BlockedUsersApi
                 'Missing the required parameter $promotion_id when calling blacklistIndex'
             );
         }
+
+
 
 
 
@@ -1012,6 +1024,24 @@ class BlockedUsersApi
             $_fields,
             '_fields', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

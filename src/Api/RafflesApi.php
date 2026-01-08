@@ -777,6 +777,8 @@ class RafflesApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do pedido (optional)
      * @param  string|null $raffle_date_start Início da participação no sorteio (optional)
      * @param  string|null $raffle_date_end Fim da participação no sorteio (optional)
@@ -789,9 +791,9 @@ class RafflesApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\RafflesIndex200Response|\IdpluggerPromotion\Model\RafflesIndex400Response|\IdpluggerPromotion\Model\RafflesIndex401Response
      */
-    public function rafflesIndex($promotion_id, $_fields = null, $id = null, $raffle_date_start = null, $raffle_date_end = null, $raffle_date = null, $realizado_em = null, $status = null, string $contentType = self::contentTypes['rafflesIndex'][0])
+    public function rafflesIndex($promotion_id, $_fields = null, $page = null, $_per_page = null, $id = null, $raffle_date_start = null, $raffle_date_end = null, $raffle_date = null, $realizado_em = null, $status = null, string $contentType = self::contentTypes['rafflesIndex'][0])
     {
-        list($response) = $this->rafflesIndexWithHttpInfo($promotion_id, $_fields, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status, $contentType);
+        list($response) = $this->rafflesIndexWithHttpInfo($promotion_id, $_fields, $page, $_per_page, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status, $contentType);
         return $response;
     }
 
@@ -802,6 +804,8 @@ class RafflesApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do pedido (optional)
      * @param  string|null $raffle_date_start Início da participação no sorteio (optional)
      * @param  string|null $raffle_date_end Fim da participação no sorteio (optional)
@@ -814,9 +818,9 @@ class RafflesApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\RafflesIndex200Response|\IdpluggerPromotion\Model\RafflesIndex400Response|\IdpluggerPromotion\Model\RafflesIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function rafflesIndexWithHttpInfo($promotion_id, $_fields = null, $id = null, $raffle_date_start = null, $raffle_date_end = null, $raffle_date = null, $realizado_em = null, $status = null, string $contentType = self::contentTypes['rafflesIndex'][0])
+    public function rafflesIndexWithHttpInfo($promotion_id, $_fields = null, $page = null, $_per_page = null, $id = null, $raffle_date_start = null, $raffle_date_end = null, $raffle_date = null, $realizado_em = null, $status = null, string $contentType = self::contentTypes['rafflesIndex'][0])
     {
-        $request = $this->rafflesIndexRequest($promotion_id, $_fields, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status, $contentType);
+        $request = $this->rafflesIndexRequest($promotion_id, $_fields, $page, $_per_page, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -922,6 +926,8 @@ class RafflesApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do pedido (optional)
      * @param  string|null $raffle_date_start Início da participação no sorteio (optional)
      * @param  string|null $raffle_date_end Fim da participação no sorteio (optional)
@@ -933,9 +939,9 @@ class RafflesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function rafflesIndexAsync($promotion_id, $_fields = null, $id = null, $raffle_date_start = null, $raffle_date_end = null, $raffle_date = null, $realizado_em = null, $status = null, string $contentType = self::contentTypes['rafflesIndex'][0])
+    public function rafflesIndexAsync($promotion_id, $_fields = null, $page = null, $_per_page = null, $id = null, $raffle_date_start = null, $raffle_date_end = null, $raffle_date = null, $realizado_em = null, $status = null, string $contentType = self::contentTypes['rafflesIndex'][0])
     {
-        return $this->rafflesIndexAsyncWithHttpInfo($promotion_id, $_fields, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status, $contentType)
+        return $this->rafflesIndexAsyncWithHttpInfo($promotion_id, $_fields, $page, $_per_page, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -950,6 +956,8 @@ class RafflesApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do pedido (optional)
      * @param  string|null $raffle_date_start Início da participação no sorteio (optional)
      * @param  string|null $raffle_date_end Fim da participação no sorteio (optional)
@@ -961,10 +969,10 @@ class RafflesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function rafflesIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $id = null, $raffle_date_start = null, $raffle_date_end = null, $raffle_date = null, $realizado_em = null, $status = null, string $contentType = self::contentTypes['rafflesIndex'][0])
+    public function rafflesIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $page = null, $_per_page = null, $id = null, $raffle_date_start = null, $raffle_date_end = null, $raffle_date = null, $realizado_em = null, $status = null, string $contentType = self::contentTypes['rafflesIndex'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\RafflesIndex200Response';
-        $request = $this->rafflesIndexRequest($promotion_id, $_fields, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status, $contentType);
+        $request = $this->rafflesIndexRequest($promotion_id, $_fields, $page, $_per_page, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1007,6 +1015,8 @@ class RafflesApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do pedido (optional)
      * @param  string|null $raffle_date_start Início da participação no sorteio (optional)
      * @param  string|null $raffle_date_end Fim da participação no sorteio (optional)
@@ -1018,7 +1028,7 @@ class RafflesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function rafflesIndexRequest($promotion_id, $_fields = null, $id = null, $raffle_date_start = null, $raffle_date_end = null, $raffle_date = null, $realizado_em = null, $status = null, string $contentType = self::contentTypes['rafflesIndex'][0])
+    public function rafflesIndexRequest($promotion_id, $_fields = null, $page = null, $_per_page = null, $id = null, $raffle_date_start = null, $raffle_date_end = null, $raffle_date = null, $realizado_em = null, $status = null, string $contentType = self::contentTypes['rafflesIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -1027,6 +1037,8 @@ class RafflesApi
                 'Missing the required parameter $promotion_id when calling rafflesIndex'
             );
         }
+
+
 
 
 
@@ -1048,6 +1060,24 @@ class RafflesApi
             $_fields,
             '_fields', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

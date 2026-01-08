@@ -132,7 +132,7 @@ try {
 ## `blacklistIndex()`
 
 ```php
-blacklistIndex($promotion_id, $_fields, $cpf): \IdpluggerPromotion\Model\BlacklistIndex200Response
+blacklistIndex($promotion_id, $_fields, $page, $_per_page, $cpf): \IdpluggerPromotion\Model\BlacklistIndex200Response
 ```
 
 Pesquisa por CPFs bloqueados na promoção
@@ -156,10 +156,12 @@ $apiInstance = new IdpluggerPromotion\Api\BlockedUsersApi(
 );
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $_fields = id,cpf,created_at; // string | Campos a serem retornados
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $cpf = 'cpf_example'; // string | CPF bloqueado
 
 try {
-    $result = $apiInstance->blacklistIndex($promotion_id, $_fields, $cpf);
+    $result = $apiInstance->blacklistIndex($promotion_id, $_fields, $page, $_per_page, $cpf);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BlockedUsersApi->blacklistIndex: ', $e->getMessage(), PHP_EOL;
@@ -172,6 +174,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **promotion_id** | **string**| ID da promoção | |
 | **_fields** | **string**| Campos a serem retornados | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **cpf** | **string**| CPF bloqueado | [optional] |
 
 ### Return type

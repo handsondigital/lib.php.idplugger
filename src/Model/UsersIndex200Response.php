@@ -61,7 +61,7 @@ class UsersIndex200Response implements ModelInterface, ArrayAccess, \JsonSeriali
         'action' => 'string',
         'result' => 'string',
         'paging' => '\IdpluggerPromotion\Model\Pagination',
-        'content' => '\IdpluggerPromotion\Model\User[]'
+        'content' => '\IdpluggerPromotion\Model\UsersIndex200ResponseContentInner[]'
     ];
 
     /**
@@ -428,7 +428,7 @@ class UsersIndex200Response implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets content
      *
-     * @return \IdpluggerPromotion\Model\User[]|null
+     * @return \IdpluggerPromotion\Model\UsersIndex200ResponseContentInner[]|null
      */
     public function getContent()
     {
@@ -438,7 +438,7 @@ class UsersIndex200Response implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets content
      *
-     * @param \IdpluggerPromotion\Model\User[]|null $content content
+     * @param \IdpluggerPromotion\Model\UsersIndex200ResponseContentInner[]|null $content content
      *
      * @return self
      */

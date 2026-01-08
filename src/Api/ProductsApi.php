@@ -775,6 +775,8 @@ class ProductsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Associações a serem retornadas (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do produto (optional)
      * @param  string|null $serial_number Número serial do produto (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productsIndex'] to see the possible values for this operation
@@ -783,9 +785,9 @@ class ProductsApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\ProductsIndex200Response|\IdpluggerPromotion\Model\ProductsIndex400Response|\IdpluggerPromotion\Model\ProductsIndex401Response
      */
-    public function productsIndex($promotion_id, $_fields = null, $_include = null, $id = null, $serial_number = null, string $contentType = self::contentTypes['productsIndex'][0])
+    public function productsIndex($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $serial_number = null, string $contentType = self::contentTypes['productsIndex'][0])
     {
-        list($response) = $this->productsIndexWithHttpInfo($promotion_id, $_fields, $_include, $id, $serial_number, $contentType);
+        list($response) = $this->productsIndexWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $id, $serial_number, $contentType);
         return $response;
     }
 
@@ -797,6 +799,8 @@ class ProductsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Associações a serem retornadas (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do produto (optional)
      * @param  string|null $serial_number Número serial do produto (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productsIndex'] to see the possible values for this operation
@@ -805,9 +809,9 @@ class ProductsApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\ProductsIndex200Response|\IdpluggerPromotion\Model\ProductsIndex400Response|\IdpluggerPromotion\Model\ProductsIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productsIndexWithHttpInfo($promotion_id, $_fields = null, $_include = null, $id = null, $serial_number = null, string $contentType = self::contentTypes['productsIndex'][0])
+    public function productsIndexWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $serial_number = null, string $contentType = self::contentTypes['productsIndex'][0])
     {
-        $request = $this->productsIndexRequest($promotion_id, $_fields, $_include, $id, $serial_number, $contentType);
+        $request = $this->productsIndexRequest($promotion_id, $_fields, $_include, $page, $_per_page, $id, $serial_number, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -914,6 +918,8 @@ class ProductsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Associações a serem retornadas (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do produto (optional)
      * @param  string|null $serial_number Número serial do produto (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productsIndex'] to see the possible values for this operation
@@ -921,9 +927,9 @@ class ProductsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productsIndexAsync($promotion_id, $_fields = null, $_include = null, $id = null, $serial_number = null, string $contentType = self::contentTypes['productsIndex'][0])
+    public function productsIndexAsync($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $serial_number = null, string $contentType = self::contentTypes['productsIndex'][0])
     {
-        return $this->productsIndexAsyncWithHttpInfo($promotion_id, $_fields, $_include, $id, $serial_number, $contentType)
+        return $this->productsIndexAsyncWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $id, $serial_number, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -939,6 +945,8 @@ class ProductsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Associações a serem retornadas (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do produto (optional)
      * @param  string|null $serial_number Número serial do produto (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productsIndex'] to see the possible values for this operation
@@ -946,10 +954,10 @@ class ProductsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productsIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $id = null, $serial_number = null, string $contentType = self::contentTypes['productsIndex'][0])
+    public function productsIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $serial_number = null, string $contentType = self::contentTypes['productsIndex'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\ProductsIndex200Response';
-        $request = $this->productsIndexRequest($promotion_id, $_fields, $_include, $id, $serial_number, $contentType);
+        $request = $this->productsIndexRequest($promotion_id, $_fields, $_include, $page, $_per_page, $id, $serial_number, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -993,6 +1001,8 @@ class ProductsApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Associações a serem retornadas (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do produto (optional)
      * @param  string|null $serial_number Número serial do produto (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productsIndex'] to see the possible values for this operation
@@ -1000,7 +1010,7 @@ class ProductsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productsIndexRequest($promotion_id, $_fields = null, $_include = null, $id = null, $serial_number = null, string $contentType = self::contentTypes['productsIndex'][0])
+    public function productsIndexRequest($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $serial_number = null, string $contentType = self::contentTypes['productsIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -1009,6 +1019,8 @@ class ProductsApi
                 'Missing the required parameter $promotion_id when calling productsIndex'
             );
         }
+
+
 
 
 
@@ -1036,6 +1048,24 @@ class ProductsApi
             $_include,
             '_include', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

@@ -74,8 +74,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'sex' => 'string',
         'newsletter' => 'bool',
         'policy_privacy' => 'bool',
-        'agree_terms' => 'bool',
-        'custom_data' => 'array<string,string>'
+        'agree_terms' => 'bool'
     ];
 
     /**
@@ -103,8 +102,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'sex' => 'string',
         'newsletter' => 'boolean',
         'policy_privacy' => 'boolean',
-        'agree_terms' => 'boolean',
-        'custom_data' => null
+        'agree_terms' => 'boolean'
     ];
 
     /**
@@ -130,8 +128,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'sex' => false,
         'newsletter' => false,
         'policy_privacy' => false,
-        'agree_terms' => false,
-        'custom_data' => false
+        'agree_terms' => false
     ];
 
     /**
@@ -237,8 +234,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'sex' => 'sex',
         'newsletter' => 'newsletter',
         'policy_privacy' => 'policy_privacy',
-        'agree_terms' => 'agree_terms',
-        'custom_data' => 'custom_data'
+        'agree_terms' => 'agree_terms'
     ];
 
     /**
@@ -264,8 +260,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'sex' => 'setSex',
         'newsletter' => 'setNewsletter',
         'policy_privacy' => 'setPolicyPrivacy',
-        'agree_terms' => 'setAgreeTerms',
-        'custom_data' => 'setCustomData'
+        'agree_terms' => 'setAgreeTerms'
     ];
 
     /**
@@ -291,8 +286,7 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         'sex' => 'getSex',
         'newsletter' => 'getNewsletter',
         'policy_privacy' => 'getPolicyPrivacy',
-        'agree_terms' => 'getAgreeTerms',
-        'custom_data' => 'getCustomData'
+        'agree_terms' => 'getAgreeTerms'
     ];
 
     /**
@@ -370,7 +364,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('newsletter', $data ?? [], null);
         $this->setIfExists('policy_privacy', $data ?? [], null);
         $this->setIfExists('agree_terms', $data ?? [], null);
-        $this->setIfExists('custom_data', $data ?? [], null);
     }
 
     /**
@@ -897,33 +890,6 @@ class User implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable agree_terms cannot be null');
         }
         $this->container['agree_terms'] = $agree_terms;
-
-        return $this;
-    }
-
-    /**
-     * Gets custom_data
-     *
-     * @return array<string,string>|null
-     */
-    public function getCustomData()
-    {
-        return $this->container['custom_data'];
-    }
-
-    /**
-     * Sets custom_data
-     *
-     * @param array<string,string>|null $custom_data custom_data
-     *
-     * @return self
-     */
-    public function setCustomData($custom_data)
-    {
-        if (is_null($custom_data)) {
-            throw new \InvalidArgumentException('non-nullable custom_data cannot be null');
-        }
-        $this->container['custom_data'] = $custom_data;
 
         return $this;
     }

@@ -57,7 +57,7 @@ class CouponsCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'coupons' => '\IdpluggerPromotion\Model\Coupon[]'
+        'coupons' => '\IdpluggerPromotion\Model\CouponsCreateRequestCouponsInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class CouponsCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets coupons
      *
-     * @return \IdpluggerPromotion\Model\Coupon[]|null
+     * @return \IdpluggerPromotion\Model\CouponsCreateRequestCouponsInner[]|null
      */
     public function getCoupons()
     {
@@ -302,7 +302,7 @@ class CouponsCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets coupons
      *
-     * @param \IdpluggerPromotion\Model\Coupon[]|null $coupons coupons
+     * @param \IdpluggerPromotion\Model\CouponsCreateRequestCouponsInner[]|null $coupons coupons
      *
      * @return self
      */

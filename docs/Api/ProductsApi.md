@@ -133,7 +133,7 @@ try {
 ## `productsIndex()`
 
 ```php
-productsIndex($promotion_id, $_fields, $_include, $id, $serial_number): \IdpluggerPromotion\Model\ProductsIndex200Response
+productsIndex($promotion_id, $_fields, $_include, $page, $_per_page, $id, $serial_number): \IdpluggerPromotion\Model\ProductsIndex200Response
 ```
 
 Busca por produtos cadastrados na promoção
@@ -158,11 +158,13 @@ $apiInstance = new IdpluggerPromotion\Api\ProductsApi(
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $_fields = ["id"]; // string | Campos a serem retornados
 $_include = ["coupons"]; // string | Associações a serem retornadas
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $id = 'id_example'; // string | Id do produto
 $serial_number = 'serial_number_example'; // string | Número serial do produto
 
 try {
-    $result = $apiInstance->productsIndex($promotion_id, $_fields, $_include, $id, $serial_number);
+    $result = $apiInstance->productsIndex($promotion_id, $_fields, $_include, $page, $_per_page, $id, $serial_number);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductsApi->productsIndex: ', $e->getMessage(), PHP_EOL;
@@ -176,6 +178,8 @@ try {
 | **promotion_id** | **string**| ID da promoção | |
 | **_fields** | **string**| Campos a serem retornados | [optional] |
 | **_include** | **string**| Associações a serem retornadas | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **id** | **string**| Id do produto | [optional] |
 | **serial_number** | **string**| Número serial do produto | [optional] |
 

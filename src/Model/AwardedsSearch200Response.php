@@ -61,7 +61,7 @@ class AwardedsSearch200Response implements ModelInterface, ArrayAccess, \JsonSer
         'action' => 'string',
         'result' => 'string',
         'paging' => '\IdpluggerPromotion\Model\Pagination',
-        'content' => '\IdpluggerPromotion\Model\Awarded[]'
+        'content' => '\IdpluggerPromotion\Model\AwardedsSearch200ResponseContentInner[]'
     ];
 
     /**
@@ -428,7 +428,7 @@ class AwardedsSearch200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets content
      *
-     * @return \IdpluggerPromotion\Model\Awarded[]|null
+     * @return \IdpluggerPromotion\Model\AwardedsSearch200ResponseContentInner[]|null
      */
     public function getContent()
     {
@@ -438,7 +438,7 @@ class AwardedsSearch200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets content
      *
-     * @param \IdpluggerPromotion\Model\Awarded[]|null $content content
+     * @param \IdpluggerPromotion\Model\AwardedsSearch200ResponseContentInner[]|null $content content
      *
      * @return self
      */

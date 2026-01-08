@@ -133,7 +133,7 @@ try {
 ## `ticketsIndex()`
 
 ```php
-ticketsIndex($promotion_id, $_fields, $_include, $id, $parent_id, $user_from_id, $user_to_id, $status): \IdpluggerPromotion\Model\TicketsIndex200Response
+ticketsIndex($promotion_id, $_fields, $_include, $page, $_per_page, $id, $parent_id, $user_from_id, $user_to_id, $status, $search): \IdpluggerPromotion\Model\TicketsIndex200Response
 ```
 
 Busca por tickets de suporte cadastrados na promoção
@@ -158,14 +158,17 @@ $apiInstance = new IdpluggerPromotion\Api\TicketsApi(
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $_fields = id,assunto,content; // string | Dados associados
 $_include = source,parent,from,to,lastUser; // string | Dados associados
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $id = 'id_example'; // string | Id do ticket
 $parent_id = 'parent_id_example'; // string | Id do ticket que gerou a resposta
 $user_from_id = 'user_from_id_example'; // string | Id do remetente
 $user_to_id = 'user_to_id_example'; // string | Id do destinatário
 $status = 'status_example'; // string | Status do destinatário
+$search = 'search_example'; // string | Texto para pesquisa por nome/email do participante
 
 try {
-    $result = $apiInstance->ticketsIndex($promotion_id, $_fields, $_include, $id, $parent_id, $user_from_id, $user_to_id, $status);
+    $result = $apiInstance->ticketsIndex($promotion_id, $_fields, $_include, $page, $_per_page, $id, $parent_id, $user_from_id, $user_to_id, $status, $search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TicketsApi->ticketsIndex: ', $e->getMessage(), PHP_EOL;
@@ -179,11 +182,14 @@ try {
 | **promotion_id** | **string**| ID da promoção | |
 | **_fields** | **string**| Dados associados | [optional] |
 | **_include** | **string**| Dados associados | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **id** | **string**| Id do ticket | [optional] |
 | **parent_id** | **string**| Id do ticket que gerou a resposta | [optional] |
 | **user_from_id** | **string**| Id do remetente | [optional] |
 | **user_to_id** | **string**| Id do destinatário | [optional] |
 | **status** | **string**| Status do destinatário | [optional] |
+| **search** | **string**| Texto para pesquisa por nome/email do participante | [optional] |
 
 ### Return type
 

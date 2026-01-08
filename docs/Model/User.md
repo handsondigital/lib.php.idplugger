@@ -22,6 +22,5 @@ Name | Type | Description | Notes
 **newsletter** | **bool** |  | [optional]
 **policy_privacy** | **bool** |  | [optional]
 **agree_terms** | **bool** |  | [optional]
-**custom_data** | **array<string,string>** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

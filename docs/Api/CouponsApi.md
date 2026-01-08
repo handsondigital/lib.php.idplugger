@@ -9,6 +9,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 | [**couponsIndex()**](CouponsApi.md#couponsIndex) | **GET** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Busca por cupons de um usuário cadastrado na promoção |
 | [**couponsUpdate()**](CouponsApi.md#couponsUpdate) | **PATCH** /v3/promotion/{promotion_id}/users/{user_id}/coupons | Cadastra ou atualiza um cupom para um usuário cadastrado na promoção |
 | [**cuponsWebhook()**](CouponsApi.md#cuponsWebhook) | **POST** /webhook-do-cupom | Webhook de resposta ao registro de cupons |
+| [**v3PromotionPromotionIdCouponsGet()**](CouponsApi.md#v3PromotionPromotionIdCouponsGet) | **GET** /v3/promotion/{promotion_id}/coupons | Buscar cupons de uma promoção |
 
 
 ## `couponsCreate()`
@@ -140,7 +141,7 @@ try {
 ## `couponsIndex()`
 
 ```php
-couponsIndex($promotion_id, $user_id, $_fields, $_include, $id, $user_id2, $external_user_id): \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response
+couponsIndex($promotion_id, $user_id, $_fields, $_include, $page, $_per_page, $id, $user_id2, $external_user_id): \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response
 ```
 
 Busca por cupons de um usuário cadastrado na promoção
@@ -166,12 +167,14 @@ $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $user_id = 56; // int | ID do usuário
 $_fields = ["id"]; // string | Campos a serem retornados
 $_include = ["custom_data,coupon,lucky_numbers"]; // string | Campos a serem retornados
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $id = 'id_example'; // string | Id do cupom
 $user_id2 = 'user_id_example'; // string | Id do usuário associado ao cupom
 $external_user_id = 'external_user_id_example'; // string | Id externo do usuário associado ao cupom
 
 try {
-    $result = $apiInstance->couponsIndex($promotion_id, $user_id, $_fields, $_include, $id, $user_id2, $external_user_id);
+    $result = $apiInstance->couponsIndex($promotion_id, $user_id, $_fields, $_include, $page, $_per_page, $id, $user_id2, $external_user_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponsApi->couponsIndex: ', $e->getMessage(), PHP_EOL;
@@ -186,6 +189,8 @@ try {
 | **user_id** | **int**| ID do usuário | |
 | **_fields** | **string**| Campos a serem retornados | [optional] |
 | **_include** | **string**| Campos a serem retornados | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **id** | **string**| Id do cupom | [optional] |
 | **user_id2** | **string**| Id do usuário associado ao cupom | [optional] |
 | **external_user_id** | **string**| Id externo do usuário associado ao cupom | [optional] |
@@ -330,6 +335,84 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `v3PromotionPromotionIdCouponsGet()`
+
+```php
+v3PromotionPromotionIdCouponsGet($promotion_id, $_fields, $_include, $page, $_per_page, $id, $user_id, $external_user_id, $purchase_date, $insert_at, $tax_coupon): \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response
+```
+
+Buscar cupons de uma promoção
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = IdpluggerPromotion\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new IdpluggerPromotion\Api\CouponsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$promotion_id = 'promotion_id_example'; // string | ID da promoção
+$_fields = id,taxcoupon; // string
+$_include = custom_data,lucky_numbers,serial_numbers,products; // string
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
+$id = 1; // int
+$user_id = 1; // int
+$external_user_id = user_1; // string
+$purchase_date = 2025-06-13 00:00:00 AND 2025-06-13 23:59:59; // string
+$insert_at = 2025-06-23 00:00:00 AND 2025-06-23 23:59:59; // string
+$tax_coupon = 160630; // int
+
+try {
+    $result = $apiInstance->v3PromotionPromotionIdCouponsGet($promotion_id, $_fields, $_include, $page, $_per_page, $id, $user_id, $external_user_id, $purchase_date, $insert_at, $tax_coupon);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CouponsApi->v3PromotionPromotionIdCouponsGet: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promotion_id** | **string**| ID da promoção | |
+| **_fields** | **string**|  | [optional] |
+| **_include** | **string**|  | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
+| **id** | **int**|  | [optional] |
+| **user_id** | **int**|  | [optional] |
+| **external_user_id** | **string**|  | [optional] |
+| **purchase_date** | **string**|  | [optional] |
+| **insert_at** | **string**|  | [optional] |
+| **tax_coupon** | **int**|  | [optional] |
+
+### Return type
+
+[**\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response**](../Model/V3PromotionPromotionIdCouponsGet200Response.md)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

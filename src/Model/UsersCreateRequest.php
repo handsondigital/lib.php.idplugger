@@ -57,7 +57,7 @@ class UsersCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'users' => '\IdpluggerPromotion\Model\User[]'
+        'users' => '\IdpluggerPromotion\Model\UsersIndex200ResponseContentInner[]'
     ];
 
     /**
@@ -292,7 +292,7 @@ class UsersCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets users
      *
-     * @return \IdpluggerPromotion\Model\User[]|null
+     * @return \IdpluggerPromotion\Model\UsersIndex200ResponseContentInner[]|null
      */
     public function getUsers()
     {
@@ -302,7 +302,7 @@ class UsersCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets users
      *
-     * @param \IdpluggerPromotion\Model\User[]|null $users users
+     * @param \IdpluggerPromotion\Model\UsersIndex200ResponseContentInner[]|null $users users
      *
      * @return self
      */

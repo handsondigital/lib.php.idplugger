@@ -775,6 +775,8 @@ class StoresApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Associações a serem retornadas (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id da loja (optional)
      * @param  string|null $cnpj CNPJ da loja (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storesIndex'] to see the possible values for this operation
@@ -783,9 +785,9 @@ class StoresApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\StoresIndex200Response|\IdpluggerPromotion\Model\StoresIndex400Response|\IdpluggerPromotion\Model\StoresIndex401Response
      */
-    public function storesIndex($promotion_id, $_fields = null, $_include = null, $id = null, $cnpj = null, string $contentType = self::contentTypes['storesIndex'][0])
+    public function storesIndex($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $cnpj = null, string $contentType = self::contentTypes['storesIndex'][0])
     {
-        list($response) = $this->storesIndexWithHttpInfo($promotion_id, $_fields, $_include, $id, $cnpj, $contentType);
+        list($response) = $this->storesIndexWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $id, $cnpj, $contentType);
         return $response;
     }
 
@@ -797,6 +799,8 @@ class StoresApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Associações a serem retornadas (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id da loja (optional)
      * @param  string|null $cnpj CNPJ da loja (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storesIndex'] to see the possible values for this operation
@@ -805,9 +809,9 @@ class StoresApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\StoresIndex200Response|\IdpluggerPromotion\Model\StoresIndex400Response|\IdpluggerPromotion\Model\StoresIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storesIndexWithHttpInfo($promotion_id, $_fields = null, $_include = null, $id = null, $cnpj = null, string $contentType = self::contentTypes['storesIndex'][0])
+    public function storesIndexWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $cnpj = null, string $contentType = self::contentTypes['storesIndex'][0])
     {
-        $request = $this->storesIndexRequest($promotion_id, $_fields, $_include, $id, $cnpj, $contentType);
+        $request = $this->storesIndexRequest($promotion_id, $_fields, $_include, $page, $_per_page, $id, $cnpj, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -914,6 +918,8 @@ class StoresApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Associações a serem retornadas (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id da loja (optional)
      * @param  string|null $cnpj CNPJ da loja (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storesIndex'] to see the possible values for this operation
@@ -921,9 +927,9 @@ class StoresApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storesIndexAsync($promotion_id, $_fields = null, $_include = null, $id = null, $cnpj = null, string $contentType = self::contentTypes['storesIndex'][0])
+    public function storesIndexAsync($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $cnpj = null, string $contentType = self::contentTypes['storesIndex'][0])
     {
-        return $this->storesIndexAsyncWithHttpInfo($promotion_id, $_fields, $_include, $id, $cnpj, $contentType)
+        return $this->storesIndexAsyncWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $id, $cnpj, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -939,6 +945,8 @@ class StoresApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Associações a serem retornadas (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id da loja (optional)
      * @param  string|null $cnpj CNPJ da loja (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storesIndex'] to see the possible values for this operation
@@ -946,10 +954,10 @@ class StoresApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storesIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $id = null, $cnpj = null, string $contentType = self::contentTypes['storesIndex'][0])
+    public function storesIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $cnpj = null, string $contentType = self::contentTypes['storesIndex'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\StoresIndex200Response';
-        $request = $this->storesIndexRequest($promotion_id, $_fields, $_include, $id, $cnpj, $contentType);
+        $request = $this->storesIndexRequest($promotion_id, $_fields, $_include, $page, $_per_page, $id, $cnpj, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -993,6 +1001,8 @@ class StoresApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Associações a serem retornadas (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id da loja (optional)
      * @param  string|null $cnpj CNPJ da loja (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storesIndex'] to see the possible values for this operation
@@ -1000,7 +1010,7 @@ class StoresApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function storesIndexRequest($promotion_id, $_fields = null, $_include = null, $id = null, $cnpj = null, string $contentType = self::contentTypes['storesIndex'][0])
+    public function storesIndexRequest($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $cnpj = null, string $contentType = self::contentTypes['storesIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -1009,6 +1019,8 @@ class StoresApi
                 'Missing the required parameter $promotion_id when calling storesIndex'
             );
         }
+
+
 
 
 
@@ -1036,6 +1048,24 @@ class StoresApi
             $_include,
             '_include', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

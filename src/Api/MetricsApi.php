@@ -132,6 +132,8 @@ class MetricsApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string[] $keys Chaves das métricas que deseja consultar. (required)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $start_date Data inicial para filtrar as métricas (optional)
      * @param  string|null $end_date Data final para filtrar as métricas (optional)
      * @param  int|null $limit Limite de resultados (optional)
@@ -142,9 +144,9 @@ class MetricsApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\Metrics200Response|\IdpluggerPromotion\Model\Metrics400Response|\IdpluggerPromotion\Model\Login401Response
      */
-    public function metrics($promotion_id, $keys, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
+    public function metrics($promotion_id, $keys, $page = null, $_per_page = null, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
     {
-        list($response) = $this->metricsWithHttpInfo($promotion_id, $keys, $start_date, $end_date, $limit, $resolution, $contentType);
+        list($response) = $this->metricsWithHttpInfo($promotion_id, $keys, $page, $_per_page, $start_date, $end_date, $limit, $resolution, $contentType);
         return $response;
     }
 
@@ -155,6 +157,8 @@ class MetricsApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string[] $keys Chaves das métricas que deseja consultar. (required)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $start_date Data inicial para filtrar as métricas (optional)
      * @param  string|null $end_date Data final para filtrar as métricas (optional)
      * @param  int|null $limit Limite de resultados (optional)
@@ -165,9 +169,9 @@ class MetricsApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\Metrics200Response|\IdpluggerPromotion\Model\Metrics400Response|\IdpluggerPromotion\Model\Login401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function metricsWithHttpInfo($promotion_id, $keys, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
+    public function metricsWithHttpInfo($promotion_id, $keys, $page = null, $_per_page = null, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
     {
-        $request = $this->metricsRequest($promotion_id, $keys, $start_date, $end_date, $limit, $resolution, $contentType);
+        $request = $this->metricsRequest($promotion_id, $keys, $page, $_per_page, $start_date, $end_date, $limit, $resolution, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -273,6 +277,8 @@ class MetricsApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string[] $keys Chaves das métricas que deseja consultar. (required)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $start_date Data inicial para filtrar as métricas (optional)
      * @param  string|null $end_date Data final para filtrar as métricas (optional)
      * @param  int|null $limit Limite de resultados (optional)
@@ -282,9 +288,9 @@ class MetricsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function metricsAsync($promotion_id, $keys, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
+    public function metricsAsync($promotion_id, $keys, $page = null, $_per_page = null, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
     {
-        return $this->metricsAsyncWithHttpInfo($promotion_id, $keys, $start_date, $end_date, $limit, $resolution, $contentType)
+        return $this->metricsAsyncWithHttpInfo($promotion_id, $keys, $page, $_per_page, $start_date, $end_date, $limit, $resolution, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -299,6 +305,8 @@ class MetricsApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string[] $keys Chaves das métricas que deseja consultar. (required)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $start_date Data inicial para filtrar as métricas (optional)
      * @param  string|null $end_date Data final para filtrar as métricas (optional)
      * @param  int|null $limit Limite de resultados (optional)
@@ -308,10 +316,10 @@ class MetricsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function metricsAsyncWithHttpInfo($promotion_id, $keys, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
+    public function metricsAsyncWithHttpInfo($promotion_id, $keys, $page = null, $_per_page = null, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\Metrics200Response';
-        $request = $this->metricsRequest($promotion_id, $keys, $start_date, $end_date, $limit, $resolution, $contentType);
+        $request = $this->metricsRequest($promotion_id, $keys, $page, $_per_page, $start_date, $end_date, $limit, $resolution, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -354,6 +362,8 @@ class MetricsApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string[] $keys Chaves das métricas que deseja consultar. (required)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $start_date Data inicial para filtrar as métricas (optional)
      * @param  string|null $end_date Data final para filtrar as métricas (optional)
      * @param  int|null $limit Limite de resultados (optional)
@@ -363,7 +373,7 @@ class MetricsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function metricsRequest($promotion_id, $keys, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
+    public function metricsRequest($promotion_id, $keys, $page = null, $_per_page = null, $start_date = null, $end_date = null, $limit = null, $resolution = null, string $contentType = self::contentTypes['metrics'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -385,6 +395,8 @@ class MetricsApi
 
 
 
+
+
         $resourcePath = '/v3/promotion/{promotion_id}/metrics';
         $formParams = [];
         $queryParams = [];
@@ -392,6 +404,24 @@ class MetricsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $keys,

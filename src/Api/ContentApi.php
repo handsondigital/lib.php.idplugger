@@ -448,6 +448,8 @@ class ContentApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados pela API (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $key Pesquisa pela chave principal do conteúdo (optional)
      * @param  string|null $group Pesquisa pela chave do grupo do conteúdo (optional)
      * @param  string|null $type Pesquisa pelo tipo do conteúdo (optional)
@@ -457,9 +459,9 @@ class ContentApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\ContentIndex200Response|\IdpluggerPromotion\Model\ContentIndex400Response|\IdpluggerPromotion\Model\ContentIndex401Response
      */
-    public function contentIndex($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
+    public function contentIndex($promotion_id, $_fields = null, $page = null, $_per_page = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
     {
-        list($response) = $this->contentIndexWithHttpInfo($promotion_id, $_fields, $key, $group, $type, $contentType);
+        list($response) = $this->contentIndexWithHttpInfo($promotion_id, $_fields, $page, $_per_page, $key, $group, $type, $contentType);
         return $response;
     }
 
@@ -470,6 +472,8 @@ class ContentApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados pela API (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $key Pesquisa pela chave principal do conteúdo (optional)
      * @param  string|null $group Pesquisa pela chave do grupo do conteúdo (optional)
      * @param  string|null $type Pesquisa pelo tipo do conteúdo (optional)
@@ -479,9 +483,9 @@ class ContentApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\ContentIndex200Response|\IdpluggerPromotion\Model\ContentIndex400Response|\IdpluggerPromotion\Model\ContentIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function contentIndexWithHttpInfo($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
+    public function contentIndexWithHttpInfo($promotion_id, $_fields = null, $page = null, $_per_page = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
     {
-        $request = $this->contentIndexRequest($promotion_id, $_fields, $key, $group, $type, $contentType);
+        $request = $this->contentIndexRequest($promotion_id, $_fields, $page, $_per_page, $key, $group, $type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -587,6 +591,8 @@ class ContentApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados pela API (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $key Pesquisa pela chave principal do conteúdo (optional)
      * @param  string|null $group Pesquisa pela chave do grupo do conteúdo (optional)
      * @param  string|null $type Pesquisa pelo tipo do conteúdo (optional)
@@ -595,9 +601,9 @@ class ContentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function contentIndexAsync($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
+    public function contentIndexAsync($promotion_id, $_fields = null, $page = null, $_per_page = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
     {
-        return $this->contentIndexAsyncWithHttpInfo($promotion_id, $_fields, $key, $group, $type, $contentType)
+        return $this->contentIndexAsyncWithHttpInfo($promotion_id, $_fields, $page, $_per_page, $key, $group, $type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -612,6 +618,8 @@ class ContentApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados pela API (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $key Pesquisa pela chave principal do conteúdo (optional)
      * @param  string|null $group Pesquisa pela chave do grupo do conteúdo (optional)
      * @param  string|null $type Pesquisa pelo tipo do conteúdo (optional)
@@ -620,10 +628,10 @@ class ContentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function contentIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
+    public function contentIndexAsyncWithHttpInfo($promotion_id, $_fields = null, $page = null, $_per_page = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\ContentIndex200Response';
-        $request = $this->contentIndexRequest($promotion_id, $_fields, $key, $group, $type, $contentType);
+        $request = $this->contentIndexRequest($promotion_id, $_fields, $page, $_per_page, $key, $group, $type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -666,6 +674,8 @@ class ContentApi
      *
      * @param  string $promotion_id ID da promoção (required)
      * @param  string|null $_fields Campos a serem retornados pela API (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $key Pesquisa pela chave principal do conteúdo (optional)
      * @param  string|null $group Pesquisa pela chave do grupo do conteúdo (optional)
      * @param  string|null $type Pesquisa pelo tipo do conteúdo (optional)
@@ -674,7 +684,7 @@ class ContentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function contentIndexRequest($promotion_id, $_fields = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
+    public function contentIndexRequest($promotion_id, $_fields = null, $page = null, $_per_page = null, $key = null, $group = null, $type = null, string $contentType = self::contentTypes['contentIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -683,6 +693,8 @@ class ContentApi
                 'Missing the required parameter $promotion_id when calling contentIndex'
             );
         }
+
+
 
 
 
@@ -701,6 +713,24 @@ class ContentApi
             $_fields,
             '_fields', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

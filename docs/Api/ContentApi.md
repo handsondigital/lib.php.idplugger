@@ -71,7 +71,7 @@ try {
 ## `contentIndex()`
 
 ```php
-contentIndex($promotion_id, $_fields, $key, $group, $type): \IdpluggerPromotion\Model\ContentIndex200Response
+contentIndex($promotion_id, $_fields, $page, $_per_page, $key, $group, $type): \IdpluggerPromotion\Model\ContentIndex200Response
 ```
 
 Dados referentes aos conteúdos (que não são artigos de blog) da promoção
@@ -95,12 +95,14 @@ $apiInstance = new IdpluggerPromotion\Api\ContentApi(
 );
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $_fields = id,key,value,order,type,group; // string | Campos a serem retornados pela API
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $key = como_participar; // string | Pesquisa pela chave principal do conteúdo
 $group = como_participar; // string | Pesquisa pela chave do grupo do conteúdo
 $type = json; // string | Pesquisa pelo tipo do conteúdo
 
 try {
-    $result = $apiInstance->contentIndex($promotion_id, $_fields, $key, $group, $type);
+    $result = $apiInstance->contentIndex($promotion_id, $_fields, $page, $_per_page, $key, $group, $type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContentApi->contentIndex: ', $e->getMessage(), PHP_EOL;
@@ -113,6 +115,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **promotion_id** | **string**| ID da promoção | |
 | **_fields** | **string**| Campos a serem retornados pela API | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **key** | **string**| Pesquisa pela chave principal do conteúdo | [optional] |
 | **group** | **string**| Pesquisa pela chave do grupo do conteúdo | [optional] |
 | **type** | **string**| Pesquisa pelo tipo do conteúdo | [optional] |

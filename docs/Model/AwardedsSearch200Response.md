@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **action** | **string** |  | [optional]
 **result** | **string** |  | [optional]
 **paging** | [**\IdpluggerPromotion\Model\Pagination**](Pagination.md) |  | [optional]
-**content** | [**\IdpluggerPromotion\Model\Awarded[]**](Awarded.md) |  | [optional]
+**content** | [**\IdpluggerPromotion\Model\AwardedsSearch200ResponseContentInner[]**](AwardedsSearch200ResponseContentInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

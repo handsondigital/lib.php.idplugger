@@ -785,6 +785,8 @@ class LuckyNumbersApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  int $user_id ID do usuário (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do número da sorte (optional)
      * @param  string|null $coupon_id Id do cupom associado ao número da sorte (optional)
      * @param  string|null $lucky_number Número da sorte (optional)
@@ -797,9 +799,9 @@ class LuckyNumbersApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\LuckyNumbersSearch200Response|\IdpluggerPromotion\Model\LuckyNumbersSearch400Response|\IdpluggerPromotion\Model\LuckyNumbersSearch401Response
      */
-    public function luckyNumbersSearch($promotion_id, $user_id, $_fields = null, $id = null, $coupon_id = null, $lucky_number = null, $serie = null, $situation = null, $serial_number_id = null, string $contentType = self::contentTypes['luckyNumbersSearch'][0])
+    public function luckyNumbersSearch($promotion_id, $user_id, $_fields = null, $page = null, $_per_page = null, $id = null, $coupon_id = null, $lucky_number = null, $serie = null, $situation = null, $serial_number_id = null, string $contentType = self::contentTypes['luckyNumbersSearch'][0])
     {
-        list($response) = $this->luckyNumbersSearchWithHttpInfo($promotion_id, $user_id, $_fields, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id, $contentType);
+        list($response) = $this->luckyNumbersSearchWithHttpInfo($promotion_id, $user_id, $_fields, $page, $_per_page, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id, $contentType);
         return $response;
     }
 
@@ -811,6 +813,8 @@ class LuckyNumbersApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  int $user_id ID do usuário (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do número da sorte (optional)
      * @param  string|null $coupon_id Id do cupom associado ao número da sorte (optional)
      * @param  string|null $lucky_number Número da sorte (optional)
@@ -823,9 +827,9 @@ class LuckyNumbersApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\LuckyNumbersSearch200Response|\IdpluggerPromotion\Model\LuckyNumbersSearch400Response|\IdpluggerPromotion\Model\LuckyNumbersSearch401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function luckyNumbersSearchWithHttpInfo($promotion_id, $user_id, $_fields = null, $id = null, $coupon_id = null, $lucky_number = null, $serie = null, $situation = null, $serial_number_id = null, string $contentType = self::contentTypes['luckyNumbersSearch'][0])
+    public function luckyNumbersSearchWithHttpInfo($promotion_id, $user_id, $_fields = null, $page = null, $_per_page = null, $id = null, $coupon_id = null, $lucky_number = null, $serie = null, $situation = null, $serial_number_id = null, string $contentType = self::contentTypes['luckyNumbersSearch'][0])
     {
-        $request = $this->luckyNumbersSearchRequest($promotion_id, $user_id, $_fields, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id, $contentType);
+        $request = $this->luckyNumbersSearchRequest($promotion_id, $user_id, $_fields, $page, $_per_page, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -932,6 +936,8 @@ class LuckyNumbersApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  int $user_id ID do usuário (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do número da sorte (optional)
      * @param  string|null $coupon_id Id do cupom associado ao número da sorte (optional)
      * @param  string|null $lucky_number Número da sorte (optional)
@@ -943,9 +949,9 @@ class LuckyNumbersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function luckyNumbersSearchAsync($promotion_id, $user_id, $_fields = null, $id = null, $coupon_id = null, $lucky_number = null, $serie = null, $situation = null, $serial_number_id = null, string $contentType = self::contentTypes['luckyNumbersSearch'][0])
+    public function luckyNumbersSearchAsync($promotion_id, $user_id, $_fields = null, $page = null, $_per_page = null, $id = null, $coupon_id = null, $lucky_number = null, $serie = null, $situation = null, $serial_number_id = null, string $contentType = self::contentTypes['luckyNumbersSearch'][0])
     {
-        return $this->luckyNumbersSearchAsyncWithHttpInfo($promotion_id, $user_id, $_fields, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id, $contentType)
+        return $this->luckyNumbersSearchAsyncWithHttpInfo($promotion_id, $user_id, $_fields, $page, $_per_page, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -961,6 +967,8 @@ class LuckyNumbersApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  int $user_id ID do usuário (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do número da sorte (optional)
      * @param  string|null $coupon_id Id do cupom associado ao número da sorte (optional)
      * @param  string|null $lucky_number Número da sorte (optional)
@@ -972,10 +980,10 @@ class LuckyNumbersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function luckyNumbersSearchAsyncWithHttpInfo($promotion_id, $user_id, $_fields = null, $id = null, $coupon_id = null, $lucky_number = null, $serie = null, $situation = null, $serial_number_id = null, string $contentType = self::contentTypes['luckyNumbersSearch'][0])
+    public function luckyNumbersSearchAsyncWithHttpInfo($promotion_id, $user_id, $_fields = null, $page = null, $_per_page = null, $id = null, $coupon_id = null, $lucky_number = null, $serie = null, $situation = null, $serial_number_id = null, string $contentType = self::contentTypes['luckyNumbersSearch'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\LuckyNumbersSearch200Response';
-        $request = $this->luckyNumbersSearchRequest($promotion_id, $user_id, $_fields, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id, $contentType);
+        $request = $this->luckyNumbersSearchRequest($promotion_id, $user_id, $_fields, $page, $_per_page, $id, $coupon_id, $lucky_number, $serie, $situation, $serial_number_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1019,6 +1027,8 @@ class LuckyNumbersApi
      * @param  string $promotion_id ID da promoção (required)
      * @param  int $user_id ID do usuário (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do número da sorte (optional)
      * @param  string|null $coupon_id Id do cupom associado ao número da sorte (optional)
      * @param  string|null $lucky_number Número da sorte (optional)
@@ -1030,7 +1040,7 @@ class LuckyNumbersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function luckyNumbersSearchRequest($promotion_id, $user_id, $_fields = null, $id = null, $coupon_id = null, $lucky_number = null, $serie = null, $situation = null, $serial_number_id = null, string $contentType = self::contentTypes['luckyNumbersSearch'][0])
+    public function luckyNumbersSearchRequest($promotion_id, $user_id, $_fields = null, $page = null, $_per_page = null, $id = null, $coupon_id = null, $lucky_number = null, $serie = null, $situation = null, $serial_number_id = null, string $contentType = self::contentTypes['luckyNumbersSearch'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -1055,6 +1065,8 @@ class LuckyNumbersApi
 
 
 
+
+
         $resourcePath = '/v3/promotion/{promotion_id}/users/{user_id}/lucky_numbers';
         $formParams = [];
         $queryParams = [];
@@ -1067,6 +1079,24 @@ class LuckyNumbersApi
             $_fields,
             '_fields', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

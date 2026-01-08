@@ -134,7 +134,7 @@ try {
 ## `rafflesIndex()`
 
 ```php
-rafflesIndex($promotion_id, $_fields, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status): \IdpluggerPromotion\Model\RafflesIndex200Response
+rafflesIndex($promotion_id, $_fields, $page, $_per_page, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status): \IdpluggerPromotion\Model\RafflesIndex200Response
 ```
 
 Pesquisa por sorteios na promoção
@@ -158,6 +158,8 @@ $apiInstance = new IdpluggerPromotion\Api\RafflesApi(
 );
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $_fields = ["id"]; // string | Campos a serem retornados
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $id = 'id_example'; // string | Id do pedido
 $raffle_date_start = 2021-01-30 00:00:00 AND 2021-01-31 23:59:59; // string | Início da participação no sorteio
 $raffle_date_end = 2021-02-15 00:00:00 AND 2021-02-16 23:59:59; // string | Fim da participação no sorteio
@@ -166,7 +168,7 @@ $realizado_em = 2021-02-20 00:00:00 AND 2021-02-25 23:59:59; // string | Data em
 $status = 1; // string | Pesquisa por um sorteio com determinado status
 
 try {
-    $result = $apiInstance->rafflesIndex($promotion_id, $_fields, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status);
+    $result = $apiInstance->rafflesIndex($promotion_id, $_fields, $page, $_per_page, $id, $raffle_date_start, $raffle_date_end, $raffle_date, $realizado_em, $status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RafflesApi->rafflesIndex: ', $e->getMessage(), PHP_EOL;
@@ -179,6 +181,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **promotion_id** | **string**| ID da promoção | |
 | **_fields** | **string**| Campos a serem retornados | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **id** | **string**| Id do pedido | [optional] |
 | **raffle_date_start** | **string**| Início da participação no sorteio | [optional] |
 | **raffle_date_end** | **string**| Fim da participação no sorteio | [optional] |

@@ -89,6 +89,9 @@ class CouponsApi
         'cuponsWebhook' => [
             'application/json',
         ],
+        'v3PromotionPromotionIdCouponsGet' => [
+            'application/json',
+        ],
     ];
 
     /**
@@ -819,6 +822,8 @@ class CouponsApi
      * @param  int $user_id ID do usuário (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do cupom (optional)
      * @param  string|null $user_id2 Id do usuário associado ao cupom (optional)
      * @param  string|null $external_user_id Id externo do usuário associado ao cupom (optional)
@@ -828,9 +833,9 @@ class CouponsApi
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet400Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet401Response
      */
-    public function couponsIndex($promotion_id, $user_id, $_fields = null, $_include = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
+    public function couponsIndex($promotion_id, $user_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
     {
-        list($response) = $this->couponsIndexWithHttpInfo($promotion_id, $user_id, $_fields, $_include, $id, $user_id2, $external_user_id, $contentType);
+        list($response) = $this->couponsIndexWithHttpInfo($promotion_id, $user_id, $_fields, $_include, $page, $_per_page, $id, $user_id2, $external_user_id, $contentType);
         return $response;
     }
 
@@ -843,6 +848,8 @@ class CouponsApi
      * @param  int $user_id ID do usuário (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do cupom (optional)
      * @param  string|null $user_id2 Id do usuário associado ao cupom (optional)
      * @param  string|null $external_user_id Id externo do usuário associado ao cupom (optional)
@@ -852,9 +859,9 @@ class CouponsApi
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet400Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function couponsIndexWithHttpInfo($promotion_id, $user_id, $_fields = null, $_include = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
+    public function couponsIndexWithHttpInfo($promotion_id, $user_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
     {
-        $request = $this->couponsIndexRequest($promotion_id, $user_id, $_fields, $_include, $id, $user_id2, $external_user_id, $contentType);
+        $request = $this->couponsIndexRequest($promotion_id, $user_id, $_fields, $_include, $page, $_per_page, $id, $user_id2, $external_user_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -962,6 +969,8 @@ class CouponsApi
      * @param  int $user_id ID do usuário (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do cupom (optional)
      * @param  string|null $user_id2 Id do usuário associado ao cupom (optional)
      * @param  string|null $external_user_id Id externo do usuário associado ao cupom (optional)
@@ -970,9 +979,9 @@ class CouponsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function couponsIndexAsync($promotion_id, $user_id, $_fields = null, $_include = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
+    public function couponsIndexAsync($promotion_id, $user_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
     {
-        return $this->couponsIndexAsyncWithHttpInfo($promotion_id, $user_id, $_fields, $_include, $id, $user_id2, $external_user_id, $contentType)
+        return $this->couponsIndexAsyncWithHttpInfo($promotion_id, $user_id, $_fields, $_include, $page, $_per_page, $id, $user_id2, $external_user_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -989,6 +998,8 @@ class CouponsApi
      * @param  int $user_id ID do usuário (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do cupom (optional)
      * @param  string|null $user_id2 Id do usuário associado ao cupom (optional)
      * @param  string|null $external_user_id Id externo do usuário associado ao cupom (optional)
@@ -997,10 +1008,10 @@ class CouponsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function couponsIndexAsyncWithHttpInfo($promotion_id, $user_id, $_fields = null, $_include = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
+    public function couponsIndexAsyncWithHttpInfo($promotion_id, $user_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response';
-        $request = $this->couponsIndexRequest($promotion_id, $user_id, $_fields, $_include, $id, $user_id2, $external_user_id, $contentType);
+        $request = $this->couponsIndexRequest($promotion_id, $user_id, $_fields, $_include, $page, $_per_page, $id, $user_id2, $external_user_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1045,6 +1056,8 @@ class CouponsApi
      * @param  int $user_id ID do usuário (required)
      * @param  string|null $_fields Campos a serem retornados (optional)
      * @param  string|null $_include Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string|null $id Id do cupom (optional)
      * @param  string|null $user_id2 Id do usuário associado ao cupom (optional)
      * @param  string|null $external_user_id Id externo do usuário associado ao cupom (optional)
@@ -1053,7 +1066,7 @@ class CouponsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function couponsIndexRequest($promotion_id, $user_id, $_fields = null, $_include = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
+    public function couponsIndexRequest($promotion_id, $user_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $user_id2 = null, $external_user_id = null, string $contentType = self::contentTypes['couponsIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -1069,6 +1082,8 @@ class CouponsApi
                 'Missing the required parameter $user_id when calling couponsIndex'
             );
         }
+
+
 
 
 
@@ -1097,6 +1112,24 @@ class CouponsApi
             $_include,
             '_include', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1856,6 +1889,456 @@ class CouponsApi
                 "description" => "URL do servidor do cliente",
             ]
         ];
+    }
+
+    /**
+     * Operation v3PromotionPromotionIdCouponsGet
+     *
+     * Buscar cupons de uma promoção
+     *
+     * @param  string $promotion_id ID da promoção (required)
+     * @param  string|null $_fields _fields (optional)
+     * @param  string|null $_include _include (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
+     * @param  int|null $id id (optional)
+     * @param  int|null $user_id user_id (optional)
+     * @param  string|null $external_user_id external_user_id (optional)
+     * @param  string|null $purchase_date purchase_date (optional)
+     * @param  string|null $insert_at insert_at (optional)
+     * @param  int|null $tax_coupon tax_coupon (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v3PromotionPromotionIdCouponsGet'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet400Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet401Response
+     */
+    public function v3PromotionPromotionIdCouponsGet($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $user_id = null, $external_user_id = null, $purchase_date = null, $insert_at = null, $tax_coupon = null, string $contentType = self::contentTypes['v3PromotionPromotionIdCouponsGet'][0])
+    {
+        list($response) = $this->v3PromotionPromotionIdCouponsGetWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $id, $user_id, $external_user_id, $purchase_date, $insert_at, $tax_coupon, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation v3PromotionPromotionIdCouponsGetWithHttpInfo
+     *
+     * Buscar cupons de uma promoção
+     *
+     * @param  string $promotion_id ID da promoção (required)
+     * @param  string|null $_fields (optional)
+     * @param  string|null $_include (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
+     * @param  int|null $id (optional)
+     * @param  int|null $user_id (optional)
+     * @param  string|null $external_user_id (optional)
+     * @param  string|null $purchase_date (optional)
+     * @param  string|null $insert_at (optional)
+     * @param  int|null $tax_coupon (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v3PromotionPromotionIdCouponsGet'] to see the possible values for this operation
+     *
+     * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet400Response|\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function v3PromotionPromotionIdCouponsGetWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $user_id = null, $external_user_id = null, $purchase_date = null, $insert_at = null, $tax_coupon = null, string $contentType = self::contentTypes['v3PromotionPromotionIdCouponsGet'][0])
+    {
+        $request = $this->v3PromotionPromotionIdCouponsGetRequest($promotion_id, $_fields, $_include, $page, $_per_page, $id, $user_id, $external_user_id, $purchase_date, $insert_at, $tax_coupon, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet400Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation v3PromotionPromotionIdCouponsGetAsync
+     *
+     * Buscar cupons de uma promoção
+     *
+     * @param  string $promotion_id ID da promoção (required)
+     * @param  string|null $_fields (optional)
+     * @param  string|null $_include (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
+     * @param  int|null $id (optional)
+     * @param  int|null $user_id (optional)
+     * @param  string|null $external_user_id (optional)
+     * @param  string|null $purchase_date (optional)
+     * @param  string|null $insert_at (optional)
+     * @param  int|null $tax_coupon (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v3PromotionPromotionIdCouponsGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function v3PromotionPromotionIdCouponsGetAsync($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $user_id = null, $external_user_id = null, $purchase_date = null, $insert_at = null, $tax_coupon = null, string $contentType = self::contentTypes['v3PromotionPromotionIdCouponsGet'][0])
+    {
+        return $this->v3PromotionPromotionIdCouponsGetAsyncWithHttpInfo($promotion_id, $_fields, $_include, $page, $_per_page, $id, $user_id, $external_user_id, $purchase_date, $insert_at, $tax_coupon, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation v3PromotionPromotionIdCouponsGetAsyncWithHttpInfo
+     *
+     * Buscar cupons de uma promoção
+     *
+     * @param  string $promotion_id ID da promoção (required)
+     * @param  string|null $_fields (optional)
+     * @param  string|null $_include (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
+     * @param  int|null $id (optional)
+     * @param  int|null $user_id (optional)
+     * @param  string|null $external_user_id (optional)
+     * @param  string|null $purchase_date (optional)
+     * @param  string|null $insert_at (optional)
+     * @param  int|null $tax_coupon (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v3PromotionPromotionIdCouponsGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function v3PromotionPromotionIdCouponsGetAsyncWithHttpInfo($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $user_id = null, $external_user_id = null, $purchase_date = null, $insert_at = null, $tax_coupon = null, string $contentType = self::contentTypes['v3PromotionPromotionIdCouponsGet'][0])
+    {
+        $returnType = '\IdpluggerPromotion\Model\V3PromotionPromotionIdCouponsGet200Response';
+        $request = $this->v3PromotionPromotionIdCouponsGetRequest($promotion_id, $_fields, $_include, $page, $_per_page, $id, $user_id, $external_user_id, $purchase_date, $insert_at, $tax_coupon, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'v3PromotionPromotionIdCouponsGet'
+     *
+     * @param  string $promotion_id ID da promoção (required)
+     * @param  string|null $_fields (optional)
+     * @param  string|null $_include (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
+     * @param  int|null $id (optional)
+     * @param  int|null $user_id (optional)
+     * @param  string|null $external_user_id (optional)
+     * @param  string|null $purchase_date (optional)
+     * @param  string|null $insert_at (optional)
+     * @param  int|null $tax_coupon (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v3PromotionPromotionIdCouponsGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function v3PromotionPromotionIdCouponsGetRequest($promotion_id, $_fields = null, $_include = null, $page = null, $_per_page = null, $id = null, $user_id = null, $external_user_id = null, $purchase_date = null, $insert_at = null, $tax_coupon = null, string $contentType = self::contentTypes['v3PromotionPromotionIdCouponsGet'][0])
+    {
+
+        // verify the required parameter 'promotion_id' is set
+        if ($promotion_id === null || (is_array($promotion_id) && count($promotion_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $promotion_id when calling v3PromotionPromotionIdCouponsGet'
+            );
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        $resourcePath = '/v3/promotion/{promotion_id}/coupons';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_fields,
+            '_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_include,
+            '_include', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $user_id,
+            'user_id', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $external_user_id,
+            'external_user_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $purchase_date,
+            'purchase_date', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $insert_at,
+            'insert_at', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $tax_coupon,
+            'tax_coupon', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($promotion_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'promotion_id' . '}',
+                ObjectSerializer::toPathValue($promotion_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
     }
 
     /**

@@ -12,7 +12,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 ## `awardedsSearch()`
 
 ```php
-awardedsSearch($promotion_id, $_fields, $_include, $user_id, $lucky_number_id, $checklist, $justificativa): \IdpluggerPromotion\Model\AwardedsSearch200Response
+awardedsSearch($promotion_id, $_fields, $_include, $page, $_per_page, $user_id, $lucky_number_id, $checklist, $justificativa): \IdpluggerPromotion\Model\AwardedsSearch200Response
 ```
 
 Busca por usuários cadastrados na promoção ganhadores de sorteios
@@ -36,14 +36,16 @@ $apiInstance = new IdpluggerPromotion\Api\AwardedsApi(
 );
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $_fields = user,lucky_number,award,award_state; // string | Campos a serem retornados
-$_include = user,lucky_number,award,award_state; // string | Dados relacionados a serem retornados
+$_include = user,raffle,luckyNumber,award,awardedState; // string | Dados relacionados a serem retornados
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $user_id = 1; // string | Id do usuário
 $lucky_number_id = 1; // string | Id do número da sorte
 $checklist = 'checklist_example'; // string | Busca ganhadores pelo texto do checklist
 $justificativa = 'justificativa_example'; // string | Busca ganhadores pelo texto da justificativa
 
 try {
-    $result = $apiInstance->awardedsSearch($promotion_id, $_fields, $_include, $user_id, $lucky_number_id, $checklist, $justificativa);
+    $result = $apiInstance->awardedsSearch($promotion_id, $_fields, $_include, $page, $_per_page, $user_id, $lucky_number_id, $checklist, $justificativa);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AwardedsApi->awardedsSearch: ', $e->getMessage(), PHP_EOL;
@@ -57,6 +59,8 @@ try {
 | **promotion_id** | **string**| ID da promoção | |
 | **_fields** | **string**| Campos a serem retornados | [optional] |
 | **_include** | **string**| Dados relacionados a serem retornados | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **user_id** | **string**| Id do usuário | [optional] |
 | **lucky_number_id** | **string**| Id do número da sorte | [optional] |
 | **checklist** | **string**| Busca ganhadores pelo texto do checklist | [optional] |

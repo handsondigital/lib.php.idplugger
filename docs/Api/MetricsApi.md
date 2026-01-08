@@ -10,7 +10,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 ## `metrics()`
 
 ```php
-metrics($promotion_id, $keys, $start_date, $end_date, $limit, $resolution): \IdpluggerPromotion\Model\Metrics200Response
+metrics($promotion_id, $keys, $page, $_per_page, $start_date, $end_date, $limit, $resolution): \IdpluggerPromotion\Model\Metrics200Response
 ```
 
 Devolve as métricas da promoção
@@ -34,13 +34,15 @@ $apiInstance = new IdpluggerPromotion\Api\MetricsApi(
 );
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $keys = array('keys_example'); // string[] | Chaves das métricas que deseja consultar.
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $start_date = 'start_date_example'; // string | Data inicial para filtrar as métricas
 $end_date = 'end_date_example'; // string | Data final para filtrar as métricas
 $limit = 56; // int | Limite de resultados
 $resolution = 'resolution_example'; // string | Resolução das métricas. Exemplo: `minute`, `hour`, `day`
 
 try {
-    $result = $apiInstance->metrics($promotion_id, $keys, $start_date, $end_date, $limit, $resolution);
+    $result = $apiInstance->metrics($promotion_id, $keys, $page, $_per_page, $start_date, $end_date, $limit, $resolution);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MetricsApi->metrics: ', $e->getMessage(), PHP_EOL;
@@ -53,6 +55,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **promotion_id** | **string**| ID da promoção | |
 | **keys** | [**string[]**](../Model/string.md)| Chaves das métricas que deseja consultar. | |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **start_date** | **string**| Data inicial para filtrar as métricas | [optional] |
 | **end_date** | **string**| Data final para filtrar as métricas | [optional] |
 | **limit** | **int**| Limite de resultados | [optional] |

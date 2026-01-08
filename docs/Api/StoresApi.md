@@ -133,7 +133,7 @@ try {
 ## `storesIndex()`
 
 ```php
-storesIndex($promotion_id, $_fields, $_include, $id, $cnpj): \IdpluggerPromotion\Model\StoresIndex200Response
+storesIndex($promotion_id, $_fields, $_include, $page, $_per_page, $id, $cnpj): \IdpluggerPromotion\Model\StoresIndex200Response
 ```
 
 Busca por lojas cadastradas na promoção
@@ -158,11 +158,13 @@ $apiInstance = new IdpluggerPromotion\Api\StoresApi(
 $promotion_id = 'promotion_id_example'; // string | ID da promoção
 $_fields = ["id"]; // string | Campos a serem retornados
 $_include = ["coupons"]; // string | Associações a serem retornadas
+$page = 1; // int | Informa o número da página da pesquisa
+$_per_page = 1; // int | Informa o número de itens por página na pesquisa
 $id = 'id_example'; // string | Id da loja
 $cnpj = 'cnpj_example'; // string | CNPJ da loja
 
 try {
-    $result = $apiInstance->storesIndex($promotion_id, $_fields, $_include, $id, $cnpj);
+    $result = $apiInstance->storesIndex($promotion_id, $_fields, $_include, $page, $_per_page, $id, $cnpj);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StoresApi->storesIndex: ', $e->getMessage(), PHP_EOL;
@@ -176,6 +178,8 @@ try {
 | **promotion_id** | **string**| ID da promoção | |
 | **_fields** | **string**| Campos a serem retornados | [optional] |
 | **_include** | **string**| Associações a serem retornadas | [optional] |
+| **page** | **int**| Informa o número da página da pesquisa | [optional] |
+| **_per_page** | **int**| Informa o número de itens por página na pesquisa | [optional] |
 | **id** | **string**| Id da loja | [optional] |
 | **cnpj** | **string**| CNPJ da loja | [optional] |
 

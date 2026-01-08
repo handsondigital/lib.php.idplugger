@@ -783,15 +783,17 @@ class UsersApi
      * @param  string|null $cpf CPF do usuário (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['usersIndex'] to see the possible values for this operation
      *
      * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \IdpluggerPromotion\Model\UsersIndex200Response|\IdpluggerPromotion\Model\ConfigsIndex400Response|\IdpluggerPromotion\Model\ConfigsIndex401Response
      */
-    public function usersIndex($promotion_id, $id = null, $external_id = null, $username = null, $email = null, $cpf = null, $_include = null, $_fields = null, string $contentType = self::contentTypes['usersIndex'][0])
+    public function usersIndex($promotion_id, $id = null, $external_id = null, $username = null, $email = null, $cpf = null, $_include = null, $_fields = null, $page = null, $_per_page = null, string $contentType = self::contentTypes['usersIndex'][0])
     {
-        list($response) = $this->usersIndexWithHttpInfo($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields, $contentType);
+        list($response) = $this->usersIndexWithHttpInfo($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields, $page, $_per_page, $contentType);
         return $response;
     }
 
@@ -808,15 +810,17 @@ class UsersApi
      * @param  string|null $cpf CPF do usuário (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['usersIndex'] to see the possible values for this operation
      *
      * @throws \IdpluggerPromotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \IdpluggerPromotion\Model\UsersIndex200Response|\IdpluggerPromotion\Model\ConfigsIndex400Response|\IdpluggerPromotion\Model\ConfigsIndex401Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersIndexWithHttpInfo($promotion_id, $id = null, $external_id = null, $username = null, $email = null, $cpf = null, $_include = null, $_fields = null, string $contentType = self::contentTypes['usersIndex'][0])
+    public function usersIndexWithHttpInfo($promotion_id, $id = null, $external_id = null, $username = null, $email = null, $cpf = null, $_include = null, $_fields = null, $page = null, $_per_page = null, string $contentType = self::contentTypes['usersIndex'][0])
     {
-        $request = $this->usersIndexRequest($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields, $contentType);
+        $request = $this->usersIndexRequest($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields, $page, $_per_page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -928,14 +932,16 @@ class UsersApi
      * @param  string|null $cpf CPF do usuário (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['usersIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersIndexAsync($promotion_id, $id = null, $external_id = null, $username = null, $email = null, $cpf = null, $_include = null, $_fields = null, string $contentType = self::contentTypes['usersIndex'][0])
+    public function usersIndexAsync($promotion_id, $id = null, $external_id = null, $username = null, $email = null, $cpf = null, $_include = null, $_fields = null, $page = null, $_per_page = null, string $contentType = self::contentTypes['usersIndex'][0])
     {
-        return $this->usersIndexAsyncWithHttpInfo($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields, $contentType)
+        return $this->usersIndexAsyncWithHttpInfo($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields, $page, $_per_page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -956,15 +962,17 @@ class UsersApi
      * @param  string|null $cpf CPF do usuário (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['usersIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersIndexAsyncWithHttpInfo($promotion_id, $id = null, $external_id = null, $username = null, $email = null, $cpf = null, $_include = null, $_fields = null, string $contentType = self::contentTypes['usersIndex'][0])
+    public function usersIndexAsyncWithHttpInfo($promotion_id, $id = null, $external_id = null, $username = null, $email = null, $cpf = null, $_include = null, $_fields = null, $page = null, $_per_page = null, string $contentType = self::contentTypes['usersIndex'][0])
     {
         $returnType = '\IdpluggerPromotion\Model\UsersIndex200Response';
-        $request = $this->usersIndexRequest($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields, $contentType);
+        $request = $this->usersIndexRequest($promotion_id, $id, $external_id, $username, $email, $cpf, $_include, $_fields, $page, $_per_page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1013,12 +1021,14 @@ class UsersApi
      * @param  string|null $cpf CPF do usuário (optional)
      * @param  string|null $_include Dados relacionados a serem retornados (optional)
      * @param  string|null $_fields Campos a serem retornados (optional)
+     * @param  int|null $page Informa o número da página da pesquisa (optional)
+     * @param  int|null $_per_page Informa o número de itens por página na pesquisa (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['usersIndex'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function usersIndexRequest($promotion_id, $id = null, $external_id = null, $username = null, $email = null, $cpf = null, $_include = null, $_fields = null, string $contentType = self::contentTypes['usersIndex'][0])
+    public function usersIndexRequest($promotion_id, $id = null, $external_id = null, $username = null, $email = null, $cpf = null, $_include = null, $_fields = null, $page = null, $_per_page = null, string $contentType = self::contentTypes['usersIndex'][0])
     {
 
         // verify the required parameter 'promotion_id' is set
@@ -1027,6 +1037,8 @@ class UsersApi
                 'Missing the required parameter $promotion_id when calling usersIndex'
             );
         }
+
+
 
 
 
@@ -1102,6 +1114,24 @@ class UsersApi
             $_fields,
             '_fields', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $_per_page,
+            '_per_page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
